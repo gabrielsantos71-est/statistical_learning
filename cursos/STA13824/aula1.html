@@ -385,37 +385,64 @@ LECON/DEST - UFES
 <p>Frequentemente, os algoritmos utilizados não possuem um modelo probabilístico explícito subjacente. Ainda que o objetivo principal de um problema de <strong>predição</strong> seja maximizar a capacidade preditiva, a <em>interpretabilidade</em> do modelo final também é um aspecto relevante, especialmente em aplicações que exigem transparência na tomada de decisão.</p>
 
 <img data-src="images/machine_learning.gif" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
-<section id="programa-da-disciplina" class="slide level2">
-<h2>Programa da disciplina</h2>
-<div class="fragment semi-fade-out" data-fragment-index="2">
-<ol type="1">
-<li><p>INTRODUÇÃO;</p></li>
-<li><p>REGRESSÃO LINEAR SIMPLES: 2.1. O Modelo; 2.2. Pressupostos do modelo; 2.3.Estimação de parâmetros; 2.4. Valores ajustados, resíduos e estimativa da variância; 2.5. Propriedades do estimador de mínimos quadrados ordinários; 2.6. Inferência sobre os parâmetros da regressão; 2.7. Predição de novas observações; 2.8. Coeficiente de determinação <span class="math inline">\(R^2\)</span>; 2.9. Regressão através da origem;</p></li>
-</ol>
-</div>
-<div class="fragment fade-in" data-fragment-index="2">
-<p><span style="text-align: justify"> 3. REGRESSÃO LINEAR MÚLTIPLA: 3.1. O modelo linear geral; 3.2. Estimação dos parâmetros do modelo; 3.3. Interpretação geométrica dos coeficientes; 3.4. Propriedades do estimador de mínimos quadrados ordinários; 3.5. Inferência sobre os parâmetros da regressão; 3.6. Predição de novas observações; 3.7. O princípio da soma de quadrados adicionais; 3.8. Coeficiente de determinação <span class="math inline">\(R^2\)</span>; 3.9. Estimação por mínimos quadrados generalizados; 3.10. Estimação por mínimos quadrados ponderados;</span></p>
-</div>
-</section>
-<section id="programa-da-disciplina-1" class="slide level2">
-<h2>Programa da disciplina</h2>
-<ol start="4" type="1">
-<li><p>VERIFICAÇÃO DO MODELO: 4.1. Análise residual 4.2. Teste de falta de ajuste; 4.3. Multicolinearidade; 4.4. Heteroscedasticidade; 4.5. Autocorrelação; 4.6. Não-normalidade; 4.7. O efeito dos casos individuais;</p></li>
-<li><p>SELEÇÃO DE MODELOS: 5.1. Critérios de informação; 5.2. Seleção Forward; 5.3. Seleção Backward; 5.4.Regressão Stepwise.</p></li>
-</ol>
-</section>
-<section id="algumas-referências-bibliográficas" class="slide level2">
-<h2>Algumas referências bibliográficas</h2>
+<section id="tipos-de-aprendizado" class="slide level2">
+<h2>Tipos de Aprendizado</h2>
 <ul>
-<li><p>MONTGOMERY, Douglas C.; PECK, Elizabeth A.; VINING, G. Geoffrey. Introduction to linear regression analysis. 5th ed.&nbsp;New Jersey: Wiley Interscience, 2012.</p></li>
-<li><p>DRAPER, Norman Richard; SMITH, Harry. Applied regression analysis. 3rd ed.&nbsp;New York: John Wiley, c1998. xvii, 706 p.</p></li>
-<li><p>HOFFMANN, Rodolfo; VIEIRA, Sônia. Análise de regressão: uma introdução à econometria. 3. ed.&nbsp;São Paulo: Hucitec, 2006 viii, 379p.</p></li>
-<li><p>GUJARATI, Damodar N.; PORTER, Dawn C. Econometria básica. 5. ed.&nbsp;Rio de Janeiro, RJ: AMGH, 2011. 924 p.</p></li>
+<li><p><strong>Supervisionado</strong>: O objetivo é prever o valor de uma variável resposta (<em>output</em>) a partir de variáveis preditoras (<em>input</em>). Dentre as técnicas mais utilizadas com essa finalidade temos:</p>
+<p><br></p>
+<ul>
+<li><ins>
+Modelos de regressão
+</ins>
+(linear, ridge, lasso, elastic net, esparsa, robusta, Bayes ingênuo (<em>Naive Bayes</em>), etc.)</li>
 </ul>
-<p>Algumas referências online estão disponíves no <strong><a href="https://estatistica.ufes.br/sites/estatistica.ufes.br/files/field/anexo/sta13824_analise_de_regressao_0.pdf">PPC 2019</a></strong> do curso de Bacharelado em Estatística e no <strong><a href="https://bit.ly/4bAVRMt">site da disciplina</a></strong>.</p>
+<p><br></p>
+<ul>
+<li><ins>
+Modelos de classificação
+</ins>
+baseados em modelos de regressão logística, algoritmos de suporte vetorial (SVM - <em>support vector machines</em>), redes neurais, análise discriminante linear e quadrática, árvores de decisão, método do <span class="math inline">\(k\)</span>-ésimo vizinho mais próximo (<em>KNN</em>), bagging e florestas aleatórias, boosting etc.</li>
+</ul></li>
+</ul>
 </section>
-<section id="metodologia" class="slide level2 center" data-background-color="#172a46">
-<h2>Metodologia</h2>
+<section class="slide level2">
+
+<ul>
+<li><strong>Não supervisionado</strong>: O objetivo é descrever associações e padrões entre variáveis. Não há uma distinção entre preditoras e respostas e só dispomos de um conjunto de variáveis (<em>inputs</em>). Dentre as técnicas mais utilizadas temos:
+<ul>
+<li><ins>
+Redução de dimensionalidade
+</ins>
+: Análise de componentes principais, análise de componentes independentes, análise fatorial, projeções aleatórias, <em>Autoencoders</em>, etc.</li>
+<li><ins>
+Análise de agrupamentos
+</ins>
+: análise de conglomerados (<em>cluster</em>), <em>k</em>-médias (<em>k-means</em>), métodos hierárquicos (<em>hierarchical clustering</em>), agrupamento espectral, etc.</li>
+<li><ins>
+Detecção de anomalias
+</ins>
+: Fator de outlier local (LOF - <em>local outlier factor</em>), floresta de isolamento (<em>Isolation Forest</em>), etc.</li>
+<li><ins>
+Abordagens para aprender modelos de variáveis latentes
+</ins>
+: Algoritmo EM, método dos momentos e técnicas de separação de sinal cego (<em>Blind signal separation</em>), etc.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><strong>Por reforço</strong>: Aprendizagem por reforço (RL) é uma área de aprendizagem de máquina preocupada de como os agentes inteligentes devem realizar ações em um ambiente a fim de maximizar a noção de recompensa cumulativa. A aprendizagem por reforço difere da aprendizagem supervisionada por não precisar da apresentação de pares de entrada/saída rotulados e por não precisar que ações abaixo do ideal sejam explicitamente corrigidas. Em vez disso, o foco está em encontrar um equilíbrio entre a exploração (de território não mapeado) e a exploração (de conhecimento atual). Dentre as técnicas mais utilizadas com essa finalidade, temos:
+<ul>
+<li>Critério de otimização (<em>Criterion of optimality</em>), Força bruta (<em>Brute force</em>), aproximação ao valor da função (<em>Value function</em>), método de Monte Carlo, método de diferenças temporais, etc.</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“<em>IA é um esforço para automatizar tarefas intelectuais usualmente realizadas por seres humanos.</em>”– <cite> <span class="citation" data-cites="chollet2018">Chollet (<a href="#/referências" role="doc-biblioref" onclick="">2018</a>)</span></cite></p>
+</blockquote>
+</section>
+<section id="modelos-de-regressão-linear" class="slide level2 center" data-background-color="#172a46">
+<h2>Modelos de regressão linear</h2>
 <div class="cell">
 <style type="text/css">
 .center h2 {
@@ -424,14 +451,17 @@ LECON/DEST - UFES
 </style>
 </div>
 </section>
-<section id="processo-ensino-aprendizagem" class="slide level2">
-<h2>Processo ensino-aprendizagem</h2>
-<p>O processo de ensino-aprendizagem será baseado em aulas expositivas, realizadas às segundas, quartas e sextas-feiras, das 07:00 às 09:00, na sala 5 do prédio didático (anexo ao IC-I). As aulas computacionais serão ministradas no LCex.</p>
-<p><br></p>
-<p>O material da disciplina estará disponível para consulta online. Sugere-se consultar o material antes da discussão dos assuntos em sala. A minha sugestão é dedicar 2h de estudo por cada hora de aula. <u>Lembre: não existem atalhos!</u></p>
-<p><br></p>
+<section id="análise-de-regressão-linear-i" class="slide level2">
+<h2>Análise de regressão linear I</h2>
+<p>Análise de regressão é uma técnica estatística que conduz a uma descrição matemática de um processo em termos de um conjunto de variáveis associadas. Os métodos de regressão tiveram suas bases com o surgimento do método de mínimos quadrados em <span class="math inline">\(1795\)</span> nos trabalhos de <a href="https://bityli.com/W5wkJ">Carl Friedrich Gauss</a>, quando Gauss tinha apenas dezoito anos.</p>
+<p>Entretanto, <a href="https://bityli.com/qwND5">Adrien-Marie Legendre</a> foi o primeiro a publicar o método em <span class="math inline">\(1805\)</span>, em seu <em>Nouvelles méthodes pour la détermination des orbites des comètes</em>. Gauss publicou suas conclusões apenas em <span class="math inline">\(1809\)</span>.</p>
+</section>
+<section id="análise-de-regressão-linear-i-1" class="slide level2">
+<h2>Análise de regressão linear I</h2>
+<p>De modo geral, o objetivo de um modelo de regressão é determinar a relação entre uma variável aleatória <span class="math inline">\(Y\in\mathbb{R}\)</span> e um vetor <span class="math inline">\(\mathbf{x}=(x_1,\dots,x_d)\in\mathbb{R}^d\)</span>. Mais especificamente, busca-se descrever tal relação estimando a função de regressão, dada por: <span class="math display">\[r(\mathbf{x})=\mathbb{E}[Y|\mathbf{X}=\mathbf{x}].\]</span></p>
+<p>A análise de regressão consiste em modelar a relação funcional entre uma variável <em>resposta</em> e uma ou mais variáveis <em>explicativas</em>. Em outras palavras, nosso principal objetivo será descrever algumas técnicas para estimar (ou <em>treinar</em>, como dito na literatura de <span style="color:#82243a">aprendizado de máquina</span>) a função <span class="math inline">\(r(\mathbf{x})\)</span>.</p>
 <blockquote>
-<p><strong>Frequência:</strong> Será computada durante as aulas. Solicita-se informar a sua participação na aula. Importante não esquecer de informar a presença, pois independente da pontuação na média final, o aluno que não tiver frequência igual ou superior a 75% será reprovado por faltas.</p>
+<p><span class="math inline">\(Y\)</span> também é chamada de variável <em>dependente</em>, ou <em>label</em> (rótulo). <span class="math inline">\(x_1,\dots,x_d\)</span> também são chamadas de variáveis <em>independentes</em>, ou <em>covariáveis</em>, ou <em>preditores</em>, ou <em>características</em> ou <em>features</em> (atributos).</p>
 </blockquote>
 </section>
 <section id="atividades-computacionais" class="slide level2">
@@ -530,6 +560,9 @@ LECON/DEST - UFES
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-breiman2001" class="csl-entry" role="listitem">
 Breiman, L. (2001), <span>“<span>Statistical Modeling: The Two Cultures (with comments and a rejoinder by the author)</span>”</span>, <em>Statistical Science</em>, Institute of Mathematical Statistics, 16, 199–231.
+</div>
+<div id="ref-chollet2018" class="csl-entry" role="listitem">
+Chollet, F. (2018), <em>Deep learning with R</em>, Shelter Island, NY: Manning Publications.
 </div>
 </div>
 </section>
