@@ -342,6 +342,28 @@
       margin-right: 0; 
     }
   </style>
+  <link href="aula1_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="aula1_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <link href="aula1_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+  <script src="aula1_files/libs/datatables-binding-0.31/datatables.js"></script>
+  <script src="aula1_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="aula1_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="aula1_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="aula1_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="aula1_files/libs/jszip-1.13.6/jszip.min.js"></script>
+  <script src="aula1_files/libs/pdfmake-1.13.6/pdfmake.js"></script>
+  <script src="aula1_files/libs/pdfmake-1.13.6/vfs_fonts.js"></script>
+  <link href="aula1_files/libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet">
+  <script src="aula1_files/libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+  <script src="aula1_files/libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+  <script src="aula1_files/libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+  <script src="aula1_files/libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+  <link href="aula1_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="aula1_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+  <script src="aula1_files/libs/plotly-binding-4.10.4/plotly.js"></script>
+  <script src="aula1_files/libs/typedarray-0.1/typedarray.min.js"></script>
+  <link href="aula1_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+  <script src="aula1_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -360,7 +382,7 @@ Introdução<br>
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 24 março, 2025
+            Última atualização: 25 março, 2025
           </p>
     </div>
 </div>
@@ -456,104 +478,177 @@ Abordagens para aprender modelos de variáveis latentes
 <p>Análise de regressão é uma técnica estatística que conduz a uma descrição matemática de um processo em termos de um conjunto de variáveis associadas. Os métodos de regressão tiveram suas bases com o surgimento do método de mínimos quadrados em <span class="math inline">\(1795\)</span> nos trabalhos de <a href="https://bityli.com/W5wkJ">Carl Friedrich Gauss</a>, quando Gauss tinha apenas dezoito anos.</p>
 <p>Entretanto, <a href="https://bityli.com/qwND5">Adrien-Marie Legendre</a> foi o primeiro a publicar o método em <span class="math inline">\(1805\)</span>, em seu <em>Nouvelles méthodes pour la détermination des orbites des comètes</em>. Gauss publicou suas conclusões apenas em <span class="math inline">\(1809\)</span>.</p>
 </section>
-<section id="análise-de-regressão-linear-i-1" class="slide level2">
-<h2>Análise de regressão linear I</h2>
+<section id="análise-de-regressão-linear-ii" class="slide level2">
+<h2>Análise de regressão linear II</h2>
 <p>De modo geral, o objetivo de um modelo de regressão é determinar a relação entre uma variável aleatória <span class="math inline">\(Y\in\mathbb{R}\)</span> e um vetor <span class="math inline">\(\mathbf{x}=(x_1,\dots,x_d)\in\mathbb{R}^d\)</span>. Mais especificamente, busca-se descrever tal relação estimando a função de regressão, dada por: <span class="math display">\[r(\mathbf{x})=\mathbb{E}[Y|\mathbf{X}=\mathbf{x}].\]</span></p>
 <p>A análise de regressão consiste em modelar a relação funcional entre uma variável <em>resposta</em> e uma ou mais variáveis <em>explicativas</em>. Em outras palavras, nosso principal objetivo será descrever algumas técnicas para estimar (ou <em>treinar</em>, como dito na literatura de <span style="color:#82243a">aprendizado de máquina</span>) a função <span class="math inline">\(r(\mathbf{x})\)</span>.</p>
 <blockquote>
 <p><span class="math inline">\(Y\)</span> também é chamada de variável <em>dependente</em>, ou <em>label</em> (rótulo). <span class="math inline">\(x_1,\dots,x_d\)</span> também são chamadas de variáveis <em>independentes</em>, ou <em>covariáveis</em>, ou <em>preditores</em>, ou <em>características</em> ou <em>features</em> (atributos).</p>
 </blockquote>
 </section>
-<section id="atividades-computacionais" class="slide level2">
-<h2>Atividades computacionais</h2>
-<p>A parte computacional será executada preferencialmente na linguagem <strong>R</strong>. Nada impede de usar outras linguagens de programação da sua preferência, e.g., <strong>Python</strong> ou <strong>Julia</strong>.</p>
-<ul>
-<li>No caso do <strong>R</strong>, existe uma basta quantidade de pacotes especializados em modelagem estatística de dados. Sugere-se dar uma olhada no <tt><a href="https://cran.r-project.org/web/views/">CRAN Task Views</a></tt>.</li>
-</ul>
-<blockquote>
-<p><strong>Observação:</strong> Quem tiver interesse na instalação de todos os pacotes relacionados a uma área em particular, basta instalar o pacote <b><tt><a href="https://cran.r-project.org/web/packages/ctv/index.html">ctv</a></tt></b> e usar o comando <b><tt>ctv::install.views</tt></b>. Por exemplo, para instalar todos os pacotes da área de econometria, utilize <b><tt>ctv::install.views(“Econometrics”, coreOnly = TRUE)</tt></b> na linha de comando.</p>
-</blockquote>
-<ul>
-<li>Ainda, recomenda-se a instalação do pacote <tt><a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">datasets</a></tt>. Esse pacote proporciona uma grande quantidade de conjuntos de dados para treinar as metodologías discutadas em sala de aula.</li>
-</ul>
+<section id="exemplo-i" class="slide level2">
+<h2>Exemplo I</h2>
+<p>Pesquisadores suspeitam que a temperatura usada em um processo industrial afeta a dureza de um certo produto. Um experimento foi realizado e vários produtos foram expostos a diferentes temperatura: <span class="math inline">\(30, 40, 50\)</span> e <span class="math inline">\(60^\circ C\)</span>. Os resultados obtidos foram:</p>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-e473785c2ca4201088ed" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e473785c2ca4201088ed">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14],[30,30,30,30,40,40,40,50,50,50,60,60,60,60],[55.8,59.1,54.8,54.6,43.1,42.2,45.2,31.6,30.9,30.8,17.5,20.5,17.2,16.9]],"container":"<table class=\"compact\">\n  <thead>\n    <tr>\n      <th>ident<\/th>\n      <th>Temperatura<\/th>\n      <th>Dureza<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tBp","buttons":[{"extend":"csv","filename":"dureza"},{"extend":"excel","filename":"dureza"},{"extend":"pdf","filename":"dureza"}],"pageLength":5,"columnDefs":[{"className":"dt-right","targets":[0,1,2]},{"name":"ident","targets":0},{"name":"Temperatura","targets":1},{"name":"Dureza","targets":2}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-10eb95e50421a74bc19c" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-10eb95e50421a74bc19c">{"x":{"visdat":{"92d8237639586":["function () ","plotlyVisDat"]},"cur_data":"92d8237639586","attrs":{"92d8237639586":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"92d8237639586.1":{"x":{},"y":[56.149450549450513,56.149450549450563,56.149450549450556,56.149450549450556,43.487912087912093,43.487912087912093,43.487912087912093,30.826373626373627,30.826373626373627,30.826373626373627,18.164835164835164,18.164835164835161,18.164835164835164,18.164835164835164],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","mode":"line","line":{"width":1,"color":"red"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"range":[29,61],"title":"Temperatura (°C)"},"autosize":true,"showlegend":false,"yaxis":{"domain":[0,1],"automargin":true,"title":"Dureza"},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[30,30,30,30,40,40,40,50,50,50,60,60,60,60],"y":[55.799999999999997,59.100000000000001,54.799999999999997,54.600000000000001,43.100000000000001,42.200000000000003,45.200000000000003,31.600000000000001,30.899999999999999,30.800000000000001,17.5,20.5,17.199999999999999,16.899999999999999],"type":"scatter","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[30,30,30,30,40,40,40,50,50,50,60,60,60,60],"y":[56.149450549450513,56.149450549450563,56.149450549450556,56.149450549450556,43.487912087912093,43.487912087912093,43.487912087912093,30.826373626373627,30.826373626373627,30.826373626373627,18.164835164835164,18.164835164835161,18.164835164835164,18.164835164835164],"type":"scatter","mode":"line+lines","line":{"color":"red","width":1},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
 </section>
-<section id="atividades-avaliativas" class="slide level2 center" data-background-color="#172a46">
-<h2>Atividades avaliativas</h2>
+<section id="exemplo-ii" class="slide level2">
+<h2>Exemplo II</h2>
+<p>Considere um estudo cujo objetivo é avaliar como a distância com que motoristas conseguem distinguir um determinado objeto varia com a idade. Nesse caso, a variável resposta é a <strong>distância</strong> e a variável explicativa é a <strong>idade</strong>. (<span class="citation" data-cites="morettin:singer:2020">Morettin e Singer (<a href="#/referências" role="doc-biblioref" onclick="">2020</a>)</span>. <a href="https://www.ime.usp.br/~jmsinger/MAE0217/cdados2020jun03.pdf"><em>Introdução à Ciência de Dados: Fundamentos e aplicações</em>.</a> )</p>
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-nrow="1" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-c552964b5230a54c0d59" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c552964b5230a54c0d59">{"x":{"filter":"none","vertical":false,"extensions":["Buttons"],"data":[[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],[18,20,22,23,23,25,27,28,29,32,37,41,46,49,53,55,63,65,66,67,68,70,71,72,73,74,75,77,79,82],[170,197,187,170,153,163,187,170,153,137,140,153,150,127,153,140,117,140,100,137,100,130,107,123,93,140,153,120,103,120]],"container":"<table class=\"compact\">\n  <thead>\n    <tr>\n      <th>ident<\/th>\n      <th>idade<\/th>\n      <th>distancia<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"tBp","buttons":[{"extend":"csv","filename":"dureza"},{"extend":"excel","filename":"dureza"},{"extend":"pdf","filename":"dureza"}],"pageLength":5,"columnDefs":[{"className":"dt-right","targets":[0,1,2]},{"name":"ident","targets":0},{"name":"idade","targets":1},{"name":"distancia","targets":2}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-551f288be3b70ede17d5" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-551f288be3b70ede17d5">{"x":{"visdat":{"92d8246eef258":["function () ","plotlyVisDat"]},"cur_data":"92d8246eef258","attrs":{"92d8246eef258":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"92d8246eef258.1":{"x":{},"y":[174.22958115183255,172.22172774869105,170.21387434554973,169.20994764397906,169.20994764397906,167.20209424083768,165.19424083769633,164.19031413612566,163.18638743455497,160.17460732984293,155.15497382198953,151.13926701570679,146.11963350785339,143.10785340314135,139.09214659685864,137.08429319371729,129.05287958115184,127.04502617801047,126.0410994764398,125.03717277486911,124.03324607329843,122.02539267015706,121.02146596858638,120.01753926701571,119.01361256544503,118.00968586387435,117.00575916230366,114.99790575916231,112.99005235602095,109.97827225130891],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","mode":"line","line":{"width":1,"color":"red"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"range":[16,86],"title":"Idade (anos)"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Distância (cm)"},"autosize":true,"showlegend":false,"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[18,20,22,23,23,25,27,28,29,32,37,41,46,49,53,55,63,65,66,67,68,70,71,72,73,74,75,77,79,82],"y":[170,197,187,170,153,163,187,170,153,137,140,153,150,127,153,140,117,140,100,137,100,130,107,123,93,140,153,120,103,120],"type":"scatter","mode":"markers","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[18,20,22,23,23,25,27,28,29,32,37,41,46,49,53,55,63,65,66,67,68,70,71,72,73,74,75,77,79,82],"y":[174.22958115183255,172.22172774869105,170.21387434554973,169.20994764397906,169.20994764397906,167.20209424083768,165.19424083769633,164.19031413612566,163.18638743455497,160.17460732984293,155.15497382198953,151.13926701570679,146.11963350785339,143.10785340314135,139.09214659685864,137.08429319371729,129.05287958115184,127.04502617801047,126.0410994764398,125.03717277486911,124.03324607329843,122.02539267015706,121.02146596858638,120.01753926701571,119.01361256544503,118.00968586387435,117.00575916230366,114.99790575916231,112.99005235602095,109.97827225130891],"type":"scatter","mode":"line+lines","line":{"color":"red","width":1},"marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div>
 </section>
-<section id="atividades-avaliativas-1" class="slide level2">
-<h2>Atividades avaliativas</h2>
-<p>As atividades avaliativas consistirão em três provas escritas <span class="math inline">\((P_i, i=1, 2, 3)\)</span>. Nas provas serão julgados os conhecimentos teóricos e práticos da disciplina. Dessa forma, a média final <span class="math inline">\((MF)\)</span> das provas será calculada como: <span class="math display">\[MF=0.2\times P_1 + 0.4\times (P_2 + P_3).\]</span> Alunos que com média final <strong>inferior</strong> a <span class="math inline">\(7.0\)</span> (sete ponto zero), ao final do período letivo terão opção de apresentar uma prova final no formato escrito. Na prova final será avaliado o <strong>conteúdo completo</strong> da disciplina.</p>
-<blockquote>
-<p>As provas escritas serão aplicadas em sala de aula durante os horários definidos para o desenvolvimento das atividades da disciplina. <strong>Não será considerada a aplicação de provas fora das datas definidas no plano de ensino</strong>. Qualquer alteração nas datas deverá ser definida por unanimidade pelos discentes matriculados na disciplina.</p>
-</blockquote>
+<section id="recursos-computacionais" class="slide level2 center" data-background-color="#172a46">
+<h2>Recursos computacionais</h2>
 </section>
-<section id="sobre-a-prova-prática" class="slide level2">
-<h2>Sobre a prova prática</h2>
-<p>A prova prática deve ser entregue em formato de <em>trabalho científico</em>. O documento deve conter um título, um resumo do trabalho, uma introdução ao problema em estudo, uma motivação para as técnicas utilizadas, os resultados e as conclusões do trabalho. Sugere-se o uso do pacote <strong><a href="https://bookdown.org/yihui/rmarkdown/journals.html">rticles</a></strong> para o uso do <tt>Rmarkdown</tt> ou do estilo <strong><a href="https://ctan.org/pkg/amsart?lang=en">amsart</a></strong> do <span class="math inline">\(\LaTeX\)</span>.</p>
-<p>No que se refere à redação do trabalho, recomenda-se que ele esteja bem escrito e que seus textos estejam gramaticalmente corretos. Evite também cometer erros de ortografia, mantenha sempre do lado seu dicionário de confiança.</p>
-<p>Todos os simbolos matemáticos utilizados no texto devem ser definidos explicitamente. Lembre: <em>A CLAREZA ANTES DA ASTÚCIA</em>, i.e.&nbsp;procure escrever de forma clara e evite construções rebuscadas. A clareza do texto deve ser sua meta central. Um bom texto deve ser admirado pelo seu conteúdo e não por sua forma. Seja objetivo. A objetividade é componente importante de qualquer texto cientı́fico.</p>
-</section>
-<section id="datas-importantes" class="slide level2 center" data-background-color="#172a46">
-<h2>Datas importantes</h2>
-</section>
-<section id="datas-importantes-1" class="slide level2">
-<h2>Datas importantes</h2>
-<ul>
-<li><p><strong>Início das aulas:</strong> Quarta-feira 23 de abril de 2025</p></li>
-<li><p><strong>Prova 1:</strong> Sexta-feira 30 de maio de 2025</p></li>
-<li><p><strong>Prova 2:</strong> Quarta-feira 25 de junho de 2025</p></li>
-<li><p><strong>69a RBras</strong> e <strong>XXI SEAGRO</strong>: 04 a 08 de agosto de 2025 (<em>Não haverá aula</em>)</p></li>
-<li><p><strong>Prova 3:</strong> Segunda-feira 18 de agosto de 2025</p></li>
-<li><p><strong>Encerramento das aulas:</strong> Quarta-feira 27 de agosto de 2025</p></li>
-<li><p><strong>Prova Final:</strong> Sexta-feira 29 de agosto de 2025<sup>*</sup></p></li>
-</ul>
-<p><br></p>
-<p><font size="5"><sup>*</sup>Alunos que com média final <strong>inferior</strong> a <span class="math inline">\(7.0\)</span> (sete ponto zero), ao final do período letivo terão opção de apresentar uma prova final no formato escrito. Na prova final será avaliado o <strong>conteúdo completo</strong> da disciplina.</font></p>
-</section>
-<section id="datas-para-2a-chamada-de-provas" class="slide level2">
-<h2>Datas para 2a chamada de provas</h2>
-<ul>
-<li><strong>Prova 1:</strong> Segunda-feira 23 de junho de 2025</li>
-<li><strong>Prova 2:</strong> Segunda-feira 28 de julho de 2025</li>
-<li><strong>Prova 3:</strong> Sexta-feira 22 de agosto de 2025</li>
-</ul>
-<p><br></p>
-<p>A aplicação de provas agendadas para 2a chamada deverá seguir o estabelecido no Art 14. da <a href="https://daocs.ufes.br/sites/daocs.ufes.br/files/field/anexo/resolucao_no_33.2023_-_exercicios_domiciliares_p_alunos.pdf">Resolução N°33 de 2023 do CEPE/UFES</a>. Dessa forma:</p>
-<ul>
-<li>Para fazer jus à segunda chamada, o(a) estudante deverá solicitá-la à secretaria do colegiado do curso ou equivalente, mediante abertura de documento avulso a ser protocolado no Sistema de Protocolo Web, tendo o(a)estudante requerente como interessado.</li>
-</ul>
-</section>
-<section id="datas-para-2a-chamada-de-provas-1" class="slide level2">
-<h2>Datas para 2a chamada de provas</h2>
-<ul>
-<li>As ausências às aulas por motivo de doença por períodos até 8 (oito) dias deverão ser enquadradas no limite de faltas permitidas, de acordo com a legislação vigente, devendo o(a) estudante <strong>protocolar</strong>, no prazo de 5 (cinco) dias contados da data final do afastamento constante no atestado, pedido de segunda chamada caso atividades avaliativas tenham sido realizadas no período de afastamento.</li>
-</ul>
-<p><br></p>
-<ul>
-<li><strong>O atestado médico deverá conter período do afastamento, Classificação Internacional das Doenças – CID, identificação e número do registro do médico no Conselho Regional de Medicina - CRM.</strong></li>
-</ul>
-<blockquote>
-<p>Para orientações adicionais, sugere-se entrar em contato com seu colegiado de curso.</p>
+<section id="recursos-computacionais-1" class="slide level2">
+<h2>Recursos computacionais</h2>
+<p>Ao longo da disciplina usaremos preferencialmente a linguagem <code>R</code>. O repositório de pacotes está disponível no site do <a href="ohttp://CRAN.R-project.org">projeto R</a>. Dentre os pacotes estatísticos disponíveis na linguagem R, aqueles mais utilizados neste contexto são: <code>car</code>, <code>stats</code>, <code>MASS</code>, <code>e1071</code>, <code>forecast</code>, <code>ggplot2</code>, <code>caret</code>, <code>robust</code>, <code>glmnet</code>, <code>Lars</code>, entre outros. As funções de cada pacote necessárias para a realização das análises serão indicadas ao longo da disciplina.</p>
+
+<img data-src="https://www.r-project.org/Rlogo.png" class="quarto-figure quarto-figure-center r-stretch" style="width:25.0%"><blockquote>
+<p>Sugere-se a leitura do livro <span class="citation" data-cites="fox2019">Fox e Weisberg (<a href="#/referências" role="doc-biblioref" onclick="">2019</a>)</span> <a href="https://www.john-fox.ca/Companion/">An R Companion to Applied Regression. 3rd Edition</a>.</p>
 </blockquote>
 </section>
-<section id="comportamento-em-sala-de-aula" class="slide level2 center" data-background-color="#172a46">
-<h2>Comportamento em sala de aula</h2>
+<section id="modelo-de-regressão-linear" class="slide level2 center" data-background-color="#172a46">
+<h2>Modelo de regressão linear</h2>
 </section>
-<section id="etiqueta" class="slide level2">
-<h2>Etiqueta</h2>
-<p>É importante manter um comportamento adequado na sala e/ou laboratório durante as aulas. Dessa forma, do meu ponto de vista, são considerados comportamentos <strong>rudes</strong>:</p>
+<section id="suposições-do-modelo-de-regressão-linear" class="slide level2">
+<h2>Suposições do modelo de regressão linear</h2>
+<p>Consideremos o modelo de regressão linear dado por <span class="math display">\[Y=f(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_k)+\mathbf{\epsilon},\]</span> onde <span class="math inline">\(Y\)</span> é a variável resposta denotada como <span class="math inline">\(Y=[Y_1,Y_2,\ldots,Y_n]'\)</span>, <span class="math inline">\(\textbf{X}\)</span> representa a variável explicativa, dada por</p>
+<div class="math">
+<p><span class="math display">\[\textbf{X}= [\mathbf{1} \quad \mathbf{x}_1\quad\cdots\quad \mathbf{x}_k]=
+\left[
+\begin{array}{ccccc}
+1&amp;x_{11}&amp;x_{12}&amp;\cdots&amp;x_{1k} \\
+1&amp;x_{21}&amp;x_{22}&amp;\cdots&amp;x_{2k} \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+1&amp;x_{n1}&amp;x_{n2}&amp;\cdots&amp;x_{nk} \\
+\end{array}
+\right]_{\,n\times (k+1)},
+\]</span></p>
+</div>
+<p><span class="math inline">\(\mathbf{\epsilon}=[\epsilon_1, \epsilon_2, \ldots, \epsilon_n]'\)</span> é um vetor de variáveis que representam o <strong>termo de erro</strong> e <span class="math inline">\(f(\cdot)\)</span> é uma função desconhecida.</p>
+</section>
+<section id="suposições-do-modelo-de-regressão-linear-1" class="slide level2">
+<h2>Suposições do modelo de regressão linear</h2>
+<p>O objetivo será estudar a relação entre a variável reposta e as variáveis explicativas, i.e., estimar a função <span class="math inline">\(f\)</span>. Dessa forma, serão necessárias um conjunto de suposições a respeito da natureza do dados, a seguir:</p>
+<p><br></p>
+<div class="fragment semi-fade-out" data-fragment-index="2">
 <ul>
-<li><p>Deixar o celular ligado durante a aula, atender ou fazer ligações, mesmo ao sair da sala, ou mantê-lo no modo silencioso e sair para atender;</p></li>
-<li><p>Conversar durante a aula ou realizar qualquer atividade não relacionada ao conteúdo ensinado, além de demonstrar desinteresse ou falta de concentração;</p></li>
-<li><p>Aguardar sempre o momento de falar e escutar atentamente o que é dito por outras pessoas;</p></li>
-<li><p>Evitar discussões sobre temas não relacionados ao conteúdo educacional durante as aulas;</p></li>
-<li><p>Chegar atrasado, sair da sala durante a aula ou antes do término da mesma;</p></li>
-<li><p>Faltar às aulas sem um motivo justificado.</p></li>
+<li><strong>A1.</strong> O modelo é linear, i.e.&nbsp;<span class="math inline">\(Y=\beta_0\mathbf{1}+\beta_1\mathbf{x}_1+\beta_2\mathbf{x}_2+\cdots+\beta_k\mathbf{x}_k+\mathbf{\epsilon}\)</span>;</li>
 </ul>
+</div>
+<div class="fragment fade-in-then-semi-out" data-fragment-index="2">
+<ul>
+<li><strong>A2.</strong> A matriz de regressores tem posto coluna completo;</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out" data-fragment-index="3">
+<ul>
+<li><strong>A3.</strong> Exogeneidade das variáveis independentes, i.e.&nbsp;<span class="math inline">\(\mathbb{E}[\mathbf{\epsilon}|\mathbf{X}]=\mathbf{0}\)</span>;</li>
+</ul>
+</div>
+<div class="fragment fade-in-then-semi-out" data-fragment-index="4">
+<ul>
+<li><strong>A4.</strong> Esfericidade dos erros, i.e.&nbsp;<span class="math inline">\(\mathbb{E}[\mathbf{\epsilon\epsilon}'|\mathbf{X}]=\sigma^2\mathbf{I}\)</span>;</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="5">
+<ul>
+<li><strong>A5.</strong> Os erros são normalmente distribuidos, i.e.&nbsp; <span class="math inline">\(\mathbf{\epsilon}|\mathbf{\mathbf{X}}\)</span> segue uma distribuição normal multivariada com vetor de médias <span class="math inline">\(\mathbf{0}\)</span> e matriz de covariâncias <span class="math inline">\(\sigma^2\mathbf{I}\)</span>.</li>
+</ul>
+</div>
 </section>
-<section id="respeito-honestidade-e-dedicação." class="slide level2 center">
-<h2>Respeito, Honestidade e Dedicação.</h2>
-<p><span style="color:grey"><font size="6"><q>No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio termo. Ou você faz uma coisa bem feita ou não faz</q> – Ayrton Senna da Silva (1960 — 1994).</font></span></p>
+<section id="a1.-linearidade" class="slide level2 center" data-background-color="#172a46">
+<h2>A1. Linearidade</h2>
+</section>
+<section id="a1.-linearidade-1" class="slide level2">
+<h2>A1. Linearidade</h2>
+<p>Ao longo da disciplina assumiremos que o modelo é linear, tal que</p>
+<p><span class="math display">\[Y=\mathbf{X}\mathbf{\beta}+\mathbf{\epsilon}\]</span> ou <span class="math inline">\(\quad Y=\beta_0\mathbf{1}+\beta_1\mathbf{x}_1+\beta_2\mathbf{x}_2+\cdots+\beta_k\mathbf{x}_k+\mathbf{\epsilon} \quad\)</span> ou</p>
+<div class="math">
+<p><span class="math display">\[\left[
+\begin{array}{c}
+Y_1 \\
+Y_2 \\
+\vdots\\
+Y_n
+\end{array}
+\right]_{\,n\times1}=
+\left[
+\begin{array}{ccccc}
+1&amp;x_{11}&amp;x_{12}&amp;\cdots&amp;x_{1k} \\
+1&amp;x_{21}&amp;x_{22}&amp;\cdots&amp;x_{2k} \\
+\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+1&amp;x_{n1}&amp;x_{n2}&amp;\cdots&amp;x_{nk} \\
+\end{array}
+\right]_{\,n\times (k+1)}
+\left[
+\begin{array}{c}
+\mathbf{\beta}_0 \\
+\mathbf{\beta}_1 \\
+\vdots\\
+\mathbf{\beta}_k
+\end{array}
+\right]_{\,(k+1)\times1}+
+\left[
+\begin{array}{c}
+\mathbf{\epsilon}_1 \\
+\mathbf{\epsilon}_2 \\
+\vdots\\
+\mathbf{\epsilon}_n
+\end{array}
+\right]_{\,n\times1}.
+\]</span></p>
+</div>
+<p>A <span class="math inline">\(i\)</span>-ésima equação simultânea é dada por</p>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+\cdots+\beta_kx_{ik}+\epsilon_i, \qquad i=1,2,\ldots,n.\]</span></p>
+</section>
+<section id="interpretação-do-termo-linear" class="slide level2">
+<h2>Interpretação do termo “Linear”</h2>
+<p>O termo “<em>linear</em>” pode ser interpretado de duas maneiras:</p>
+<ul>
+<li><strong>Linearidade nas variáveis</strong>: a linearidade em termos das variáveis sugere que a função de regressão é do tipo</li>
+</ul>
+<p><span class="math display">\[r(\mathbf{x})=\mathbb{E}[\mathbf{Y}|\mathbf{X}=\mathbf{x}]=\beta_0+\beta_1\mathbf{x}_1+\beta_2\mathbf{x}_2+\cdots+\beta_k\mathbf{x}_k.\]</span> Em particular, para <span class="math inline">\(k=1\)</span>, <span class="math inline">\(r(x_i)=\mathbb{E}[Y_i|X=x_i]=\beta_0+\beta_1x_i\)</span>, <span class="math inline">\(i=1,2,\ldots,n\)</span> a função de regressão é uma <ins>reta</ins>.</p>
+<p><br> De acordo com essa interpretação, funções de regressão do tipo</p>
+<p><span class="math display">\[r(x_i)=\mathbb{E}[Y_i|X=x_i]=\beta_0+\beta_1x^2_i, \quad i=1,2,\ldots,n\]</span> <strong>não são funções lineares</strong>, pois a covariável <span class="math inline">\(x_i\)</span> é quadrática.</p>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p><strong>Linearidade nos parâmetros</strong>: A diferença com a interpretação anterior, as covariáveis não são necessariamente lineares, por exemplo, mesmo que as covariáveis sejam quadráticas, a função de regressão é linear.</p>
+<p>Em particular, para <span class="math inline">\(k=1\)</span> <span class="math display">\[r(x_i)=\mathbb{E}[Y_i|X=x_i]=\beta_0+\beta_1x^2_i, \quad i=1,2,\ldots,n\]</span> a função de regressão é uma função <ins>linear</ins>. Mas, a função <span class="math display">\[r(x_i)=\mathbb{E}[Y_i|X=x_i]=\beta_0+\sqrt{\beta_1}x_i, \quad i=1,2,\ldots,n\]</span> <strong>não é uma função de regressão linear</strong>. Este último caso é classificado no conjunto de funções de regressão não-lineares.</p></li>
+</ul>
+<blockquote>
+<p>Das duas interpretações, a <strong>linearidade nos parâmetros</strong> é considerada a mais relevante para o desenvolvimento teórico de interesse. Portanto, de agora em diante, o termo <em>regressão linear</em> será relativo à <ins>regressão linear nos parâmetros</ins>.</p>
+</blockquote>
 </section>
 <section id="referências" class="slide level2 smaller scrollable">
 <h2>Referências</h2>
@@ -563,6 +658,12 @@ Breiman, L. (2001), <span>“<span>Statistical Modeling: The Two Cultures (with 
 </div>
 <div id="ref-chollet2018" class="csl-entry" role="listitem">
 Chollet, F. (2018), <em>Deep learning with R</em>, Shelter Island, NY: Manning Publications.
+</div>
+<div id="ref-fox2019" class="csl-entry" role="listitem">
+Fox, J., e Weisberg, S. (2019), <em>An R Companion to Applied Regression</em>, Sage publications.
+</div>
+<div id="ref-morettin:singer:2020" class="csl-entry" role="listitem">
+Morettin, P. A., e Singer, J. M. (2020), <span>“Introdu<span>ç</span>aoa Ci<span>ê</span>ncia de Dados”</span>, <em>Introdu<span>ç</span><span>ã</span>o <span>à</span> Ci<span>ê</span>ncia de Dados: Fundamentos e Aplica<span>ç</span><span>õ</span>es</em>.
 </div>
 </div>
 </section>
