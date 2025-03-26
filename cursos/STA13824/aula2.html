@@ -562,8 +562,9 @@ S(\mathbf{\beta})=\mathbf{\epsilon}'\mathbf{\epsilon}&amp;=(Y-\mathbf{X\,\beta})
 <div class="math">
 <p><span class="math display">\[
 \begin{aligned}
-\textrm{cov}\left[\widehat{\beta}\,\big|\,\mathbf{X}\right]&amp;=\mathbb{E}\left[\left(\mathbf{\widehat{\beta}}-\mathbf{\beta}\right)\left(\mathbf{\widehat{\beta}}-\mathbf{\beta}\right)'\,\Big|\,\mathbf{X}\right]=\mathbb{E}\left[\left(\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\mathbf{\epsilon}\right)\left(\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\mathbf{\epsilon}\right)'\,\Big|\,\mathbf{X}\right]\\
-&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\mathbb{E}\left[\mathbf{\epsilon}\mathbf{\epsilon}'\,\big|\,\mathbf{X}\right]\mathbf{X}\left(\mathbf{X}'\mathbf{X}\right)^{-1}.
+\textrm{cov}\left[\widehat{\beta}\,\big|\,\mathbf{X}\right]&amp;=\mathbb{E}\left[\left(\mathbf{\widehat{\beta}}-\mathbf{\beta}\right)\left(\mathbf{\widehat{\beta}}-\mathbf{\beta}\right)'\,\Big|\,\mathbf{X}\right]\\
+&amp;=\mathbb{E}\left[\left(\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\mathbf{\epsilon}\right)\left(\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\mathbf{\epsilon}\right)'\,\Big|\,\mathbf{X}\right]\\
+&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'\,\mathbb{E}\left[\mathbf{\epsilon}\mathbf{\epsilon}'\,\big|\,\mathbf{X}\right]\mathbf{X}\left(\mathbf{X}'\mathbf{X}\right)^{-1}.
 \end{aligned}
 \]</span></p>
 </div>
