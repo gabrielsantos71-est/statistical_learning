@@ -360,7 +360,7 @@ Estimação dos parâmetros<br>
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 25 março, 2025
+            Última atualização: 26 março, 2025
           </p>
     </div>
 </div>
@@ -368,7 +368,7 @@ LECON/DEST - UFES
 </section>
 <section id="alguns-resultados-da-álgebra-matricial" class="slide level2">
 <h2>Alguns resultados da álgebra matricial</h2>
-<p>Os seguintes resultados podem ser facilmente encontrados em qualquer livro de teoria matricial. Para detalhes sugere-se a consulta das seguintes referências <span class="citation" data-cites="magnus2019">Magnus e Neudecker (<a href="#/referências" role="doc-biblioref" onclick="">2019</a>)</span>, <span class="citation" data-cites="harville97">Harville (<a href="#/referências" role="doc-biblioref" onclick="">1997</a>)</span> ou <span class="citation" data-cites="searle:2017">Searle (<a href="#/referências" role="doc-biblioref" onclick="">2017</a>)</span>.</p>
+<p>Os seguintes resultados são facilmente encontrados em qualquer livro de álgebra matricial. Para detalhes sugere-se a consulta das seguintes referências <span class="citation" data-cites="magnus2019">Magnus e Neudecker (<a href="#/referências" role="doc-biblioref" onclick="">2019</a>)</span>, <span class="citation" data-cites="harville97">Harville (<a href="#/referências" role="doc-biblioref" onclick="">1997</a>)</span> ou <span class="citation" data-cites="searle:2017">Searle (<a href="#/referências" role="doc-biblioref" onclick="">2017</a>)</span>.</p>
 <ul>
 <li><strong>Matriz trasposta</strong>: A trasposta de uma matriz <span class="math inline">\(\mathbf{A}\)</span> é a matriz que se obtém da troca das linhas pelas colunas da matriz, ou seja, se <span class="math inline">\(\mathbf{A}=(a_{ij})_{i,j=1}^{m,n}\)</span>, então <span class="math inline">\(\mathbf{A}'=(a_{ij})_{i,j=1}^{n,m}\)</span>. Em outras palavras,</li>
 </ul>
@@ -405,10 +405,9 @@ a_{1n}&amp;a_{2n}&amp;a_{3n}&amp;\cdots&amp;a_{mn} \\
 <li><p><span class="math inline">\(\det\left(\mathbf{A}'\right)=\det\left(\mathbf{A}\right)\)</span>;</p></li>
 </ol>
 <ul>
-<li><p><strong>Matriz Simétrica</strong>: Uma matriz quadrada <span class="math inline">\(\mathbf{A}\)</span> é simétrica se <span class="math inline">\(\mathbf{A}=\mathbf{A}'\)</span>.</p>
-<div id="exm-simetrica" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 1</strong></span> Seja <span class="math inline">\(\mathbf{A}\)</span> uma matriz quadrada, então as matrizes <span class="math inline">\(\mathbf{A}'+\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{A}\mathbf{A}'=\mathbf{A}'\mathbf{A}\)</span> são simétricas.</p>
-</div></li>
+<li><p><strong>Matriz Simétrica</strong>: Uma matriz quadrada <span class="math inline">\(\mathbf{A}\)</span> é simétrica se <span class="math inline">\(\mathbf{A}=\mathbf{A}'\)</span>.</p></li>
+<li><p><strong>Matriz Idempotente</strong>: Uma matriz quadrada <span class="math inline">\(\mathbf{A}\)</span> é idempotente se <span class="math inline">\(\mathbf{A}\mathbf{A}=\mathbf{A}\)</span>.</p></li>
+<li><p><strong>Matriz Ortogonal</strong>: Uma matriz quadrada <span class="math inline">\(\mathbf{A}\)</span> se diz ortogonal se <span class="math inline">\(\mathbf{A}'\mathbf{A}=\mathbf{A}\mathbf{A}'=\mathbf{I}\)</span>.</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -444,7 +443,10 @@ Para formas lineares, considere <span class="math inline">\(\mathbf{Ax}\)</span>
 <li>Uma matriz simétrica <span class="math inline">\(\mathbf{A}\)</span> se diz <em>semidefinida positiva</em> se <span class="math inline">\(\mathbf{x}'\mathbf{Ax}\ge0\)</span>, para todo <span class="math inline">\(\mathbf{x}\ne\mathbf{0}\)</span>;</li>
 <li>Uma matriz simétrica <span class="math inline">\(\mathbf{A}\)</span> se diz <em>semidefinida negativa</em> se <span class="math inline">\(-\mathbf{A}\)</span> é semidefinida positiva.</li>
 </ul></li>
-<li><p><strong>Propriedades</strong>: Seja <span class="math inline">\(\mathbf{A}\)</span> uma matriz simétrica definida positiva, então</p>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>Propriedades</strong>: Seja <span class="math inline">\(\mathbf{A}\)</span> uma matriz simétrica definida positiva, então
 <ul>
 <li><span class="math inline">\(\mathbf{A}\)</span> é não-singular;</li>
 <li>Os autovalores de <span class="math inline">\(\mathbf{A}\)</span> são todos positivos;</li>
@@ -507,11 +509,11 @@ S(\mathbf{\beta})=\mathbf{\epsilon}'\mathbf{\epsilon}&amp;=(Y-\mathbf{X\,\beta})
 <p>Igualando a <span class="math inline">\(\mathbf{0}\)</span>, temos que <span class="math inline">\(-2\mathbf{X}'Y+2\mathbf{X}'\mathbf{X\widehat{\beta}}=0\)</span>. Daí que,</p>
 <p><span class="math display">\[
 \mathbf{X}'\mathbf{X\widehat{\beta}}=\mathbf{X}'Y.
-\]</span> <br></p>
-<p>O sistema de equações acima é denominado <strong>equações normais</strong>. O nome deve-se a que podemos reescrever o sistema de equações como</p>
+\]</span> O sistema de equações acima é denominado <strong>equações normais</strong>. O nome deve-se a que podemos reescrever o sistema de equações como</p>
 <p><span class="math display">\[
 \mathbf{X}'\left(\mathbf{X\widehat{\beta}}-Y\right)=\mathbf{0}.
 \]</span> O vetor <span class="math inline">\(\mathbf{X\widehat{\beta}}-Y\)</span> é chamado de <em>vetor de resíduos</em> e, segundo a equação acima, esse vetor é <em>normal</em> (ortogonal) aos vetores linha de <span class="math inline">\(\mathbf{X}\)</span>.</p>
+<p><br></p>
 <p>De acordo com <strong>A2.</strong>, a matriz <span class="math inline">\(\mathbf{X}\)</span> tem posto coluna completo, então <span class="math inline">\(\mathbf{X}'\mathbf{X}\)</span> é uma matrix simétrica e não-singular, ou seja, <span class="math inline">\(\mathbf{X}'\mathbf{X}\)</span> tem inversa. Dessa forma,</p>
 <p><span class="math display">\[
 \mathbf{\widehat{\beta}}=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y.
@@ -591,36 +593,33 @@ S(\mathbf{\beta})=\mathbf{\epsilon}'\mathbf{\epsilon}&amp;=(Y-\mathbf{X\,\beta})
 <section id="sugestão-de-exercícios" class="slide level2">
 <h2>Sugestão de exercícios</h2>
 <ol type="1">
-<li>Exercícios <span class="citation" data-cites="searle:2017">Searle (<a href="#/referências" role="doc-biblioref" onclick="">2017</a>)</span>: 5.1, 5.5, 5.6, 5.10, 5.14;</li>
-</ol>
-<p><br></p>
-<ol start="2" type="1">
-<li>Seja <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> uma amostra aleatória de uma população com distribuição <span class="math inline">\(N\left(\theta, \sigma^2\right)\)</span>. Mostre que:</li>
+<li><p>Seja <span class="math inline">\(\mathbf{A}\)</span> uma matriz quadrada. Mostre que as matrizes <span class="math inline">\(\mathbf{A}'+\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{A}\mathbf{A}'=\mathbf{A}'\mathbf{A}\)</span> são simétricas;</p></li>
+<li><p>O traço de uma matriz quadrada <span class="math inline">\(\mathbf{A}=(a_{ij})_{i,j=1}^n\)</span> define-se como <span class="math inline">\(\mathrm{tr}(\mathbf{A})=a_{11}+a_{22}+\cdots+a_{nn}\)</span>. Sejam <span class="math inline">\(\mathbf{A}\)</span> e <span class="math inline">\(\mathbf{B}\)</span> matrizes quadradas e <span class="math inline">\(k\)</span> um escalar. Mostre que:</p></li>
 </ol>
 <ol type="i">
-<li><span class="math inline">\(\bar{Y}\)</span> é independente de <span class="math inline">\(Q=\sum_i\left(Y_i-\bar{Y}\right)^2\)</span>;</li>
-<li><span class="math inline">\(\frac{Q}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{(n-1)}\)</span>.</li>
+<li><span class="math inline">\(\mathrm{tr}(k\mathbf{A})=k\mathrm{tr}(\mathbf{A})\)</span>;</li>
+<li><span class="math inline">\(\mathrm{tr}(\mathbf{A}+\mathbf{B})=\mathrm{tr}(\mathbf{A})+\mathrm{tr}(\mathbf{B})\)</span>;</li>
+<li><span class="math inline">\(\mathrm{tr}(\mathbf{A})=\mathrm{tr}(\mathbf{A}')\)</span>;</li>
+</ol>
+<ol start="3" type="1">
+<li>Sejam <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\mathbf{B}\)</span> e <span class="math inline">\(\mathbf{C}\)</span> matrizes com dimensões adequadas para o produto. Mostre que:</li>
+</ol>
+<ol type="i">
+<li><span class="math inline">\(\mathrm{tr}(\mathbf{A}\mathbf{B})=\mathrm{tr}(\mathbf{B}'\mathbf{A}')=\mathrm{tr}(\mathbf{B}\mathbf{A})=\mathrm{tr}(\mathbf{A}'\mathbf{B}')\)</span>;</li>
+<li><span class="math inline">\(\mathrm{tr}(\mathbf{A}\mathbf{B}\mathbf{C})=\mathrm{tr}(\mathbf{C}\mathbf{A}\mathbf{B})=\mathrm{tr}(\mathbf{B}\mathbf{C}\mathbf{A})\)</span>.</li>
 </ol>
 </section>
 <section class="slide level2">
 
-<ol start="3" type="1">
-<li>Seja <span class="math inline">\(\mathbf{X}=[X_1,X_2,X_3]'\)</span> com</li>
+<ol start="4" type="1">
+<li>Seja <span class="math inline">\(\mathbf{A}\)</span> uma matriz quadrada tal que <span class="math inline">\(\mathbf{A}'\mathbf{A}=\mathbf{A}^2\)</span>.</li>
 </ol>
-<div class="math">
-<p><span class="math display">\[\mathrm{var}[\mathbf{X}]=
-\left[
-\begin{array}{ccccc}
-5&amp;2&amp;3 \\
-2&amp;3&amp;0 \\
-3&amp;0&amp;3 \\
-\end{array}
-\right].
-\]</span></p>
-</div>
 <ol type="i">
-<li>Calcule a variância de <span class="math inline">\(X_1-2X_2+X_3\)</span>;</li>
-<li>Calcule a matriz de variâncias de <span class="math inline">\(\mathbf{Y}=[Y_1,Y_2]'\)</span>, onde <span class="math inline">\(Y_1=X_1+X_2\)</span> e <span class="math inline">\(Y_2=X_1+X_2+X_3\)</span>.</li>
+<li>Mostre que <span class="math inline">\(\mathrm{tr}\left[(\mathbf{A}-\mathbf{A}')'(\mathbf{A}-\mathbf{A}')\right]=0\)</span>;</li>
+<li>Mostre que <span class="math inline">\(\mathbf{A}\)</span> é simétrica.</li>
+</ol>
+<ol start="5" type="1">
+<li>Considere o modelo linear dado por <span class="math inline">\(Y=\mathbf{X}\mathbf{\beta}+\mathbf{\epsilon}\)</span> e <span class="math inline">\(\mathbf{\widehat{\beta}}=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y\)</span> o estimador de MQO do vetor <span class="math inline">\(\mathbf{\beta}\)</span>. Os valores ajustados de <span class="math inline">\(Y\)</span> são calculados como <span class="math display">\[\hat{Y}=\mathbf{X}\mathbf{\widehat{\beta}}=\mathbf{X}\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y=\mathbf{H}Y.\]</span> Mostre que as matrizes <span class="math inline">\(\mathbf{H}\)</span> e <span class="math inline">\(\mathbf{I}-\mathbf{H}\)</span> são simétricas e idempotentes.</li>
 </ol>
 </section>
 <section id="referências" class="slide level2 smaller scrollable">
