@@ -357,7 +357,7 @@
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 24 março, 2025
+            Última atualização: 26 março, 2025
           </p>
     </div>
 </div>
@@ -403,22 +403,43 @@ LECON/DEST - UFES
 <p>Além dessa ponderação, é comum incluir um termo adicional, denominado <strong>viés</strong> (<em>bias</em>), que permite ajustar a saída do neurônio, conferindo maior flexibilidade ao modelo na representação da função subjacente aos dados de entrada. O resultado dessa operação é denominado <strong>pré-ativação</strong> do neurônio, conforme a seguinte equação:</p>
 <p><span class="math display">\[a(x) = b + \sum_{i=1}^n w_ix_i=\mathbf{b}+\mathbf{w}'\mathbf{x}.\]</span></p>
 </section>
-<section id="arquitetura-básica-1" class="slide level2">
-<h2>Arquitetura básica</h2>
-<p>Após calcular <span class="math inline">\(a(x)\)</span>, o neurônio aplica uma transformação não-linear sobre esse valor por meior de uma <em>função de ativação</em>, <span class="math inline">\(g(\cdot)\)</span>. A função composta <span class="math inline">\(h=g\circ a\)</span> produz o que se chama de <strong>ativação do neurônio</strong>, i.e.,</p>
+<section class="slide level2">
+
+<p>Após calcular <span class="math inline">\(a(x)\)</span>, o neurônio aplica uma transformação não-linear sobre esse valor por meio de uma <em>função de ativação</em>, <span class="math inline">\(g(\cdot)\)</span>. A função composta <span class="math inline">\(h=g\circ a\)</span> produz o que se chama de <strong>ativação do neurônio</strong>, i.e.,</p>
 <p><span class="math display">\[y=h(x)=g\left(a(x)\right) = g\left(b + \sum_{i=1}^n w_ix_i\right).\]</span> O objetivo da função de ativação, ou função de transferência, é restringir a amplitude dos valores de saída, evitando que valores excessivamente grandes comprometam o treinamento da rede neural ou resultem em paralisação da aprendizagem.</p>
 <p>No perceptron multicamadas, as funções de ativação mais utilizadas são a <em>sigmoide</em> e a <em>tangente hiperbólica</em>; no entanto, diversas outras funções também podem ser empregadas, conforme descrito em <span class="citation" data-cites="gately:1995">Gately (<a href="#/referências" role="doc-biblioref" onclick="">1995</a>)</span>.</p>
 </section>
-<section id="arquitetura-básica-2" class="slide level2">
-<h2>Arquitetura básica</h2>
+<section class="slide level2">
+
 <div class="fragment semi-fade-out" data-fragment-index="2">
-<p>De acordo com <span class="citation" data-cites="trippi:1992">Trippi e Turban (<a href="#/referências" role="doc-biblioref" onclick="">1992</a>)</span>, se a rede é projetada para aprender um comportamento médio, a função de ativação mais adequada é a sigmoide. No entanto, se o aprendizado envolve desvios em relação à média, a tangente hiperbólica torna-se a melhor escolha.</p>
-<p>Funções como a sigmoide e a tangente hiperbólica são amplamente utilizadas na modelagem de séries temporais, pois apresentam propriedades desejáveis para o treinamento da rede, como a não linearidade e a diferenciabilidade contínua.</p>
+<ul>
+<li>De acordo com <span class="citation" data-cites="trippi:1992">Trippi e Turban (<a href="#/referências" role="doc-biblioref" onclick="">1992</a>)</span>, se a rede é projetada para aprender um comportamento médio, a função de ativação mais adequada é a sigmoide. No entanto, se o aprendizado envolve desvios em relação à média, a tangente hiperbólica torna-se a melhor escolha.<br>
+</li>
+</ul>
 </div>
-<div class="fragment fade-in" data-fragment-index="2">
-<p>Em geral, a função de ativação no perceptron multicamadas é uniforme para todos os neurônios da rede e sua escolha é feita pelo pesquisador com base nos valores de ativação desejados. No entanto, essa escolha não afeta a capacidade da rede de solucionar o problema, conforme discutido por <span class="citation" data-cites="isasi:2004">Isasi et al. (<a href="#/referências" role="doc-biblioref" onclick="">2004</a>)</span>.</p>
-<p>Em algumas situações, dependendo da natureza do problema, os neurônios de saída podem adotar uma função de ativação distinta dos demais neurônios da rede. Nesses casos, a função linear é a mais comumente utilizada.</p>
+<div class="fragment fade-in-then-semi-out" data-fragment-index="2">
+<ul>
+<li>Funções como a sigmoide e a tangente hiperbólica são amplamente utilizadas na modelagem de séries temporais, pois apresentam propriedades desejáveis para o treinamento da rede, como a não linearidade e a diferenciabilidade contínua.</li>
+</ul>
 </div>
+<div class="fragment fade-in-then-semi-out" data-fragment-index="3">
+<ul>
+<li>Em geral, a função de ativação no perceptron multicamadas é uniforme para todos os neurônios da rede e sua escolha é feita pelo pesquisador com base nos valores de ativação desejados. No entanto, essa escolha não afeta a capacidade da rede de solucionar o problema, conforme discutido por <span class="citation" data-cites="isasi:2004">Isasi et al. (<a href="#/referências" role="doc-biblioref" onclick="">2004</a>)</span>.<br>
+</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="4">
+<ul>
+<li>Em algumas situações, dependendo da natureza do problema, os neurônios de saída podem adotar uma função de ativação distinta dos demais neurônios da rede. Nesses casos, a função linear é a mais comumente utilizada.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<p>A equação para ativação de um neurônio, i.e.,</p>
+<p><span class="math display">\[y=h(x)=g\left(a(x)\right) = g\left(b + \sum_{i=1}^n w_ix_i\right).\]</span> pode ser estendida para o caso em que temos <span class="math inline">\(L\)</span> camadas ocultas, com vários neurônios em cada camada. Dessa forma</p>
+<p><span class="math display">\[a^{(k)}(x) = \mathbf{b}^{(k)}+\mathbf{w}^{(k)}\,h^{(k-1)}(x)\]</span> e</p>
+<p><span class="math display">\[h^{(k)}(x)=g\left(a^{(k)}(x)\right).\]</span></p>
 </section>
 <section id="metodologia" class="slide level2 center" data-background-color="#172a46">
 <h2>Metodologia</h2>
