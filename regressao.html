@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-	
-	<html class="no-js" lang="pt">
+
+<html class="no-js" lang="pt">
 
 <head>
 
 	<!-- Google Tag Manager -->
 	<script>
-		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PNSXVNR');
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PNSXVNR');
 	</script>
 	<!-- End Google Tag Manager -->
 
-   <!--- basic page needs
+	<!--- basic page needs
    ================================================== -->
-   <meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>Análise de Regressão</title>
-	<meta name="description" content="Site do Laboratório de Estatística e Computação Natural -- LECON. Neste site serão disponibilizados materiais sobre Estatística e afins.">  
+	<meta name="description"
+		content="Site do Laboratório de Estatística e Computação Natural -- LECON. Neste site serão disponibilizados materiais sobre Estatística e afins.">
 	<meta name="author" content="LECON">
 
-   <!-- mobile specific metas
+	<!-- mobile specific metas
    ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
- 	<!-- CSS
+	<!-- CSS
    ================================================== -->
-   <link rel="stylesheet" href="css/base.css">  
-   <link rel="stylesheet" href="css/mainReg.css">
-   <link rel="stylesheet" href="css/vendor.css">     
-   <link rel="stylesheet" href="css/slidebar.css"> 
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/mainReg.css">
+	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="css/slidebar.css">
 
-   <!-- script
-   ================================================== -->   
-	
+	<!-- script
+   ================================================== -->
+
 	<script src="js/modernizr.js"></script>
 	<script src="js/pace.min.js"></script>
 	<script src="js/slidebar.js"></script>
@@ -43,87 +47,87 @@
 
 	<link rel="stylesheet" href="css/font-awesome-6/css/all.css" type="text/css">
 
-	
+
 </head>
 
-   <!-- favicons
+<!-- favicons
 	================================================== -->
-	<link rel="icon" type="image/png" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.ico">
 
 </head>
 
 <body id="top">
 
 	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNSXVNR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNSXVNR" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	<!-- header 
    ================================================== -->
-   <header>   	
+	<header>
 
-	   
-   	<div class="row">
 
-   		<div class="top-bar">
-   			<a class="menu-toggle" href="#"><span>Menu</span></a>
+		<div class="row">
 
-	   		<div class="logo">
-		         <a href="https://bit.ly/3oVfACg">Menu</a>
-		      </div>		      
+			<div class="top-bar">
+				<a class="menu-toggle" href="#"><span>Menu</span></a>
 
-		   	<nav id="main-nav-wrap">
+				<div class="logo">
+					<a href="https://bit.ly/3oVfACg">Menu</a>
+				</div>
+
+				<nav id="main-nav-wrap">
 					<ul class="main-navigation">
-						<li class="current"><a class="smoothscroll"  href="#intro" title="">Início</a></li>
-						<li><a class="smoothscroll"  href="#slides" title="">Slides</a></li>
-						<li><a class="smoothscroll"  href="#referencias" title="">Referências</a></li>
-						<li><a class="smoothscroll"  href="#scripts" title="">Scripts</a></li>
-						<li><a class="smoothscroll"  href="#datasets" title="">Datasets</a></li>			
-						<li><a class="smoothscroll"  href="#contato" title="">Contato</a></li>				
+						<li class="current"><a class="smoothscroll" href="#intro" title="">Início</a></li>
+						<li><a class="smoothscroll" href="#slides" title="">Slides</a></li>
+						<li><a class="smoothscroll" href="#referencias" title="">Referências</a></li>
+						<li><a class="smoothscroll" href="#scripts" title="">Scripts</a></li>
+						<li><a class="smoothscroll" href="#datasets" title="">Datasets</a></li>
+						<li><a class="smoothscroll" href="#contato" title="">Contato</a></li>
 					</ul>
-				</nav>    		
-   		</div> <!-- /top-bar --> 
-   		
-   	</div> <!-- /row --> 		
-   </header> <!-- /header -->
+				</nav>
+			</div> <!-- /top-bar -->
+
+		</div> <!-- /row -->
+	</header> <!-- /header -->
 
 	<!-- intro section
    ================================================== -->
-   <section id="intro">   
+	<section id="intro">
 
-   	<div class="intro-overlay"></div>	
+		<div class="intro-overlay"></div>
 
-   	<div class="intro-content">
-   		<div class="row">
+		<div class="intro-content">
+			<div class="row">
 
-   			<div class="col-twelve">
+				<div class="col-twelve">
 
-	   			<h5>Análise de</h5>
-	   			<h1>Regressão Linear</h1>
-				
-				<p class="intro-position">
-					<span><a href="#slides">Slides</a></span> 
-					<span><a href="#referencias">Referências</a></span>
-					<span><a href="#scripts">Scripts</a></span>
-					<span><a href="#datasets">Datasets</a></span>
-					<span><a href="#contato">Contato</a></span>
-				</p>
+					<h5>Análise de</h5>
+					<h1>Regressão Linear</h1>
 
-	   		</div>  
-   			
-   		</div>   		 		
-   	</div> <!-- /intro-content --> 
+					<p class="intro-position">
+						<span><a href="#slides">Slides</a></span>
+						<span><a href="#referencias">Referências</a></span>
+						<span><a href="#scripts">Scripts</a></span>
+						<span><a href="#datasets">Datasets</a></span>
+						<span><a href="#contato">Contato</a></span>
+					</p>
 
-   	<ul class="intro-social">        
-         <li><a href="mailto:lecon@ufes.br" target="_blank"><i class="fas fa-envelope"></i></a></li>
-         <li><a href="https://github.com/lecondest" target="_blank"><i class="fab fa-github"></i></a></li>
-         <li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-      </ul> <!-- /intro-social -->      	
+				</div>
 
-   </section> <!-- /intro -->
+			</div>
+		</div> <!-- /intro-content -->
+
+		<ul class="intro-social">
+			<li><a href="mailto:lecon@ufes.br" target="_blank"><i class="fas fa-envelope"></i></a></li>
+			<li><a href="https://github.com/lecondest" target="_blank"><i class="fab fa-github"></i></a></li>
+			<li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+		</ul> <!-- /intro-social -->
+
+	</section> <!-- /intro -->
 
 
-   <!-- slides section
+	<!-- slides section
    ================================================== -->
 	<section id="slides" class="grey-section">
 		<div class="row section-intro">
@@ -133,15 +137,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<h1>Análise de regressão linear</h1>
 
 				<p class="lead">
-					O objetivo da disciplina é fornecer aos alunos os fundamentos teóricos e práticos dos modelos de regressão, capacitando-os a compreender, formular e
+					O objetivo da disciplina é fornecer aos alunos os fundamentos teóricos e práticos dos modelos de
+					regressão, capacitando-os a compreender, formular e
 					interpretar modelos estatísticos utilizados para descrever e prever relações entre variáveis.
 
-					A disciplina abrange conceitos essenciais, como o modelo de regressão linear simples e múltipla, inferência estatística em regressão, diagnóstico de
+					A disciplina abrange conceitos essenciais, como o modelo de regressão linear simples e múltipla,
+					inferência estatística em regressão, diagnóstico de
 					modelos, seleção de variáveis e suposições do modelo.
 				</p>
 
-			</div>   		
-		</div> <!-- /section-intro--> 
+			</div>
+		</div> <!-- /section-intro-->
 
 		<div class="row slides-timeline">
 
@@ -170,7 +176,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="timeline-content">
 								<h4><a href="https://bit.ly/3RiDaDO" target="_blank">Plano de Ensino</a></h4>
 								<p>
-									Plano de ensino proposto para a disciplina. Nesse material é informado o programa da disciplina, datas importantes, referências bibliográficas sugeridas para o acompanhamento dos assuntos, entre outros.
+									Plano de ensino proposto para a disciplina. Nesse material é informado o programa da
+									disciplina, datas importantes, referências bibliográficas sugeridas para o
+									acompanhamento dos assuntos, entre outros.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
@@ -191,7 +199,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							<div class="timeline-content">
 								<h4> <a href="https://bit.ly/4iYL01j" target="_blank">Introdução</a></h4>
 								<p>
-									É apresentada uma breve introdução da filosofia da análise de regressão para determinar a relação entre variáveis. São discutidos os conceitos de variáveis dependentes e independentes, a importância da análise de regressão e a sua aplicação em diferentes áreas do conhecimento.
+									É apresentada uma breve introdução da filosofia da análise de regressão para
+									determinar a relação entre variáveis. São discutidos os conceitos de variáveis
+									dependentes e independentes, a importância da análise de regressão e a sua aplicação
+									em diferentes áreas do conhecimento.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
@@ -205,14 +216,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 
 							<div class="timeline-header">
-								<h3>  Aula 3 </h3>
+								<h3> Aula 3 </h3>
 								<p>abril, 2025</p>
 							</div>
 
 							<div class="timeline-content">
 								<h4><a href="https://bit.ly/3QOaT84" target="_blank"> Estimação dos parâmetros</a></h4>
 								<p>
-									É apresentado o método de mínimos quadrados ordinários para estimação do vetor de parâmetros e algumas das suas propriedades estatísticas são discutidas. 
+									É apresentado o método de mínimos quadrados ordinários para estimação do vetor de
+									parâmetros e algumas das suas propriedades estatísticas são discutidas.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
@@ -227,14 +239,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 
 							<div class="timeline-header">
-								<h3>  Aula 4 </h3>
+								<h3> Aula 4 </h3>
 								<p>Maio, 2025</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4><a href="https://bit.ly/3XxtLMe" target="_blank">Interpretação geométrica do estimador MQO</a></h4>
+								<h4><a href="https://bit.ly/3XxtLMe" target="_blank">Interpretação geométrica do
+										estimador MQO</a></h4>
 								<p>
-									É discutida a interpretação geométrica do estimador de mínimos quadrados ordinários e como ele pode ser utilizado para estimar os parâmetros do modelo de regressão linear simples.
+									É discutida a interpretação geométrica do estimador de mínimos quadrados ordinários
+									e como ele pode ser utilizado para estimar os parâmetros do modelo de regressão
+									linear simples.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
@@ -249,18 +264,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 							<div class="timeline-header">
 								<h3> Aula 5 </h3>
-								<p>Outubro - Novembro, 2023</p>
+								<p>Maio, 2025</p>
 							</div>
 
 							<div class="timeline-content">
 								<h4><a href="https://bit.ly/42j9k8r" target="_blank"> Teorema de Gauss-Markov</a></h4>
 								<p>
-									É discutido o teorema de Gauss-Markov e como ele pode ser utilizado para avaliar a eficiência do estimador de mínimos quadrados ordinários. Além disso, são discutidas algumas propriedades do estimador MQO.
+									É discutido o teorema de Gauss-Markov e como ele pode ser utilizado para avaliar a
+									eficiência do estimador de mínimos quadrados ordinários. Além disso, são discutidas
+									algumas propriedades do estimador MQO.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
 						<!-- \Aula 4 -->
-					
+
 						<!-- Aula 5 -->
 						<div class="timeline-block">
 
@@ -270,13 +287,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 							<div class="timeline-header">
 								<h3> Aula 6 </h3>
-								<p>Novembro, 2023</p>
+								<p>Maio, 2025</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4><a href="https://bit.ly/4jZNwoT" target="_blank"> Inferência no modelo de regressão linear</a></h4>
+								<h4><a href="https://bit.ly/4jZNwoT" target="_blank"> Inferência no modelo de regressão
+										linear</a></h4>
 								<p>
-									São discutidas alguns resultados da inferência estatística no modelo de regressão linear, como a construção de intervalos de confiança e a realização de testes de hipóteses. Além disso, são discutidos os conceitos de erro padrão e estatísticas t e F.
+									São discutidos alguns resultados da inferência estatística no modelo de regressão linear, como a construção de intervalos de confiança e a realização de testes de hipóteses. Além disso, são discutidos os conceitos de erro padrão e estatísticas t e
+									F.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
@@ -291,18 +310,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 							<div class="timeline-header">
 								<h3> Aula 7 </h3>
-								<p>Dezembro, 2023</p>
+								<p>Maio, 2025</p>
 							</div>
 
 							<div class="timeline-content">
 								<h4><a href="https://bit.ly/43pMn40" target="_blank"> Análise de variância I</a></h4>
 								<p>
-									São discutidos os tipos de dados atípico encontrados em séries temporais e como eles podem ser tratados. Além disso, são discutidos os conceitos de análise de intervenção e como ela pode ser utilizada para identificar e tratar dados atípicos.
+									São discutidos alguns aspectos relacionados à análise de variância em modelos de regressão linear.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
 						<!-- \Aula 6 -->
-					
+
 						<!-- Aula 7 -->
 						<div class="timeline-block">
 
@@ -312,119 +331,163 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 							<div class="timeline-header">
 								<h3> Aula 7 </h3>
-								<p>Dezembro, 2023</p>
+								<p>Maio, 2025</p>
 							</div>
 
 							<div class="timeline-content">
-								<h4><a href="https://bit.ly/4bAVRMt" target="_blank"> Análise de variância II</a></h4>
+								<h4><a href="https://bit.ly/4jT3u4a" target="_blank"> Análise de variância II</a></h4>
 								<p>
-									São discutidos os tipos de dados atípico encontrados em séries temporais e como eles podem ser tratados. Além disso, são discutidos os conceitos de análise de intervenção e como ela pode ser utilizada para identificar e tratar dados atípicos.
+									São discutidos alguns aspectos relacionados à análise de variância em modelos de regressão linear.
 								</p>
 							</div>
 						</div> <!-- /timeline-block -->
 						<!-- \Aula 7 -->
 					</div> <!-- owl-slider-work -->
-				</div> <!-- /timeline-wrap -->   			
+				</div> <!-- /timeline-wrap -->
 
 			</div> <!-- /col-twelve -->
-	   
+
 		</div> <!-- /slides-timeline -->
 		<div class="row section-intro">
 			<div class="col-twelve">
 				<h5> Desafios</h5>
 				<p class="lead">
-				A solução dos exercícios devem ser tipografadas em LATEX ou Quarto e encaminhadas em arquivo no formato PDF, respeitando os prazos estabelecidos. No caso do LATEX, sugere-se o formato Overleaf <a href="https://www.overleaf.com/project/new/template/28775?id=93265415&latexEngine=xelatex&mainFile=main.tex&templateName=Overleaf+Homework+Template&texImage=texlive-full%3A2023.1" target="_blank">Homework Template</a> para apresentar as suas soluções. A solução correta terá um valor em pontos adicionados à nota final da prova correspondente. Será avaliada, única e exclusivamente, a primeira solução enviada no repositório Github.
+					A solução dos exercícios devem ser tipografadas em LATEX ou Quarto e encaminhadas em arquivo no
+					formato PDF, respeitando os prazos estabelecidos. No caso do LATEX, sugere-se o formato Overleaf <a
+						href="https://www.overleaf.com/project/new/template/28775?id=93265415&latexEngine=xelatex&mainFile=main.tex&templateName=Overleaf+Homework+Template&texImage=texlive-full%3A2023.1"
+						target="_blank">Homework Template</a> para apresentar as suas soluções. A solução correta terá
+					um valor em pontos adicionados à nota final da prova correspondente. Será avaliada, única e
+					exclusivamente, a primeira solução enviada no repositório Github.
 				</p>
-					<ol>
-						<li><a href="https://ffajardo64.github.io/statistical_learning/cursos/STA13824/desafios/desafio1/desafio1.pdf" target="_blank">Desafio 1</a>. Prazo de entrega 12/05/2025 às 09:00h</li>
+				<ol>
+					<li><a href="https://ffajardo64.github.io/statistical_learning/cursos/STA13824/desafios/desafio1/desafio1.pdf"
+							target="_blank">Desafio 1</a>. Prazo de entrega 12/05/2025 às 09:00h</li>
 
-						<li><a href="https://ffajardo64.github.io/statistical_learning/cursos/STA13824/desafios/desafio2/desafio2.pdf" target="_blank">Desafio 2</a>. (Por confirmar)</li>
-					</ol>
-				</div>
+					<li><a href="https://ffajardo64.github.io/statistical_learning/cursos/STA13824/desafios/desafio2/desafio2.pdf"
+							target="_blank">Desafio 2</a>. (Por confirmar)</li>
+				</ol>
 			</div>
+		</div>
 	</section> <!-- /features -->
 
-	<section id="referencias">  
+	<section id="referencias">
 
 		<div class="row section-intro">
 			<div class="col-twelve">
- 
+
 				<h1>Referências Bibliográficas</h1>
- 
+
 				<div class="intro-info">
- 
+
 					<!--<img src="images/profile-pic.jpg" alt="Profile Picture">-->
 					<p class="lead">
-						As referências bibliográficas estão compostas por livros físicos, livros online e alguns sites com assuntos relacionados à áreas. Os livros online são gratuitos e podem ser acessados diretamente no link. Os livros físicos podem ser adquiridos em livrarias ou em sites de vendas online.	
+						As referências bibliográficas estão compostas por livros físicos, livros online e alguns sites
+						com assuntos relacionados à áreas. Os livros online são gratuitos e podem ser acessados
+						diretamente no link. Os livros físicos podem ser adquiridos em livrarias ou em sites de vendas
+						online.
 					<p>
 
 					<h5>Livros físicos</h5>
 					<ol>
-						<li>MONTGOMERY, Douglas C.; PECK, Elizabeth A.; VINING, G. Geoffrey. Introduction to linear regression analysis. 5th ed. New Jersey: Wiley Interscience, 2012.</li>
+						<li>MONTGOMERY, Douglas C.; PECK, Elizabeth A.; VINING, G. Geoffrey. Introduction to linear
+							regression analysis. 5th ed. New Jersey: Wiley Interscience, 2012.</li>
 
-						<li>DRAPER, Norman Richard; SMITH, Harry. Applied regression analysis. 3rd ed. New York: John Wiley, c1998. xvii, 706 p.</li>
-							
-						<li>HOFFMANN,   Rodolfo;   VIEIRA,   Sônia.   Análise   de   regressão:   uma   introdução à econometria. 3. ed. São Paulo: Hucitec, 2006 viii, 379p.</li>
+						<li>DRAPER, Norman Richard; SMITH, Harry. Applied regression analysis. 3rd ed. New York: John
+							Wiley, c1998. xvii, 706 p.</li>
 
-						<li>GUJARATI, Damodar N.; PORTER, Dawn C. Econometria básica. 5. ed. Rio de Janeiro, RJ: AMGH, 2011. 924 p.</li>
+						<li>HOFFMANN, Rodolfo; VIEIRA, Sônia. Análise de regressão: uma introdução à econometria. 3. ed.
+							São Paulo: Hucitec, 2006 viii, 379p.</li>
 
-					</ol>	
+						<li>GUJARATI, Damodar N.; PORTER, Dawn C. Econometria básica. 5. ed. Rio de Janeiro, RJ: AMGH,
+							2011. 924 p.</li>
+
+					</ol>
 
 					<h5>Livros online</h5>
 					<ol>
-						<li>Caffo, B. (2015). <a href="https://bit.ly/35FkZAz" target="_blank">Regression Models for Data Science in R</a>.</li>
+						<li>Caffo, B. (2015). <a href="https://bit.ly/35FkZAz" target="_blank">Regression Models for
+								Data Science in R</a>.</li>
 
-						<li>Dalpiaz D. (2021). <a href="https://daviddalpiaz.github.io/appliedstats/applied_statistics.pdf" target="_blank">Applied Statistics with R</a>.</li>
+						<li>Dalpiaz D. (2021). <a
+								href="https://daviddalpiaz.github.io/appliedstats/applied_statistics.pdf"
+								target="_blank">Applied Statistics with R</a>.</li>
 
-						<li>Faraway, J. (2002). <a href="https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf" target="_blank">Practical Regression and Anova using R</a>.</li>
+						<li>Faraway, J. (2002). <a href="https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf"
+								target="_blank">Practical Regression and Anova using R</a>.</li>
 
-						<li>Faraway, J. (2014). <a href="https://julianfaraway.github.io/faraway/LMR/" target="_blank">Linear Models with R</a>.</li>
+						<li>Faraway, J. (2014). <a href="https://julianfaraway.github.io/faraway/LMR/"
+								target="_blank">Linear Models with R</a>.</li>
 
-						<li>Hanck, C., Arnold, M., Gerber, A. and Schmelzer, M. (2020). <a href="https://www.econometrics-with-r.org" target="_blank">Introduction to Econometrics with R</a>. <a href="https://bit.ly/38V2F80" target="_blank">[PDF version]</a></li>
+						<li>Hanck, C., Arnold, M., Gerber, A. and Schmelzer, M. (2020). <a
+								href="https://www.econometrics-with-r.org" target="_blank">Introduction to Econometrics
+								with R</a>. <a href="https://bit.ly/38V2F80" target="_blank">[PDF version]</a></li>
 
-						<li>Irizarry, R. (2021). <a href="https://bit.ly/2SRBJBK" target="_blank">Introduction to Data Science</a>. <a href="https://bit.ly/3zEySwF" target="_blank">[Online version]</a></li>
+						<li>Irizarry, R. (2021). <a href="https://bit.ly/2SRBJBK" target="_blank">Introduction to Data
+								Science</a>. <a href="https://bit.ly/3zEySwF" target="_blank">[Online version]</a></li>
 
-						<li>James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). <a href="https://www.statlearning.com/" target="_blank">An introduction to statistical learning</a>. New York: springer.</li>
+						<li>James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). <a
+								href="https://www.statlearning.com/" target="_blank">An introduction to statistical
+								learning</a>. New York: springer.</li>
 
-						<li>Justiniano, P. (2021). <a href="http://www.leg.ufpr.br/~paulojus/estbas/" target="_blank">Estatística Básica</a>. Material didático. Equipe EstBas - DEST/UFPR.</li>
+						<li>Justiniano, P. (2021). <a href="http://www.leg.ufpr.br/~paulojus/estbas/"
+								target="_blank">Estatística Básica</a>. Material didático. Equipe EstBas - DEST/UFPR.
+						</li>
 
-						<li>Kuhn, M. (2019). <a href="http://topepo.github.io/caret/" target="_blank">The caret package (short for Classification And Regression Training)</a>.</li>
+						<li>Kuhn, M. (2019). <a href="http://topepo.github.io/caret/" target="_blank">The caret package
+								(short for Classification And Regression Training)</a>.</li>
 
-						<li>Petersen, K. B. and Pedersen, M. S. (2012). <a href="http://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf" target="_blank">The Matrix Cookbook</a>.</li>
+						<li>Petersen, K. B. and Pedersen, M. S. (2012). <a
+								href="http://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf" target="_blank">The Matrix
+								Cookbook</a>.</li>
 
-						<li>Vancine, M. (2021). <a href="https://mauriciovancine.github.io/pt/short-course/short-course-git-github-rstudio/" target="_blank">Introdução ao controle de versão com git, GitHub e RStudio</a>.</li>
+						<li>Vancine, M. (2021). <a
+								href="https://mauriciovancine.github.io/pt/short-course/short-course-git-github-rstudio/"
+								target="_blank">Introdução ao controle de versão com git, GitHub e RStudio</a>.</li>
 
-						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.had.co.nz/" target="_blank">R for data science</a>. <a href="https://es.r4ds.hadley.nz/" target="_blank">[Spanish version]</a>. 1st Ed.</li>
+						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.had.co.nz/" target="_blank">R
+								for data science</a>. <a href="https://es.r4ds.hadley.nz/" target="_blank">[Spanish
+								version]</a>. 1st Ed.</li>
 
-						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.hadley.nz/" target="_blank">R for data science</a>. 2nd ed.</li>
+						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.hadley.nz/" target="_blank">R
+								for data science</a>. 2nd ed.</li>
 
-						<li>Wright, C., Ellis, S., Hicks, S. and Peng, R. (2021). <a href="https://bit.ly/3qhUDht" target="_blank">Tidyverse Skills for Data Science in R</a>. 2nd ed.</li>
+						<li>Wright, C., Ellis, S., Hicks, S. and Peng, R. (2021). <a href="https://bit.ly/3qhUDht"
+								target="_blank">Tidyverse Skills for Data Science in R</a>. 2nd ed.</li>
 
-						<li>Zeileis, A. (2021). <a href="https://cran.r-project.org/web/packages/sandwich/vignettes/sandwich.pdf" target="_blank">Econometric Computing with HC and HAC Covariance Matrix Estimators</a>. Acesso em 24/03/2025.</li>
-					</ol>	
-					
+						<li>Zeileis, A. (2021). <a
+								href="https://cran.r-project.org/web/packages/sandwich/vignettes/sandwich.pdf"
+								target="_blank">Econometric Computing with HC and HAC Covariance Matrix Estimators</a>.
+							Acesso em 24/03/2025.</li>
+					</ol>
+
 					<h5>Artigos</h5>
 					<ol>
-						<li>Box, G. E. P. and Cox, D. R. (1964) An Analysis of Transformations. Journal of the Royal Statistical Society. Series B (Methodological), Vol. 26, No. 2, pp. 211-252 <a href="https://bit.ly/3CVr8XG" target="_blank">[PDF1]</a>  <a href="https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf" target="_blank">[PDF2]</a>.</li>
+						<li>Box, G. E. P. and Cox, D. R. (1964) An Analysis of Transformations. Journal of the Royal
+							Statistical Society. Series B (Methodological), Vol. 26, No. 2, pp. 211-252 <a
+								href="https://bit.ly/3CVr8XG" target="_blank">[PDF1]</a> <a
+								href="https://www.ime.usp.br/~abe/lista/pdfQWaCMboK68.pdf" target="_blank">[PDF2]</a>.
+						</li>
 
 						<li><a href="https://www.openintro.org/" target="_blank">OpenIntro statistics</a>.</li>
 					</ol>
-					
+
 					<h5>Sites</h5>
 					<ol>
-						<li><a href="https://bookdown.org/" target="_blank">Livros gratuitos feitos com o pacote Bookdown</a>.</li>
+						<li><a href="https://bookdown.org/" target="_blank">Livros gratuitos feitos com o pacote
+								Bookdown</a>.</li>
 
 						<li><a href="https://www.openintro.org/" target="_blank">OpenIntro statistics</a>.</li>
-						
-						<li><a href="https://online.stat.psu.edu/statprogram/stat501">Statistics online: STAT 501: Regression methods </a></li>
+
+						<li><a href="https://online.stat.psu.edu/statprogram/stat501">Statistics online: STAT 501:
+								Regression methods </a></li>
 					</ol>
-					
-				</div>   			
-			</div>   		
+
+				</div>
+			</div>
 		</div> <!-- /section-intro -->
- 
-	</section> <!-- /process-->    
- 
+
+	</section> <!-- /process-->
+
 
 	<!-- Scripts Section
    ================================================== -->
@@ -433,158 +496,170 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="overlay"></div>
 
 		<div class="row section-intro">
-	   		<div class="col-twelve">
+			<div class="col-twelve">
 
-	   			<h5>Scripts</h5>
+				<h5>Scripts</h5>
 
-	   			<p class="lead">
-					Scripts em R e Python estão disponíveis para ilustrar algumas técnicas utilizadas para a análise de regressão. Para execução do exemplos são utilizados conjuntos de dados disponíveis na seção de <a href="#datasets">Datasets</a>. Não esqueça de verificar a seção de <a href="#referencias">Referências Bibliográficas</a> para obter mais informações sobre os métodos utilizados.
-	   			</p>
+				<p class="lead">
+					Scripts em R e Python estão disponíveis para ilustrar algumas técnicas utilizadas para a análise de
+					regressão. Para execução do exemplos são utilizados conjuntos de dados disponíveis na seção de <a
+						href="#datasets">Datasets</a>. Não esqueça de verificar a seção de <a
+						href="#referencias">Referências Bibliográficas</a> para obter mais informações sobre os métodos
+					utilizados.
+				</p>
 
-	   		</div>   		
+			</div>
 		</div> <!-- /section-intro -->
 
-	   	<div class="row scripts-content">
+		<div class="row scripts-content">
 
-	   		<div id="owl-slider" class="owl-carousel scripts-list">
+			<div id="owl-slider" class="owl-carousel scripts-list">
 
-		      						
+
 				<div class="scripts">
 
-				   	<span class="icon"><i class="icon-pie-chart"></i></span>	            
+					<span class="icon"><i class="icon-pie-chart"></i></span>
 
-		            <div class="scripts-content">
+					<div class="scripts-content">
 
-		            	<h3>Visualização</h3>
+						<h3>Visualização</h3>
 
-			            <p class="desc">
-							<ul>
-								<li><a href="https://" target="_blank"> ST_aula1.ipynb</a></li>
-								<li><a href="https://" target="_blank"> ST_aula2.ipynb</a></li>
-								<li><a href="https://" target="_blank"> ST_aula3.ipynb</a></li>
-							</ul>
-	        			</p> 
-		            </div>	               
+						<p class="desc">
+						<ul>
+							<li><a href="https://" target="_blank"> ST_aula1.ipynb</a></li>
+							<li><a href="https://" target="_blank"> ST_aula2.ipynb</a></li>
+							<li><a href="https://" target="_blank"> ST_aula3.ipynb</a></li>
+						</ul>
+						</p>
+					</div>
 				</div> <!-- /scripts -->
 
-				<div class="scripts">	
+				<div class="scripts">
 
-		      		<span class="icon"><i class="icon-bar-chart"></i></span>            
+					<span class="icon"><i class="icon-bar-chart"></i></span>
 
-		            <div class="scripts-content">	
+					<div class="scripts-content">
 
 						<h3>Análise Descritiva</h3>
 
-			            <p class="desc">
-							<ul>
-								<li><a href="http://" target="_blank"> ST_aula4.ipynb</a></li>
-								<li><a href="http://" target="_blank"> ST_aula5.ipynb</a></li>
-								<li><a href="http://" target="_blank"> ST_aula6.ipynb</a></li>	
-							</ul>
-		         		</p>
-		         	</div> 	         	 
+						<p class="desc">
+						<ul>
+							<li><a href="http://" target="_blank"> ST_aula4.ipynb</a></li>
+							<li><a href="http://" target="_blank"> ST_aula5.ipynb</a></li>
+							<li><a href="http://" target="_blank"> ST_aula6.ipynb</a></li>
+						</ul>
+						</p>
+					</div>
 				</div> <!-- /scripts -->
 
-				<div class="scripts">	
+				<div class="scripts">
 
-					<span class="icon"><i class="icon-signal"></i></span>                          
+					<span class="icon"><i class="icon-signal"></i></span>
 
-		            <div class="scripts-content">	
+					<div class="scripts-content">
 
-						<h3>Modelagem</h3>  
+						<h3>Modelagem</h3>
 
 						<p class="desc">
-							<ul>
-								<li><a href="https://" target="_blank"> ST_aula7.ipynb</a></li>
-								<li><a href="https://" target="_blank"> ST_aula8.ipynb</a></li>
-								<li><a href="https://" target="_blank"> ST_aula9.ipynb</a></li>
-							</ul>
+						<ul>
+							<li><a href="https://" target="_blank"> ST_aula7.ipynb</a></li>
+							<li><a href="https://" target="_blank"> ST_aula8.ipynb</a></li>
+							<li><a href="https://" target="_blank"> ST_aula9.ipynb</a></li>
+						</ul>
 						</p>
 
-					</div>	                          
+					</div>
 				</div> <!-- /scripts -->
 
 				<div class="scripts">
 
-				   	<span class="icon"><i class="icon-network"></i></span>		            
+					<span class="icon"><i class="icon-network"></i></span>
 
-		            <div class="scripts-content">
+					<div class="scripts-content">
 
-		            	<h3> Análise Preditiva</h3>
+						<h3> Análise Preditiva</h3>
 
-			            <p class="desc">
+						<p class="desc">
 							<a href="http://" target="_blank"> Script1.ipynb</a>
-	        			</p> 
+						</p>
 
-		            </div> 	            	               
+					</div>
 
 				</div> <!-- /scripts -->
 
 				<div class="scripts">
 
-					<span class="icon"><i class="icon-edit"></i></span>	              
+					<span class="icon"><i class="icon-edit"></i></span>
 
-		            <div class="scripts-content">
+					<div class="scripts-content">
 
-		            	<h3>Análise de intervenção</h3>
+						<h3>Análise de intervenção</h3>
 
-			            <p class="desc">
+						<p class="desc">
 							<a href="https://bit.ly/3wWBSEg" target="_blank"> ST_aula6.ipynb</a>
-		         		</p> 
-		         		
-		            </div>                
+						</p>
+
+					</div>
 
 				</div> <!-- /scripts -->
 
 				<div class="scripts">
 
-				   	<span class="icon"><i class="icon-external"></i></span>	            
+					<span class="icon"><i class="icon-external"></i></span>
 
-		            <div class="scripts-content">
+					<div class="scripts-content">
 
-		            	<h3>Análise robusta</h3>
+						<h3>Análise robusta</h3>
 
-			            <p class="desc">
+						<p class="desc">
 							<a href="http://" target="_blank"> Script1.ipynb</a>
-	        			</p> 
+						</p>
 
-		            </div>	               
+					</div>
 
-				   </div> <!-- /scripts -->
+				</div> <!-- /scripts -->
 
-				   
-	   	</div> <!-- /scripts-content -->
-		
-	</section> <!-- /scripts -->	
+
+			</div> <!-- /scripts-content -->
+
+	</section> <!-- /scripts -->
 
 	<!-- Datasets Section
    ================================================== -->
 
-	<section id="datasets">  
+	<section id="datasets">
 
 		<div class="row section-intro">
 			<div class="col-twelve">
- 
+
 				<h1>Datasets</h1>
- 
+
 				<div class="intro-info">
- 
+
 					<p class="lead">
-						Os conjuntos de dados disponíveis também podem ser encontradas em diferentes fontes. Alguns deles fazem parte da literatura clássica de análise de regressão, outros são conjuntos proporcionados por diversas plataformas de análise de dados ou por instituições dedicadas ao tratamento estatístico de dados.
+						Os conjuntos de dados disponíveis também podem ser encontradas em diferentes fontes. Alguns
+						deles fazem parte da literatura clássica de análise de regressão, outros são conjuntos
+						proporcionados por diversas plataformas de análise de dados ou por instituições dedicadas ao
+						tratamento estatístico de dados.
 					<p>
 
 					<h5>Arquivos csv</h5>
 					<ol>
-						<li> 
-							<a href="https://github.com/ffajardo64/statistical_learning/blob/main/docs/STA13828/db/airpassengers/airpassengers.csv" target="_blank">Monthly international airline passengers, Jan. 1949 - Dec. 1960</a> (mensal - milhares de passageiros).
+						<li>
+							<a href="https://github.com/ffajardo64/statistical_learning/blob/main/docs/STA13828/db/airpassengers/airpassengers.csv"
+								target="_blank">Monthly international airline passengers, Jan. 1949 - Dec. 1960</a>
+							(mensal - milhares de passageiros).
 						</li>
 
-						<li> 
-							<a href="https://github.com/ffajardo64/statistical_learning/blob/main/docs/STA13828/db/nile/nile.csv" target="_blank"> Vazão média anual do rio Nilo abaixo da represa de Aswan Dam 1871 - 1970</a>. (anual - metros cúbicos por segundo).
+						<li>
+							<a href="https://github.com/ffajardo64/statistical_learning/blob/main/docs/STA13828/db/nile/nile.csv"
+								target="_blank"> Vazão média anual do rio Nilo abaixo da represa de Aswan Dam 1871 -
+								1970</a>. (anual - metros cúbicos por segundo).
 						</li>
-						
-						<li> 
-							<a href="https://www.sidc.be/silso/datafiles" target="_blank"> Sunspot number</a>. (diária - mensal - anual).
+
+						<li>
+							<a href="https://www.sidc.be/silso/datafiles" target="_blank"> Sunspot number</a>. (diária -
+							mensal - anual).
 						</li>
 					</ol>
 
@@ -595,23 +670,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</li>
 
 						<li>
-							<a href="https://www.google.com/publicdata/directory" target="_blank">Global public data explorer</a>.
+							<a href="https://www.google.com/publicdata/directory" target="_blank">Global public data
+								explorer</a>.
 						</li>
 
 						<li>
-							<a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html" target="_blank">The R Datasets Package</a>.
+							<a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html"
+								target="_blank">The R Datasets Package</a>.
 						</li>
 
 					</ol>
-				</div>   			
-			</div>   		
+				</div>
+			</div>
 		</div> <!-- /section-intro -->
- 
-	</section> <!-- /process-->    
+
+	</section> <!-- /process-->
 
 
 
-   <!-- End Dataset Section ================================================== -->
+	<!-- End Dataset Section ================================================== -->
 
 
 	<!-- Phrase Section ================================================== -->
@@ -625,87 +702,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						Estatísticos, assim como os artistas, têm o mau hábito de se apaixonar por seus modelos.
 					</p>
 				</blockquote>
-			</aside> 
+			</aside>
 		</div> <!-- /cta-content -->
-   	</section> <!-- /cta --> 
+	</section> <!-- /cta -->
 
-   <!-- contato
+	<!-- contato
    ================================================== -->
 	<section id="contato">
 
 		<div class="row section-intro">
-   		<div class="col-twelve">
+			<div class="col-twelve">
 
-   			<h5>Contato</h5>
-   			<h1>FALE CONOSCO!</h1>
+				<h5>Contato</h5>
+				<h1>FALE CONOSCO!</h1>
 
-   			<p>
-   				Laboratório de Estatística e Computação Natural -- LECON <br/>
-				Departamento de Estatística | Universidade Federal do Espírito Santo <br/> 
-				Av. Fernando Ferrari, 514 - Goiabeiras, Vitória - ES, 29075-910.
-			</p>
+				<p>
+					Laboratório de Estatística e Computação Natural -- LECON <br />
+					Departamento de Estatística | Universidade Federal do Espírito Santo <br />
+					Av. Fernando Ferrari, 514 - Goiabeiras, Vitória - ES, 29075-910.
+				</p>
 
-   		</div> 
-   	</div> <!-- /section-intro -->
+			</div>
+		</div> <!-- /section-intro -->
 
-   	<div class="row contato-form">
+		<div class="row contato-form">
 
-		<a href="mailto:lecon@ufes.br"><button class="submitform">Enviar E-mail</button></i></a>
-   		
-   	</div> <!-- /contato-form -->
-		
+			<a href="mailto:lecon@ufes.br"><button class="submitform">Enviar E-mail</button></i></a>
+
+		</div> <!-- /contato-form -->
+
 	</section> <!-- /contato -->
 
 
-   <!-- footer
+	<!-- footer
    ================================================== -->
 
-   <footer>
-     	<div class="row">
+	<footer>
+		<div class="row">
 
-     		<div class="col-six tab-full pull-right social">
+			<div class="col-six tab-full pull-right social">
 
-			   	<ul class="footer-social">        
+				<ul class="footer-social">
 					<li><a href="https://github.com/lecondest"><i class="fab fa-github"></i></a></li>
 					<li><a href="https://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a></li>
-		      	</ul> <!-- /intro-social -->    
+				</ul> <!-- /intro-social -->
 
-      		</div>
+			</div>
 
-	  	<div class="col-eight tab-full">
+			<div class="col-eight tab-full">
 
-	      	<div class="copyright">
+				<div class="copyright">
 
-	        	<span>
-	        		© Copyright 2022 - 
+					<span>
+						© Copyright 2022 -
 
-	        		<script>
-	        			new Date().getFullYear()>document.write(new Date().getFullYear());
-	        		</script>
-	        	</span> 
-	        	
-	        	<span>Design by <a href="https://lecon.ufes.br/">LECON</a></span>  
-	        	    	
-	         </div>		                  
-	  	</div>
+						<script>
+							new Date().getFullYear() > document.write(new Date().getFullYear());
+						</script>
+					</span>
 
-	  	<div id="go-top">
-	 		<a class="smoothscroll" title="Voltar ao topo" href="#top"><i class="fas fa-arrow-up"></i></a>
-	  	</div>
+					<span>Design by <a href="https://lecon.ufes.br/">LECON</a></span>
 
-      	</div> <!-- /row -->     	
-   </footer>  
+				</div>
+			</div>
 
-   <div id="preloader"> 
-    	<div id="loader"></div>
-   </div> 
+			<div id="go-top">
+				<a class="smoothscroll" title="Voltar ao topo" href="#top"><i class="fas fa-arrow-up"></i></a>
+			</div>
 
-   <!-- Java Script
-   ================================================== --> 
-   <script src="js/jquery-3.5.1.min.js"></script>
-   <script src="js/jquery-migrate-1.4.1.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
+		</div> <!-- /row -->
+	</footer>
+
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+   ================================================== -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/jquery-migrate-1.4.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 
