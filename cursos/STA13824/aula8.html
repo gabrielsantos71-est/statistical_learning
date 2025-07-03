@@ -1,89 +1,219 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>STA13824 - Análise de regressão</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="  " />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-class: center, middle, inverse, title-slide
+<html lang="pt-BR"><head>
+<script src="aula8_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula8_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula8_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula8_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula8_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula8_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula8_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
-# STA13824 - Análise de regressão
-## Inferência no modelo de regressão linear - IV
-### <br/><br/>
-### LECON/DEST - UFES
-### Vitória, ES. - 14/07/2021
+  <meta name="author" content="LECON/DEST - UFES">
+  <title>STA13824 - Análise de regressão  Hipótese Linear Geral </title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula8_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula8_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="aula8_files/libs/revealjs/dist/theme/quarto-bbd3fe9ba78fe19100bb54757e835c1d.css">
+  <link href="aula8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula8_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula8_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula8_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula8_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {enableAssistiveMml: false}});</script>
+  <div class="reveal">
+    <div class="slides">
 
----
+<section id="title-slide" data-background-color="#172a46" data-background-opacity="number" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">STA13824 - Análise de regressão<br>
+</h1><h3><br>
+Hipótese Linear Geral<br>
+</h3>
+  <p class="subtitle"><br><br></p>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+LECON/DEST - UFES 
+</div>
+        <p class="quarto-title-affiliation">
+            Última atualização: 03 julho, 2025
+          </p>
+    </div>
+</div>
 
-class: animated, fadeIn
+</section>
+<section class="slide level2">
 
+<h3 id="hipótese-linear-geral---i">Hipótese linear geral - I</h3>
+<p>A estatística de teste <span class="math inline">\(F=\frac{QM_{Reg}}{QM_{Res}}\)</span> permite avaliar a hipótese nula de que todos os <span class="math inline">\(\beta_j\)</span>, com <span class="math inline">\(j=1,2,3,\ldots,k\)</span>, são simultaneamente iguais a zero.</p>
+<p>Mas, existem situações específicas em que a hipótese nula pode envolver uma única função linear, uma hipótese simples, ou pode envolver vários funções lineares simultaneamente ou uma hipótese composta, entre outras.</p>
+<div class="fragment fade-in" data-fragment-index="2">
+<p><span style="color:#82243a">Todos esses cenários <strong>não</strong> podem ser avaliadas com a estatística <span class="math inline">\(F\)</span> e uma nova contrução dos testes será necessária.</span></p>
+<p><br></p>
+<p>A seguir será apresentado um método geral de construção de testes para qualquer hipótese envolvendo funções lineares do vetor <span class="math inline">\(\beta\)</span>.</p>
+</div>
+<br>
+<hr>
 
+<p><font size="6">Para detalhes sugere-se consultar <span class="citation" data-cites="chatterjee:hadi:2006">Chatterjee e Hadi (<a href="#/referências" role="doc-biblioref" onclick="">2006</a>)</span>, <span class="citation" data-cites="draper:smith:1998">Draper e Smith (<a href="#/referências" role="doc-biblioref" onclick="">1998</a>)</span>, <span class="citation" data-cites="greene2003">Greene (<a href="#/referências" role="doc-biblioref" onclick="">2003</a>)</span>, <span class="citation" data-cites="hocking:2013">Hocking (<a href="#/referências" role="doc-biblioref" onclick="">2013</a>)</span>, <span class="citation" data-cites="montgomery2006">Montgomery et al. (<a href="#/referências" role="doc-biblioref" onclick="">2006</a>)</span>.</font></p>
+</section>
+<section class="slide level2">
 
-
-&lt;style&gt; body {text-align: justify} &lt;/style&gt; &lt;!-- Justify text. --&gt;
-
-### Hipótese linear geral - I
-
-A estatística de teste `\(F=\frac{QM_{Reg}}{QM_{Res}}\)` permite avaliar a hipótese 
-nula de que todos os `\(\beta_j\)`, com `\(j=1,2,3,\ldots,k\)`, são 
-simultaneamente iguais a zero. Mas, algumas situações específicas, por exemplo: 
-quando a hipótese nula pode envolver uma única função linear, uma hipótese 
-simples, ou pode envolver vários funções lineares simultaneamente ou uma hipótese 
-composta, entre outras situações. Todos esses cenários **não** podem ser 
-avaliadas com a estatística `\(F\)` e uma nova contrução dos testes será
-necessária. A seguir será apresentada um método geral de construção de testes 
-para qualquer hipótese envolvendo funções lineares do vetor `\(\beta\)`. 
-
-A hipótese linear geral define-se como
-
-&lt;div class="math"&gt;
-  $$
+<p>A hipótese linear geral define-se como</p>
+<div class="math">
+<p><span class="math display">\[
   \begin{aligned}
   H_0&amp;:\mathbf{K}'\beta=m &amp; H_1&amp;:\mathbf{K}'\beta\ne m,
   \end{aligned}
-  $$
-&lt;/div&gt;
+  \]</span></p>
+</div>
+<p>onde <span class="math inline">\(\mathbf{K}'\)</span> é uma matriz <span class="math inline">\(l\times p\)</span> e representa a matriz de coeficientes que define as <span class="math inline">\(l\)</span> funções lineares dos <span class="math inline">\(\beta_j\)</span> a serem testadas. O vetor <span class="math inline">\(m\)</span>, de dimensão <span class="math inline">\(l\times1\)</span>, é um vetor de constantes. No caso de avaliar a significância das funções lineares, o vetor <span class="math inline">\(m\)</span> frequentemente é o vetor nulo.</p>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="2">
+<p><span style="color:#82243a">As <span class="math inline">\(l\)</span> equações lineares em <span class="math inline">\(H_0\)</span> devem ser <strong>linearmente independentes</strong> (mas não precisam ser ortogonais). A independência linear implica que a matriz <span class="math inline">\(\mathbf{K}'\)</span> tem posto coluna completo, i.e., <span class="math inline">\(\textrm{posto}(\mathbf{K}')=l\)</span>. Isso garante que as equações em <span class="math inline">\(H_0\)</span> sejam consistentes para cada escolha de <span class="math inline">\(m\)</span>.</span></p>
+</div>
+</section>
+<section class="slide level2">
 
-onde `\(\mathbf{K}'\)` é uma matriz `\(l\times p\)` e representa a matriz de coeficientes
-que define as `\(l\)` funções lineares dos `\(\beta_j\)` a serem testadas. O vetor `\(m\)`,
-de dimensão `\(l\times1\)`, é um vetor de constantes. No caso de avaliar a
-significância das funções lineares, o vetor `\(m\)` frequentemente é o vetor nulo.
-
-&gt; As `\(l\)` equações lineares em `\(H_0\)` devem ser linearmente independentes (mas não 
-precisam ser ortogonais). Essa independência linear implica que a matriz 
-`\(\mathbf{K}'\)` tem posto coluna completo, i.e., `\(\textrm{posto}(\mathbf{K}')=l\)`.
-Isso garante que as equações em `\(H_0\)` sejam consistentes para cada escolha de `\(m\)`.
-
----
-class: animated, slideInRight
-
-### Hipótese linear geral - II
-
-&gt; **Exemplo**
-
-Suponha o vetor de parâmetros dado por `\(\beta'=\left[\beta_0\ \ \beta_1\ \ \beta_2\ \ \beta_3\right]\)`
-e temos interesse em avaliar a seguinte hipótese:
-
-&lt;div class="math"&gt;
-  $$
+<p><strong>Exemplo</strong>. Suponha o vetor de parâmetros dado por <span class="math inline">\(\beta'=\left[\beta_0\ \ \beta_1\ \ \beta_2\ \ \beta_3\right]\)</span> e temos interesse em avaliar a seguinte hipótese:</p>
+<div class="math">
+<p><span class="math display">\[
   \begin{aligned}
   H_0&amp;:&amp;\beta_1-\beta_2&amp;=0\\
      &amp; &amp;\beta_1+\beta_2-2\beta_3&amp;=0\\
      &amp; &amp;\beta_0&amp;=20.
   \end{aligned}
-  $$
-&lt;/div&gt;
-
-`\(H_0\)` pode ser escrita no formato matricial da seguinte forma:
-
-&lt;div class="math"&gt;
-  $$
+  \]</span></p>
+</div>
+<p><span class="math inline">\(H_0\)</span> pode ser escrita no formato matricial da seguinte forma:</p>
+<div class="math">
+<p><span class="math display">\[
   \begin{aligned}
   H_0:\mathbf{K}'\beta=\left[
   \begin{array}{cccc}
@@ -108,393 +238,650 @@ e temos interesse em avaliar a seguinte hipótese:
   \end{array}
   \right]
   \end{aligned}
-  $$
-&lt;/div&gt;
+  \]</span></p>
+</div>
+<p>A hipótese alternativa é dada por <span class="math inline">\(H_1:\mathbf{K}'\beta\ne m\)</span>.</p>
+</section>
+<section class="slide level2">
 
-A hipótese alternativa é dada por `\(H_1:\mathbf{K}'\beta\ne m\)`.
-
----
-class: animated, slideInRight
-
-### Hipótese linear geral - III
-
-Para encontrar uma estatística de teste para avaliar a hipótese linear
-
-&lt;div class="math"&gt;
-  $$
+<p>Para encontrar uma estatística de teste para avaliar a Hipótese Linear Geral (HLG)</p>
+<div class="math">
+<p><span class="math display">\[
   \begin{aligned}
   H_0&amp;:\mathbf{K}'\beta=m &amp; H_1&amp;:\mathbf{K}'\beta\ne m,
   \end{aligned}
-  $$
-&lt;/div&gt;
-
-considere as Suposições **A1-A5**. Dessa forma, o estimador de MQO de 
-`\(\mathbf{K}'\beta-m\)` é dado por `\(\mathbf{K}'\widehat{\beta}-m\)` segue uma
-distribuição normal `\(l\)`-variada com
-
-&lt;div class="math"&gt;
-  $$
+  \]</span></p>
+</div>
+<p>considere as Suposições <strong>A1-A5</strong>. Dessa forma, o estimador de MQO de <span class="math inline">\(\mathbf{K}'\beta-m\)</span>, dado por <span class="math inline">\(\mathbf{K}'\widehat{\beta}-m\)</span>, segue uma distribuição normal <span class="math inline">\(l\)</span>-variada com</p>
+<div class="math">
+<p><span class="math display">\[
   \begin{aligned}
-  \mathbf{E}\left[\mathbf{K}'\widehat{\beta}-m\right]&amp;=\mathbf{K}'\beta-m &amp; \text{e} &amp; &amp; \mathrm{cov}\left[\mathbf{K}'\widehat{\beta}-m\right]&amp;=\sigma^2\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}.
+  \mathbb{E}\left[\mathbf{K}'\widehat{\beta}-m\right]&amp;=\mathbf{K}'\beta-m &amp; \text{e} &amp; &amp; \mathrm{cov}\left[\mathbf{K}'\widehat{\beta}-m\right]&amp;=\sigma^2\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}.
   \end{aligned}
-  $$
-&lt;/div&gt;
+  \]</span></p>
+</div>
+<p>A soma de quadrados associada à hipótese nula é dada por</p>
+<p><span class="math display">\[SQ_{HLG}=\left(\mathbf{K}'\widehat{\beta}-m\right)'\left[\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}\right]^{-1}\left(\mathbf{K}'\widehat{\beta}-m\right).\]</span> Daí, <span class="math inline">\(\frac{SQ_{HLG}}{\sigma^2}\)</span> segue uma distribuição <span class="math inline">\(\chi^2_{l,\lambda}\)</span>, com parâmetro de não-centralidade dado por <span class="math inline">\(\lambda=\frac{1}{\sigma^2}\left(\mathbf{K}'\beta-m\right)'\left[\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}\right]^{-1}\left(\mathbf{K}'\beta-m\right).\)</span></p>
+</section>
+<section class="slide level2">
 
+<p>Dessa forma, a estatística de teste dada por</p>
+<p><span class="math display">\[F=\frac{QM_{HLG}}{QM_{Res}}\]</span> segue uma distribuição <span class="math inline">\(F_{l,n-p,\lambda}\)</span>.</p>
+<p>Sob <span class="math inline">\(H_0\)</span>, a distribuição da estatística <span class="math inline">\(F\)</span> torna-se centralizada, i.e., <span class="math inline">\(\lambda=0\)</span>. Assim, rejeita-se <span class="math inline">\(H_0\)</span>, em favor de <span class="math inline">\(H_1\)</span>, se <span class="math inline">\(F&gt;F_{l,n-p,\alpha}\)</span>.</p>
+<p><br></p>
+<blockquote>
+<p>Esta formulação geral fornece um método conveniente para testar <strong>qualquer</strong> hipótese de interesse.</p>
+</blockquote>
+</section>
+<section class="slide level2">
 
-A soma de quadrados associada à hipótese nula é dada por
+<h3 id="algumas-considerações">Algumas considerações</h3>
+<ul>
+<li>O valor esperado das formas quadráticas depende do formato funcional do modelo. Assim, se o modelo usado é incorreto, o valor esperado da formas quadráticas é incorreto e isso é particularmente crítico para o estimador de <span class="math inline">\(\sigma^2\)</span>;</li>
+</ul>
+<div class="fragment fade-in" data-fragment-index="2">
+<ul>
+<li>A suposição de normalidade é necessária para a construção dos testes de hipóteses, intervalos e regiões de confiança para avaliar a significância dos parâmetros. Embora os testes de significância pareçam ser razoavelmente robustos na ausência de normalidade, eles devem ser considerados como aproximações nesse cenário;</li>
+</ul>
+</div>
+<div class="fragment fade-in" data-fragment-index="3">
+<ul>
+<li><p>É importante ressaltar que todas as somas dos quadrados estão vínculadas ao modelo específico que está sendo usado. Em geral, a inclusão ou exclusão de uma covariável ao modelo mudará a soma de quadrados para todas as hipóteses;</p></li>
+<li><p>O formato matricial do teste de hipótese geral torna muito prática a sua implementação computacional.</p></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
 
-`$$SQ_{HLG}=\left(\mathbf{K}'\widehat{\beta}-m\right)'\left[\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}\right]^{-1}\left(\mathbf{K}'\widehat{\beta}-m\right).$$`
-Daí, `\(\frac{SQ_{HLG}}{\sigma^2}\)` segue uma distribuição `\(\chi^2_{l,\lambda}\)`, com
-parâmetro de não-centralidade dado por
+<h3 id="somas-de-quadrados-parciais---i">Somas de quadrados parciais - I</h3>
+<p>O interesse agora é avaliar hipóteses referentes à significância de um subconjunto do vetor de coeficientes.</p>
+<p><br></p>
+<p>Para isso será necessária a análise das somas de quadrados parciais vínculadas à <span class="math inline">\(H_0\)</span>. Em outras palavras, será analisada a variação parcial explicada do modelo que contém apenas uma ou mais covariáveis.</p>
+<p><br></p>
+<p>Seja <span class="math inline">\(SQ_{Reg}=R(\beta_0,\beta_1, \beta_2, \ldots,\beta_k)\)</span> a soma de quadrados da regressão, contendo os parâmetros listados entre parênteses. Essa soma de quadrados também é denotada como <span class="math inline">\(SQ_{MC}\)</span> e é chamada de <span style="color:#82243a"><em>soma de quadrados do modelo completo</em></span>.</p>
+</section>
+<section class="slide level2">
 
-`$$\lambda=\frac{1}{\sigma^2}\left(\mathbf{K}'\beta-m\right)'\left[\mathbf{K}'(\mathbf{X}'\mathbf{X})^{-1}\mathbf{K}\right]^{-1}\left(\mathbf{K}'\beta-m\right).$$`
----
-class: animated, slideInRight
+<p>A soma de quadrados para avaliar a hipótese que um subconjunto do <span class="math inline">\(\beta\)</span> é o vetor nulo, pode ser obtida como</p>
+<div class="math">
+<p><span class="math display">\[
+  \begin{aligned}
+  SQ&amp;=SQ_{MC}-SQ_{MR}\\
+  &amp;=R(\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q},\beta_{k-q+1},\ldots,\beta_k)-R(\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q}),
+  \end{aligned}
+  \]</span></p>
+</div>
+<p>onde <span class="math inline">\(SQ_{MR}\)</span> representa a <strong>soma de quadrados do modelo reduzido</strong>.</p>
+<p><br></p>
+<p>Uma outra forma de escrever a soma de quadrados acime é dada por</p>
+<p><span class="math display">\[SQ=R\left(\beta_{k-q+1},\ldots,\beta_k|\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q}\right).\]</span></p>
+<blockquote>
+<p>Seguindo essa notação, <span class="math display">\[SQ_{Reg}=SQ_{Modelo}-SQ_\mu=R\left(\beta_1,\ldots,\beta_k|\beta_0\right).\]</span></p>
+</blockquote>
+</section>
+<section class="slide level2">
 
-### Hipótese linear geral - IV
+<h3 id="interpretação">Interpretação</h3>
+<ul>
+<li>Suponha o modelo linear com duas covariáveis, sejam elas <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>. Nesse cenário, <span class="math inline">\(SQ_{Reg}(x_1)\)</span> representa a variação explicada do modelo que contem apenas a variável preditiva <span class="math inline">\(x_1\)</span> e <span class="math inline">\(SQ_{Reg}(x_1,x_2)\)</span> representa a variação explicada do modelo que contem as variáveis preditivas <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span> e assim por diante;</li>
+</ul>
+<div class="fragment fade-in" data-fragment-index="2">
+<ul>
+<li><p>A inclusão de uma covariável no modelo diminui o valor da <span class="math inline">\(SQ_{Res}\)</span>, no pior dos casos fica igual (nunca maior) e não altera o valor da <span class="math inline">\(SQ_{Total}\)</span>. Daí, pode-se concluir que o valor da <span class="math inline">\(SQ_{Reg}\)</span> aumenta com a inclusão de uma covariável no modelo, uma vez que <span class="math inline">\(SQ_{Total}=SQ_{Reg}+SQ_{Res}\)</span>.</p>
+<p>Dessa forma,</p>
+<p><span class="math display">\[SQ_{Reg}(x_2|x_1)=SQ_{Reg}(x_1,x_2)-SQ_{Reg}(x_1)\]</span></p>
+<p>representa o aumento da soma de quadrados com a inclusão da covariável <span class="math inline">\(x_2\)</span> no modelo, dado que já tinha a covariável <span class="math inline">\(x_1\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
 
-Dessa forma, a estatística de teste é dada por
+<h3 id="interpretação-1">Interpretação</h3>
+<ul>
+<li><p>A ideia pode-se estender para o caso de três covariáveis <span class="math inline">\(x_1,x_2\)</span> e <span class="math inline">\(x_3\)</span>. Dessa forma</p>
+<p><span class="math display">\[SQ_{Reg}\left(x_3|x_1,x_2\right)=SQ_{Reg}(x_1,x_2,x_3)-SQ_{Reg}(x_1,x_2)\]</span> representa o aumento da soma de quadrados com a inclusão da da covariável <span class="math inline">\(x_3\)</span> no modelo, dado que já tinha as covariáveis <span class="math inline">\(x_1\)</span> e <span class="math inline">\(x_2\)</span>.</p>
+<ul>
+<li>Reescrevendo as equações acima, temos que</li>
+</ul>
+<div class="math">
+<p><span class="math display">\[
+  \begin{aligned}
+    SQ_{Reg}(x_1,x_2)&amp;=SQ_{Reg}(x_1)+SQ_{Reg}(x_2|x_1);\\ \\
+    SQ_{Reg}(x_1,x_2,x_3)&amp;=SQ_{Reg}(x_1,x_2)+SQ_{Reg}(x_3|x_1,x_2)\\
+                         &amp;=SQ_{Reg}(x_1)+SQ_{Reg}(x_2|x_1)+SQ_{Reg}(x_3|x_1,x_2).
+  \end{aligned}
+\]</span></p>
+</div></li>
+</ul>
+</section>
+<section class="slide level2">
 
-`$$F=\frac{QM_{HLG}}{QM_{Res}}$$`
-segue uma distribuição `\(F_{l,n-p,\lambda}\)`. Sob `\(H_0\)`, a distribuição da 
-estatística `\(F\)` torna-se centrlizada, i.e., `\(\lambda=0\)`. Assim, rejeita-se `\(H_0\)`
-se `\(F&gt;F_{l,n-p,\alpha}\)`.
+<p>Dessa forma, para o cenário com três covariáveis, a tabela para a <strong>Análise de Variância</strong>, com a soma de quadrados parciais é dada por:</p>
+<p><br><br></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 29%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Fonte</th>
+<th style="text-align: center;">Graus de liberdade</th>
+<th style="text-align: center;">Somas de quadrados</th>
+<th style="text-align: center;">Quadrados médios</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(SQ_{Reg}(x_1)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(QM_{Reg}(x_1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(x_2\mid x_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(SQ_{Reg}(x_2\mid x_1)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(QM_{Reg}(x_2\mid x_1)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(x_3\mid x_1,x_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(SQ_{Reg}(x_3 \mid x_1,x_2)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(QM_{Reg}(x_3 \mid x_1,x_2)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Resíduos</td>
+<td style="text-align: center;"><span class="math inline">\(n-4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(SQ_{Res}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(QM_{Res}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Total</td>
+<td style="text-align: center;"><span class="math inline">\(n-1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(SQ_{Total}\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><font size="6">Tabela acima é a mesma fornecida pela função <strong>anova</strong> do <code>R</code> (ver, e.g., <span class="citation" data-cites="Rlang:2024">R Core Team (<a href="#/referências" role="doc-biblioref" onclick="">2024</a>)</span>).</font></p>
+</section>
+<section id="referências" class="slide level2 smaller scrollable">
+<h2>Referências</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chatterjee:hadi:2006" class="csl-entry" role="listitem">
+Chatterjee, S., e Hadi, A. S. (2006), <em>Regression Analysis by Example</em>, Wiley-Interscience.
+</div>
+<div id="ref-draper:smith:1998" class="csl-entry" role="listitem">
+Draper, N. R., e Smith, H. (1998), <em>Applied regression analysis</em>, Wiley series em probability e mathematical statistics, New York: Wiley.
+</div>
+<div id="ref-greene2003" class="csl-entry" role="listitem">
+Greene, W. H. (2003), <em>Econometric Analysis</em>, Pearson Education.
+</div>
+<div id="ref-hocking:2013" class="csl-entry" role="listitem">
+Hocking, R. R. (2013), <em>Methods and applications of linear models: regression and the analysis of variance</em>, John Wiley &amp; Sons.
+</div>
+<div id="ref-montgomery2006" class="csl-entry" role="listitem">
+Montgomery, D. C., Peck, E. A., e Vining, G. G. (2006), <em>Introduction to Linear Regression Analysis</em>, Wiley &amp; Sons.
+</div>
+<div id="ref-Rlang:2024" class="csl-entry" role="listitem">
+R Core Team (2024), <em><a href="https://www.R-project.org/">R: A Language and Environment for Statistical Computing</a></em>, Vienna, Austria: R Foundation for Statistical Computing.
+</div>
+</div>
+</section>
+<section id="política-de-proteção-aos-direitos-autorais" class="slide level2">
+<h2>Política de proteção aos direitos autorais</h2>
+<blockquote>
+<p><span style="color:grey"><font size="6">O conteúdo disponível consiste em material protegido pela legislação brasileira, sendo certo que, por ser o detentor dos direitos sobre o conteúdo disponível na plataforma, o <strong>LECON</strong> e o <strong>NEAEST</strong> detém direito exclusivo de usar, fruir e dispor de sua obra, conforme Artigo 5<sup>o</sup>, inciso XXVII, da Constituição Federal e os Artigos 7<sup>o</sup> e 28<sup>o</sup>, da Lei 9.610/98. A divulgação e/ou veiculação do conteúdo em sites diferentes à plataforma e sem a devida autorização do <strong>LECON</strong> e o <strong>NEAEST</strong>, pode configurar violação de direito autoral, nos termos da Lei 9.610/98, inclusive podendo caracterizar conduta criminosa, conforme Artigo 184<sup>o</sup>, §1<sup>o</sup> a 3<sup>o</sup>, do Código Penal. É considerada como contrafação a reprodução não autorizada, integral ou parcial, de todo e qualquer conteúdo disponível na plataforma.</font></span></p>
+</blockquote>
 
-&gt; Esta formulação geral fornece um método conveniente para testar **qualquer**
-hipótese de interesse.
+<img data-src="images/logo_neaest_lecon.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"><p><span style="color:grey"><font size="4">Material elaborado pela equipe LECON/NEAEST: Alessandro J. Q. Sarnaglia, Bartolomeu Zamprogno, Fabio A. Fajardo, Luciana G. de Godoi e Nátaly A. Jiménez.</font></span></p>
 
----
-class: animated, fadeIn
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo_neaest.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
-### Hipótese linear geral - IV
+</div>
+</div></div>
 
-#### Algumas considerações
-
-* O valor esperado das formas quadráticas dependem do formato funcional do modelo.
-Dessa forma, se o modelo usado é incorreto, o valor esperado da formas quadráticas
-é incorreto e isso é particularmente crítico para o estimador de `\(\sigma^2\)`;
-
---
-
-* A suposição de normalidade é necessária para a construção dos testes de hipóteses,
-intervalos e regiões de confiança para avaliar a significância do vetor de parâmetros.
-Embora os testes de significância pareçam ser razoavelmente robustos contra a 
-não-normalidade, eles devem ser considerados como aproximações quando o pressuposto 
-de normalidade não está satisfeita.
-
---
-
-* É importante ressaltar que todas as somas dos quadrados para hipóteses 
-estão vínculadas ao modelo específico que está sendo usado. Em geral, a exclusão 
-de uma covariável ou adicionar uma covariável ao modelo mudará a soma de 
-quadrados para todas as hipóteses;
-
---
-
-* O formato matricial do teste de hipótese geral torna muito pratica a sua 
-implementação computacional.
-
-&lt;br&gt;&lt;/br&gt;
-
-Para detalhes, ver, e.g., Greene (2012), 
-Montgomery, Peck, and Vining (2006) e Searle and Khuri (2017)
-
----
-class: animated, slideInRight
-
-### Somas de quadrados parciais - I
-
-O interesse agora é avaliar hipóteses referentes à significância de um 
-subconjunto do vetor de coeficientes. Para isso será necessária a análise das 
-somas de quadrados parciais vínculadas à `\(H_0\)`. Em outras palavras, será analisada
-a variação parcial explicada do modelo que contém apenas uma ou mais covariáveis.
-
-Seja `\(SQ_{Reg}=R(\beta_0,\beta_1, \beta_2, \ldots,\beta_k)\)` a soma de 
-quadrados da regressão, contendo os parâmetros listados entre parênteses. Essa
-soma de quadrados também é denotada como `\(SQ_{MC}\)` e é chamada de 
-*soma de quadrados do modelo completo*.
-
-A soma de quadrados para avaliar a hipótese que um subconjunto do `\(\beta\)` é o 
-vetor nulo, pode ser obtida como
-
-`$$SQ=SQ_{MC}-SQ_{MR}=R(\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q},\beta_{k-q+1},\ldots,\beta_k)-R(\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q}),$$`
-onde `\(SQ_{MR}\)` representa a *soma de quadrados do modelo reduzido*. Uma outra
-forma de escrever a soma de quadrados acime é dada por
-
-`$$SQ=R\left(\beta_{k-q+1},\ldots,\beta_k|\beta_0,\beta_1, \beta_2, \ldots,\beta_{k-q}\right).$$`
-&gt; Seguindo essa notação,
-`$$SQ_{Reg}=SQ_{Modelo}-SQ_\mu=R\left(\beta_1,\ldots,\beta_k|\beta_0\right).$$`
-
-
----
-class: animated, fadeIn
-
-### Somas de quadrados parciais - II
-
-&gt; **Interpretação**
-
-* Suponha o modelo linear com duas covariáveis, sejam elas `\(x_1\)` e `\(x_2\)`. Nesse
-  cenário, `\(SQ_{Reg}(x_1)\)` representa a variação explicada do modelo que contem 
-  apenas a variável preditiva `\(x_1\)`. 
-
-  Por outra parte, `\(SQ_{Reg}(x_1,x_2)\)` representa a variação explicada do modelo 
-  que contem as variáveis preditivas `\(x_1\)` e `\(x_2\)` e assim por diante.
-
---
-
-* A inclusão de uma covariável no modelo diminui o valor de `\(SQ_{Res}\)`, no pior 
-  dos casos fica igual (nunca maior) e não altera o valor da `\(SQ_{Total}\)`. Assim,
-  pode-se concluir que o valor da `\(SQ_{Reg}\)` aumenta com a inclusão de uma 
-  covariável no modelo, uma vez que `\(SQ_{Total}=SQ_{Reg}+SQ_{Res}\)`.
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula8_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
-  Dessa forma, 
-  
-  `$$SQ_{Reg}(x_2|x_1)=SQ_{Reg}(x_1,x_2)-SQ_{Reg}(x_1)$$`
-  
-  representa o aumento da soma de quadrados com a inclusão da covariável `\(x_2\)`
-  no modelo, dado que já tinha a covariável `\(x_1\)`. 
 
----
-class: animated, fadeIn
+  <script src="aula8_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula8_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
-### Somas de quadrados parciais - III
+  <script>
 
-&gt; **Interpretação**
-
-* A ideia pode-se estender para o caso de três covariáveis `\(x_1,x_2\)` e `\(x_3\)`.
-  Dessa forma
-
-  `$$SQ_{Reg}\left(x_3|x_1,x_2\right)=SQ_{Reg}(x_1,x_2,x_3)-SQ_{Reg}(x_1,x_2)$$`
-  representa o aumento da soma de quadrados com a inclusão da da covariável `\(x_3\)`
-  no modelo, dado que já tinha as covariáveis `\(x_1\)` e `\(x_2\)`. 
-
-  - Reescrevendo as equações acima, temos que
-
-  &lt;div class="math"&gt;
-  $$
-    \begin{aligned}
-      SQ_{Reg}(x_1,x_2)&amp;=SQ_{Reg}(x_1)+SQ_{Reg}(x_2|x_1)\\ \\
-      SQ_{Reg}(x_1,x_2,x_3)&amp;=SQ_{Reg}(x_1,x_2)+SQ_{Reg}(x_3|x_1,x_2)\\
-                           &amp;=SQ_{Reg}(x_1)+SQ_{Reg}(x_2|x_1)+SQ_{Reg}(x_3|x_1,x_2)
-    \end{aligned}
-  $$
-  &lt;/div&gt;
-
----
-class: animated, slideInRight
-
-### Somas de quadrados parciais - IV
-
-Dessa forma, para o cenário com três covariáveis, a tabela para a 
-**Análise de Variância**, com a soma de quadrados parciais é dada por:
-
-
- | Fonte                | Graus de liberdade |  Somas de quadrados           | Quadrados médios               |
- |:--------------------:|:------------------:|:-----------------------------:|:------------------------------:|
- |    `\(x_1\)`             |         `\(1\)`        | `\(SQ_{Reg}(x_1)\)`               |  `\(QM_{Reg}(x_1)\)`               |
- |    `\(x_2\mid x_1\)`     |         `\(1\)`        | `\(SQ_{Reg}(x_2\mid x_1)\)`       |  `\(QM_{Reg}(x_2\mid x_1)\)`       |
- |    `\(x_3\mid x_1,x_2\)` |         `\(1\)`        | `\(SQ_{Reg}(x_3 \mid x_1,x_2)\)` |  `\(QM_{Reg}(x_3 \mid x_1,x_2)\)` |
- |     Resíduos         |         `\(n-4\)`      | `\(SQ_{Res}\)`                    |  `\(QM_{Res}\)`                    |
- |                      |                    |                               |                                |
- |        Total         |         `\(n-1\)`      | `\(SQ_{Total}\)`                  |                                |
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
  
+        // Display controls in the bottom right corner
+        controls: false,
 
-Tabela acima é a mesma fornecida pela função **anova** do ``R`` (ver, e.g., R Core Team (2021)).
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
 
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
 
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
 
----
-class: animated, lightSpeedIn
-# Referências
+        // Display a presentation progress bar
+        progress: true,
 
-Greene, W. (2012). _Econometric Analysis_. Prentice Hall.
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
 
-Montgomery, D. C., E. A. Peck, and G. G. Vining (2006). _Introduction to Linear Regression Analysis_. 4th
-edition. Wiley &amp; Sons.
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
 
-Muirhead, R. J. (2005). _Aspects of Multivariate Statistical Theory_. Wiley-Interscience.
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
 
-R Core Team (2021). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical
-Computing. Vienna, Austria. URL: [https://www.R-project.org/](https://www.R-project.org/).
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
 
-Searle, S. and A. Khuri (2017). _Matrix Algebra Useful for Statistics_. 2nd edition. Wiley.
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
 
----
-class: animated, hide-logo, bounceInDown
-## Política de proteção aos direitos autorais
+        // Push each slide change to the browser history
+        history: true,
 
-&gt; &lt;span style="color:grey"&gt;O conteúdo disponível consiste em material protegido pela legislação brasileira, sendo certo que, por ser
-o detentor dos direitos sobre o conteúdo disponível na plataforma, o **LECON** e o **NEAEST** detém direito
-exclusivo de usar, fruir e dispor de sua obra, conforme Artigo 5&lt;sup&gt;o&lt;/sup&gt;, inciso XXVII, da Constituição Federal
-e os Artigos 7&lt;sup&gt;o&lt;/sup&gt; e 28&lt;sup&gt;o&lt;/sup&gt;, da Lei 9.610/98.
-A divulgação e/ou veiculação do conteúdo em sites diferentes à plataforma e sem a devida autorização do
-**LECON** e o **NEAEST**, pode configurar violação de direito autoral, nos termos da Lei 9.610/98, inclusive podendo
-caracterizar conduta criminosa, conforme Artigo 184&lt;sup&gt;o&lt;/sup&gt;, §1&lt;sup&gt;o&lt;/sup&gt; a 3&lt;sup&gt;o&lt;/sup&gt;, do Código Penal.
-É considerada como contrafação a reprodução não autorizada, integral ou parcial, de todo e qualquer
-conteúdo disponível na plataforma.&lt;/span&gt;
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
 
-.pull-left[
-&lt;img src="images/logo_lecon.png" width="50%" style="display: block; margin: auto;" /&gt;
-]
-.pull-right[
-&lt;img src="images/logo_neaest.png" width="50%" style="display: block; margin: auto;" /&gt;
-]
-&lt;br&gt;&lt;/br&gt;
-.center[
-[https://lecon.ufes.br](https://lecon.ufes.br/) &amp;emsp; &amp;emsp;  &amp;emsp; &amp;emsp; [https://analytics.ufes.br](https://analytics.ufes.br)
-]
+        // Enable the slide overview mode
+        overview: true,
 
-&lt;font size="2"&gt;&lt;span style="color:grey"&gt;Material elaborado pela equipe LECON/NEAEST: 
-Alessandro J. Q. Sarnaglia, Bartolomeu Zamprogno, Fabio A. Fajardo, Luciana G. de Godoi 
-e Nátaly A. Jiménez.&lt;/span&gt;&lt;/font&gt;
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"ratio": "16:9",
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
 
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
+        // Vertical centering of slides
+        center: false,
 
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-<style>
-.logo {
-  background-image: url(images/logo_neaest.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  width: 150px;
-  height: 168px;
-  z-index: 0;
-}
-</style>
+        // Enables touch navigation on devices with touch input
+        touch: true,
 
-<script>
-document
-  .querySelectorAll(
-    '.remark-slide-content' +
-    ':not(.title-slide)' +
-    // add additional classes to exclude here, e.g.
-    // ':not(.inverse)' +
-    ':not(.hide-logo)'
-  )
-  .forEach(el => {
-    el.innerHTML += '<div class="logo"></div>';
-  });
-</script>
+        // Loop the presentation
+        loop: false,
 
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
       }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
