@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="LECON/DEST - UFES">
-  <title>STA13824 - Análise de regressão  Análise residual I </title>
+  <title>STA13824 - Análise de regressão  Análise residual </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -152,7 +152,7 @@
 <section id="title-slide" data-background-color="#172a46" data-background-opacity="number" data-background-size="contain" class="quarto-title-block center">
   <h1 class="title">STA13824 - Análise de regressão<br>
 </h1><h3><br>
-Análise residual I<br>
+Análise residual<br>
 </h3>
   <p class="subtitle"><br><br></p>
 
@@ -384,10 +384,232 @@ LECON/DEST - UFES
 </section>
 <section class="slide level2">
 
+<h3 id="gráfico-de-resíduos-vs-tempo-1">Gráfico de <em>Resíduos</em> vs <em>tempo</em></h3>
 
-<img data-src="images/res6.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<img data-src="images/res6.png" class="quarto-figure quarto-figure-center r-stretch" width="900"></section>
 <section id="pontos-influentes-e-de-alavancagem" class="slide level2 center" data-background-color="#172a46">
 <h2>Pontos influentes e de alavancagem</h2>
+</section>
+<section id="pontos-influentes" class="slide level2">
+<h2>Pontos influentes</h2>
+<p>Uma observação é dita <strong>influente</strong> quanto a sua eliminação da amostra altera de forma significativa o modelo ajustado, i.e., a sua eliminação altera as estimativas para os parâmetros e, consequentemente, os resíduos, as previsões, etc.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/influente1.png" width="550"></p>
+<figcaption>Não influente</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/influente2.png" width="550"></p>
+<figcaption>Influente</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Quando nosso modelo envolve muitas covariáveis, não é possível detectar tal situação graficamente. No entanto, gostaríamos de saber da existência de tais pontos na amostra. Observe que, na maioria dos cenários, olhar para os resíduos pode não ser de utilidade, pois o residual para este tipo de pontos é <strong>zero</strong>!</p>
+<p><br></p>
+<blockquote>
+<p>O ponto não é um dado atípico porque não tem um resíduo muito grande, mas é um ponto muito <em>influente</em>. A ideia geral é identificar esse tipo de pontos e, após uma análise rigorosa, decidir se dito ponto pode ou não ser excluído da amostra.</p>
+</blockquote>
+<p><br><br><br><br></p>
+<hr>
+<p><font size="6">Para detalhes, veja, e.g., <span class="citation" data-cites="cook:weisberg:1982">Cook e Weisberg (<a href="#/referências" role="doc-biblioref" onclick="">1982</a>)</span>.</font></p>
+</section>
+<section class="slide level2">
+
+<p>Algumas medidas de influência para detectar esse tipo de pontos. Cada uma delas mede o efeito de deletar a <span class="math inline">\(i\)</span>-ésima observação:</p>
+<ul>
+<li><strong>Distâncias de Cook</strong> ( <span class="math inline">\(D_i\)</span> ): Mede o efeito no vetor <span class="math inline">\(\widehat{\beta}\)</span>;</li>
+<li><strong>DFFITS</strong> ( <span class="math inline">\(\mathrm{DFFITS}_i\)</span> ): Mede o efeito em <span class="math inline">\(\hat{Y}_i\)</span>;</li>
+<li><strong>DFBETAS</strong> ( <span class="math inline">\(\mathrm{DFBETAS}_{j(i)}\)</span> ): Mede o efeito em <span class="math inline">\(\widehat{\beta}_i\)</span>;</li>
+<li><strong>COVRATIO</strong> ( <span class="math inline">\(\mathrm{COVRATIO}_i\)</span> ): Mede o efeito sobre a matriz de covariâncias das estimativas dos parâmetros.</li>
+</ul>
+<p>Os três primeiros, a distância de Cook, <span class="math inline">\(\mathrm{DFFITS}\)</span> e <span class="math inline">\(\mathrm{DFBETAS}\)</span>, podem ser considerados casos especiais de uma abordagem geral para medir o impacto da exclusão a <span class="math inline">\(i\)</span>-ésima observação em qualquer conjunto de <span class="math inline">\(k\)</span> funções linearmente independentes de <span class="math inline">\(\beta\)</span>.</p>
+</section>
+<section id="análise-de-sensibilidade" class="slide level2 center" data-background-color="#172a46">
+<h2>Análise de sensibilidade</h2>
+</section>
+<section id="consequências-da-omissão-de-uma-observação" class="slide level2">
+<h2>Consequências da omissão de uma observação</h2>
+<p>Considere o Teorema A.18 na p.&nbsp;358 em <span class="citation" data-cites="rao:1999">Rao e Toutenburg (<a href="#/referências" role="doc-biblioref" onclick="">1999</a>)</span>.</p>
+<p><br></p>
+<p><strong>Teorema A.18</strong>. Sejam <span class="math inline">\(A_{p\times p}, B_{p\times n}, C_{n\times n}\)</span> e <span class="math inline">\(D_{n\times p}\)</span> matrizes. Suponha que a inversa de <span class="math inline">\(A\)</span> e <span class="math inline">\(C\)</span> existem. Então:</p>
+<ol type="1">
+<li><span class="math inline">\(\left(A+BCD\right)^{-1}=A^{-1}-A^{-1}B(C^{-1}+DA^{-1}B)^{-1}DA^{-1}\)</span>;<br><br></li>
+<li>Se <span class="math inline">\(1+b'A^{-1}a\ne0\)</span>, então <span class="math display">\[\left(A+ab'\right)^{-1}=A^{-1}-\frac{A^{-1}ab'A^{-1}}{1+b'A^{-1}a}.\]</span></li>
+</ol>
+</section>
+<section class="slide level2">
+
+<p><strong>Notação</strong>: Sejam <span class="math inline">\(Y_{(i)}\)</span> e <span class="math inline">\(\mathbf{X}_{(i)}\)</span>, respectivamente, o vetor de observações e a matriz de covariáveis quando a <span class="math inline">\(i\)</span>-ésima observação é omitida, i.e., a <span class="math inline">\(i\)</span>-ésima linha de <span class="math inline">\(Y\)</span> e <span class="math inline">\(\mathbf{X}\)</span> são omitidas. Dessa forma, <span class="math display">\[\mathbf{X}'\mathbf{X}=\sum_{j=1}^n\mathbf{x}_j\mathbf{x}_j'=\mathbf{X}_{(i)}'\mathbf{X}_{(i)}+\mathbf{x}_i\mathbf{x}_i',\]</span> onde <span class="math inline">\(\mathbf{x}_i\)</span> representa a <span class="math inline">\(i\)</span>-ésima linha de <span class="math inline">\(\mathbf{X}\)</span>, i.e., <span class="math inline">\(\mathbf{x}_i\)</span> é um vetor linha.</p>
+<p><br></p>
+<p>Suponha que o <span class="math inline">\(\mathrm{posto}(\mathbf{X}_{(i)})=p-1\)</span>, então a inversa de <span class="math inline">\(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\)</span> é dada por</p>
+<div class="math">
+<p><span class="math display">\[
+\begin{aligned}
+\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i}.
+\end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Daí,</p>
+<div class="math">
+<p><span class="math display">\[
+\begin{aligned}
+\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i}\\
+&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}},
+\end{aligned}
+\]</span></p>
+</div>
+<p>onde <span class="math inline">\(h_{ii}=\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\)</span> representa o <span class="math inline">\(i\)</span>-ésimo elemento diagonal da matriz <span class="math inline">\(\mathbf{H}\)</span>.</p>
+<p>O estimador do vetor de parâmetros, após a exclusão da <span class="math inline">\(i\)</span>-ésima observação, é dado por</p>
+<p><span class="math display">\[\widehat{\beta}_{(i)}=\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}_{(i)}'Y_{(i)}.\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Portanto, o <span class="math inline">\(i\)</span>-ésimo residual é dado por</p>
+<div class="math">
+<p><span class="math display">\[
+  \begin{aligned}
+    e_{i(i)}&amp;=Y_i-\mathbf{x}_i'\widehat{\beta}_{(i)}=Y_i-\mathbf{x}_i'\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}_{(i)}'Y_{(i)}=Y_i-\mathbf{x}_i'\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\left(\mathbf{X}'Y-\mathbf{x}_iY_i\right)\\
+    &amp;=Y_i-\mathbf{x}_i'\left[\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\right]\left(\mathbf{X}'Y-\mathbf{x}_iY_i\right)\\
+    &amp;=Y_i-\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\frac{\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\mathbf{X}'Y+\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_iY_i\\
+    &amp;\hspace{17cm}+\frac{\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i}{1-h_{ii}}Y_i\\
+    &amp;=Y_i-\widehat{Y}_i-\frac{h_{ii}\widehat{Y}_i}{1-h_{ii}}+h_{ii}Y_i+\frac{h_{ii}^2Y_i}{1-h_{ii}}
+    =\frac{Y_i-\widehat{Y}_i}{1-h_{ii}}\\
+   e_{i(i)} &amp;=\frac{e_i}{1-h_{ii}} \quad\blacksquare
+  \end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Comparando os estimadores de MQO para ambos cenários, temos que</p>
+<div class="math">
+<p><span class="math display">\[
+  \begin{aligned}
+    \widehat{\beta}-\widehat{\beta}_{(i)}&amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}_{(i)}'Y_{(i)}\\
+    &amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\left[\mathbf{X}'Y-\mathbf{x}_iY_i\right]\\
+    &amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\mathbf{X}'Y+\left(\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right)^{-1}\mathbf{x}_iY_i\\
+    &amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\left[\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\right]\mathbf{X}'Y\\
+    &amp;\hspace{13cm}+\left[\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\right]\mathbf{x}_iY_i
+  \end{aligned}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="math">
+<p><span class="math display">\[
+  \begin{aligned}
+    \widehat{\beta}-\widehat{\beta}_{(i)}&amp;=
+    \left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y-\left[\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\right]\mathbf{X}'Y\\
+    &amp;\hspace{13cm}+\left[\left(\mathbf{X}'\mathbf{X}\right)^{-1}+\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}}{1-h_{ii}}\right]\mathbf{x}_iY_i\\
+    &amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\left[Y_i+\frac{\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_iY_i}{1-h_{ii}}-\frac{\mathbf{x}_i'\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{X}'Y}{1-h_{ii}}\right]\\
+    &amp;=\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_i\left[Y_i+\frac{h_{ii}Y_i}{1-h_{ii}}-\frac{\hat{Y}_i}{1-h_{ii}}\right]\\
+    &amp;=\frac{\left(\mathbf{X}'\mathbf{X}\right)^{-1}\mathbf{x}_ie_{i}}{1-h_{ii}} \quad\blacksquare
+  \end{aligned}
+\]</span></p>
+</div>
+</section>
+<section id="medidas-de-influência" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de influência</h2>
+</section>
+<section id="distância-de-cook" class="slide level2">
+<h2>Distância de Cook</h2>
+<p>Considerando as Suposições <strong>A1-A5</strong>, temos que <span class="math inline">\(\widehat{\beta}\)</span> segue uma distribuição normal <span class="math inline">\(p\)</span>-variada com vetor de médias <span class="math inline">\(\beta\)</span> e matriz de covariâncias <span class="math inline">\(\sigma^2\left(\mathbf{X}'\mathbf{X}\right)^{-1}\)</span>. Sabemos que a forma quadrática <span class="math display">\[\frac{\left(\beta-\widehat{\beta}\right)'\left(\mathbf{X}'\mathbf{X}\right)\left(\beta-\widehat{\beta}\right)}{p\,s^2}\]</span> segue uma distribuição <span class="math inline">\(F_{p,n-p}\)</span>. Dessa forma, <span class="math display">\[\frac{\left(\beta-\widehat{\beta}\right)'\left(\mathbf{X}'\mathbf{X}\right)\left(\beta-\widehat{\beta}\right)}{p\,s^2}\le F_{p,n-p,\alpha}\]</span> define um elipsoide confiança de <span class="math inline">\(100(1-\alpha)\%\)</span> para o vetor <span class="math inline">\(\beta\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<p><span class="citation" data-cites="cook:1977">Cook (<a href="#/referências" role="doc-biblioref" onclick="">1977</a>)</span> propõe a seguinte estatística para detectar dados influentes</p>
+<div class="math">
+<p><span class="math display">\[
+\begin{aligned}
+D_i&amp;=\frac{\left(\widehat{\beta}_{(i)}-\widehat{\beta}\right)'\left(\mathbf{X}'\mathbf{X}\right)\left(\widehat{\beta}_{(i)}-\widehat{\beta}\right)}{p\,s^2}=\frac{\left(\hat{Y}_{(i)}-\hat{Y}\right)'\left(\hat{Y}_{(i)}-\hat{Y}\right)}{p\,s^2}\\
+&amp;=\frac{e_{i}^2h_{ii}}{p\, s^2(1-h_{ii})^2}=\frac{h_{ii}}{1-h_{ii}}\frac{r_i^2}{p},
+\end{aligned}\]</span></p>
+</div>
+<p>onde <span class="math inline">\(r_i\)</span> são os resíduos estudentizado internamente.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="algumas-considerações-5">Algumas considerações</h3>
+<ul>
+<li>Grandes valores de <span class="math inline">\(D_i\)</span> indicam a presença de observações influentes. Dessa forma, a estatística <span class="math inline">\(D_i\)</span> mede a mudança em <span class="math inline">\(\widehat{\beta}\)</span> quando uma observação em particular é omitida;</li>
+</ul>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="2">
+<ul>
+<li><span class="math inline">\(D_i\)</span> depende de <span class="math inline">\(h_{ii}\)</span>, daí <span class="math inline">\(D_i\)</span> se torna grande se <span class="math inline">\(h_{ii}\)</span> e/ou <span class="math inline">\(r_i^2\)</span> são grandes;</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="3">
+<ul>
+<li>Pela analogia com o elipsoide confiança, <span class="citation" data-cites="cook:1977">Cook (<a href="#/referências" role="doc-biblioref" onclick="">1977</a>)</span> sugere comparar <span class="math inline">\(D_i\)</span> com percentis da distribuição <span class="math inline">\(F_{p,n-p}\)</span>. Assim, quanto maior o percentil correspondente a <span class="math inline">\(D_i\)</span>, mais influente é a <span class="math inline">\(i\)</span>-ésima observação.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="dffits">DFFITS</h3>
+<p>Proposto por <span class="citation" data-cites="belsley:2005">Belsley et al. (<a href="#/referências" role="doc-biblioref" onclick="">2005</a>)</span>, a estatística mede a mudança em <span class="math inline">\(\hat{Y}_i\)</span> quando a <span class="math inline">\(i\)</span>-ésima observação é omitida. A estatística é dada por</p>
+<p><span class="math display">\[\mathrm{DFFITS}_i=\frac{\hat{Y}_i-\hat{Y}_{i(i)}}{s_{(i)}\sqrt{h_{ii}}}=\left(\frac{h_{ii}}{1-h_{ii}}\right)\frac{e_i}{s_{(i)}\sqrt{1-h_{ii}}},\]</span> onde <span class="math inline">\(\hat{Y}_{i(i)}\)</span> é o <span class="math inline">\(i\)</span>-ésimo elemento do vetor <span class="math inline">\(\hat{Y}\)</span>, quando a <span class="math inline">\(i\)</span>-ésima observação é omitida ao estimar <span class="math inline">\(\beta\)</span> e <span class="math inline">\(s_{(i)}^2=\frac{1}{n-p-1}\left[(n-p)s^2-\frac{e_i^2}{1-h_{ii}}\right]\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="dffits-1">DFFITS</h3>
+<ul>
+<li><p><span class="citation" data-cites="belsley:2005">Belsley et al. (<a href="#/referências" role="doc-biblioref" onclick="">2005</a>)</span> sugerem que o valor absoluto dos valores da estatística <span class="math inline">\(\mathrm{DFFITS}\)</span> maiores do que <span class="math inline">\(2\sqrt{\frac{p}{n}}\)</span> sugerem a presença de observações influentes;</p></li>
+<li><p>A sua relação com a distância de Cook é dada pela seguinte expressão <span class="math display">\[D_i=(\mathrm{DFFITS}_i)^2\left(\frac{s_{(i)}^2}{p\, s^2}\right).\]</span></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="dfbetas">DFBETAS</h3>
+<p>A distância de Cook revela o impacto da <span class="math inline">\(i\)</span>-ésima observação no vetor <span class="math inline">\(\beta\)</span>.</p>
+<p>As mudanças para o coeficientes marginais são identificadas com os <span class="math inline">\(\textrm{DFBETAS}_{j(i)}, \, j=0,1,2,\ldots,p-1\)</span>. Cada <span class="math inline">\(\textrm{DFBETAS}_{j(i)}\)</span> representa a mudança padronizada em <span class="math inline">\(\widehat{\beta}_j\)</span> quando a <span class="math inline">\(i\)</span>-ésima observação é omitida da análise. A estatística é dada por <span class="math display">\[\mathrm{DFBETAS}_{j(i)}=\frac{\widehat{\beta}_j-\widehat{\beta}_{j(i)}}{s_i\sqrt{c_{jj}}},\]</span> onde <span class="math inline">\(c_{jj}\)</span> é o <span class="math inline">\((j+1)\)</span>-ésimo elemento diagonal da matriz <span class="math inline">\(\left(\mathbf{X}'\mathbf{X}\right)^{-1}\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<h3 id="dfbetas-1">DFBETAS</h3>
+<ul>
+<li>Embora o formato pareça o de uma estatística <span class="math inline">\(t\)</span>-student, a mesma não pode ser usada para avaliar significância;</li>
+<li>Valores de <span class="math inline">\(\textrm{DFBETAS}_{j(i)}\)</span> maiores que <span class="math inline">\(2\)</span> devem indicar um maior, mas improvável, impacto de um único ponto. O ponto <span class="math inline">\(\frac{2}{\sqrt{n}}\)</span> tenderá a destacar a mesma proporção de pontos de influência nos dados. Para detalhes, veja <span class="citation" data-cites="belsley:2005">Belsley et al. (<a href="#/referências" role="doc-biblioref" onclick="">2005</a>)</span>.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="covratio">COVRATIO</h3>
+<p>O impacto da <span class="math inline">\(i\)</span>-ésima observação na matriz de covariâncias do vetor <span class="math inline">\(\beta\)</span> é medido pela razão dos determinantes das duas matrizes de covariâncias, i.e.,</p>
+<p><span class="math display">\[\mathrm{COVRATIO}=\frac{\det\left(s_{(i)}^2\left[\mathbf{X}_{(i)}'\mathbf{X}_{(i)}\right]^{-1}\right)}{\det\left(s^2\left[\mathbf{X}'\mathbf{X}\right]^{-1}\right)}=\left[\left(\frac{n-p-1}{n-p}+\frac{\left(r_i^*\right)^2}{n-p}\right)^{p-1}(1-h_{ii})\right]^{-1}.\]</span></p>
+</section>
+<section class="slide level2">
+
+<h3 id="covratio-1">COVRATIO</h3>
+<ul>
+<li><p>Valores pŕoximos de <span class="math inline">\(1\)</span> indicam que a <span class="math inline">\(i\)</span>-ésima observação tem um pequeno efeito na precisão das estimativas;</p></li>
+<li><p>Um COVRATIO maior que <span class="math inline">\(1\)</span> indica que a presença da <span class="math inline">\(i\)</span>-ésima observação aumenta a precisão das estimativas; uma proporção menor que <span class="math inline">\(1\)</span> indica que a presença da observação prejudica a precisão de as estimativas;</p></li>
+<li><p><span class="citation" data-cites="belsley:2005">Belsley et al. (<a href="#/referências" role="doc-biblioref" onclick="">2005</a>)</span> sugerem que observações com valores do <span class="math inline">\(\mathrm{COVRATIO}\)</span> fora dos limites <span class="math inline">\(1\pm3\frac{p}{n}\)</span> podem ser consideradas como influentes.</p></li>
+</ul>
+<blockquote>
+<p>As estatísticas de influência devem ser usadas como ferramentas de diagnóstico para identificar as observações com maior impacto nos resultados da regressão. Embora algumas das medidas de influência se assemelhem às estatísticas de teste, elas não devem ser interpretadas como testes de significância para observações influentes.</p>
+</blockquote>
 </section>
 <section id="referências" class="slide level2 smaller scrollable">
 <h2>Referências</h2>
@@ -400,6 +622,12 @@ Brockwell, P., e Davis, R. (2002), <em>Introduction to Time Series and Forecasti
 </div>
 <div id="ref-brown:1975" class="csl-entry" role="listitem">
 Brown, R. L., Durbin, J., e Evans, J. M. (1975), <span>“Techniques for Testing the Constancy of Regression Relationships over Time”</span>, <em>Journal of the Royal Statistical Society. Series B (Methodological)</em>, 37, 149–192.
+</div>
+<div id="ref-cook:1977" class="csl-entry" role="listitem">
+Cook, R. D. (1977), <span>“Detection of influential observation in linear regression”</span>, <em>Technometrics</em>, 19, 15–18.
+</div>
+<div id="ref-cook:weisberg:1982" class="csl-entry" role="listitem">
+Cook, R. D., e Weisberg, S. (1982), <em>Residual and influence in regression</em>, New York: Chapman; Hall.
 </div>
 <div id="ref-fuller:1996" class="csl-entry" role="listitem">
 Fuller, W. A. (1996), <em>Introduction to statistical time series</em>, John Wiley &amp; Sons.
