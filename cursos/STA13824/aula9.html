@@ -291,8 +291,8 @@ LECON/DEST - UFES
 </style>
 </div>
 </section>
-<section id="gráfico-de-resíduos-vs-valores-ajustados---i" class="slide level2">
-<h2>Gráfico de <em>Resíduos</em> vs <em>Valores ajustados</em> - I</h2>
+<section id="gráfico-de-resíduos-vs-valores-ajustados" class="slide level2">
+<h2>Gráfico de <em>Resíduos</em> vs <em>Valores ajustados</em></h2>
 <p>O gráfico dos resíduos contra os valores ajustados permite identificar alguns padrões úteis que podem ser indicativos de violação de alguma suposição do modelo.</p>
 <p>Uma dispersão aleatória dos pontos acima e abaixo a linha <span class="math inline">\(\mathbb{E}[e] = 0\)</span> com quase todos os pontos de dados dentro da banda definida a <span class="math inline">\(\pm2\)</span> dois desvios padrão ( <span class="math inline">\(\pm2s\)</span> ) é esperado se as suposições forem satisfeitas.</p>
 <p><br></p>
@@ -337,14 +337,72 @@ LECON/DEST - UFES
 <h3 id="outros-padrões-2">Outros padrões</h3>
 
 <img data-src="images/resid_plots.gif" class="quarto-figure quarto-figure-center r-stretch" width="2500"></section>
+<section class="slide level2">
+
+<h3 id="gráfico-de-resíduos-vs-covariáveis">Gráfico de <em>Resíduos</em> vs <em>Covariáveis</em></h3>
+<p>Os gráficos dos resíduos contra as covariáveis têm interpretações semelhantes aos gráficos contra <span class="math inline">\(\hat{Y}\)</span>.</p>
+<p><br></p>
+<ul>
+<li>Alguns padrões nos gráficos como por exemplo a diferenças na magnitude da dispersão cerca de zero que sugere variações heterogêneas ou a ausência de um termo polinomial de alto grau nas covariáveis resulta evidente nesse tipo de gráficos;</li>
+</ul>
+<blockquote>
+<p>No entanto, inadequações no modelo associadas a uma covariável, como um termo polinomial de alto grau ausente, podem ser “<em>camufladas</em>” pelos efeitos e distribuição de outras covariáveis.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Pontos de <em>alavancagem</em> e dados atípicos (<em>outliers</em>) podem ser revelados nos gráficos. Observações que aparecem isoladas ou pontos nos extremos da escala <span class="math inline">\(X_i\)</span> são potencialmente <em>influentes</em> por causa de seus valores extremos para essa covariável em particular.</p></li>
+<li><p>De acordo com as suposições do modelo de regressão, os resíduos são não-correlacionados com cada uma das covariáveis, isso significa que não deve existir um padrão definido no gráfico. O mesmo deve ser caracterizado por uma dispersão aleatória de pontos.</p></li>
+</ul>
+<blockquote>
+<p>Qualquer padrão discernível neste gráfico pode indicar violação de algumas suposições.</p>
+</blockquote>
+</section>
+<section class="slide level2">
+
+<h4 id="padrão-de-não-linearidade">Padrão de não-linearidade</h4>
+<p>Se a suposição de linearidade não é satisfeita, pode-se observar o padrão a seguir. Neste caso uma <em>transformação</em> no vetor <span class="math inline">\(Y\)</span> e/ou nas covariáveis pode ser necessária para atingir a <ins>linearidade</ins>.</p>
+
+<img data-src="images/res4a.png" class="quarto-figure quarto-figure-center r-stretch" width="2500"></section>
+<section class="slide level2">
+
+<h4 id="padrão-de-não-esfericidade">Padrão de não-esfericidade</h4>
+<p>Um gráfico com esse padrão pode indicar a presença de <em>heterogeneidade</em> na variância. Neste caso, uma <em>transformação</em> dos dados pode ser útil para “<em>estabilizar</em>” a variância.</p>
+
+<img data-src="images/res5a.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<section class="slide level2">
+
+<h3 id="gráfico-de-resíduos-vs-tempo">Gráfico de <em>Resíduos</em> vs <em>tempo</em></h3>
+<p>Esse tipo de gráfico pode ser útil para sugerir a violação da suposição de independência dos erros. Os resíduos indexados no tempo podem evidenciar correlação serial, ou seja, o resíduo em um ponto no tempo apresenta um grau de dependência com os resíduos anteriores.</p>
+<blockquote>
+<p>Dados clássicos de séries temporais, como os dados gerados pelo monitoramento contínuo de algum processo, são prontamente reconhecidos como tais e espera-se que tenham resíduos correlacionados. Modelos e análises de séries temporais levam em consideração essas correlações seriais e devem ser usados em tais casos.</p>
+</blockquote>
+<p><br><br></p>
+<hr>
+<p>Para detalhes, ver, e.g., <span class="citation" data-cites="fuller:1996">Fuller (<a href="#/referências" role="doc-biblioref" onclick="">1996</a>)</span>, <span class="citation" data-cites="brockwell:davis:2002">Brockwell e Davis (<a href="#/referências" role="doc-biblioref" onclick="">2002</a>)</span>.</p>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/res6.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<section id="pontos-influentes-e-de-alavancagem" class="slide level2 center" data-background-color="#172a46">
+<h2>Pontos influentes e de alavancagem</h2>
+</section>
 <section id="referências" class="slide level2 smaller scrollable">
 <h2>Referências</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-belsley:2005" class="csl-entry" role="listitem">
 Belsley, D. A., Kuh, E., e Welsch, R. E. (2005), <em>Regression Diagnostics: Identifying Influential Data and Sources of Collinearity</em>, Wiley Series em Probability e Statistics, Wiley.
 </div>
+<div id="ref-brockwell:davis:2002" class="csl-entry" role="listitem">
+Brockwell, P., e Davis, R. (2002), <em>Introduction to Time Series and Forecasting</em>, Springer Verlag.
+</div>
 <div id="ref-brown:1975" class="csl-entry" role="listitem">
 Brown, R. L., Durbin, J., e Evans, J. M. (1975), <span>“Techniques for Testing the Constancy of Regression Relationships over Time”</span>, <em>Journal of the Royal Statistical Society. Series B (Methodological)</em>, 37, 149–192.
+</div>
+<div id="ref-fuller:1996" class="csl-entry" role="listitem">
+Fuller, W. A. (1996), <em>Introduction to statistical time series</em>, John Wiley &amp; Sons.
 </div>
 <div id="ref-rao:1999" class="csl-entry" role="listitem">
 Rao, C. R., e Toutenburg, H. (1999), <em>Linear Models: Least Squares and Alternatives</em>, Springer Series em Statistics, Springer New York.
