@@ -6,9 +6,8 @@
 <script src="intro_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="intro_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="intro_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="intro_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="intro_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+<link href="intro_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="LECON/DEST - UFES">
   <title>STA13828 - Análise de Séries Temporais I</title>
@@ -30,211 +29,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="intro_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="intro_files/libs/revealjs/dist/theme/quarto-bbd3fe9ba78fe19100bb54757e835c1d.css">
   <link href="intro_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="intro_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="intro_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
   <link href="intro_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="intro_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="intro_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-
-  .callout {
-    margin-top: 1em;
-    margin-bottom: 1em;  
-    border-radius: .25rem;
-  }
-
-  .callout.callout-style-simple { 
-    padding: 0em 0.5em;
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-    display: flex;
-  }
-
-  .callout.callout-style-default {
-    border-left: solid #acacac .3rem;
-    border-right: solid 1px silver;
-    border-top: solid 1px silver;
-    border-bottom: solid 1px silver;
-  }
-
-  .callout .callout-body-container {
-    flex-grow: 1;
-  }
-
-  .callout.callout-style-simple .callout-body {
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-style-default .callout-body {
-    font-size: 0.9rem;
-    font-weight: 400;
-  }
-
-  .callout.callout-titled.callout-style-simple .callout-body {
-    margin-top: 0.2em;
-  }
-
-  .callout:not(.callout-titled) .callout-body {
-      display: flex;
-  }
-
-  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
-    padding-left: 1.6em;
-  }
-
-  .callout.callout-titled .callout-header {
-    padding-top: 0.2em;
-    margin-bottom: -0.2em;
-  }
-
-  .callout.callout-titled .callout-title  p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
-    
-  .callout.callout-titled.callout-style-simple .callout-content  p {
-    margin-top: 0;
-  }
-
-  .callout.callout-titled.callout-style-default .callout-content  p {
-    margin-top: 0.7em;
-  }
-
-  .callout.callout-style-simple div.callout-title {
-    border-bottom: none;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: 75%;
-  }
-
-  .callout.callout-style-default  div.callout-title {
-    border-bottom: none;
-    font-weight: 600;
-    opacity: 85%;
-    font-size: 0.9rem;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-default div.callout-content {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-
-  .callout.callout-style-simple .callout-icon::before {
-    height: 1rem;
-    width: 1rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 1rem 1rem;
-  }
-
-  .callout.callout-style-default .callout-icon::before {
-    height: 0.9rem;
-    width: 0.9rem;
-    display: inline-block;
-    content: "";
-    background-repeat: no-repeat;
-    background-size: 0.9rem 0.9rem;
-  }
-
-  .callout-title {
-    display: flex
-  }
-    
-  .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  .callout.no-icon::before {
-    display: none !important;
-  }
-
-  .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
-  }
-
-  .callout.callout-titled .callout-icon::before {
-    margin-top: .5rem;
-    padding-right: .5rem;
-  }
-
-  .callout:not(.callout-titled) .callout-icon::before {
-    margin-top: 1rem;
-    padding-right: .5rem;
-  }
-
-  /* Callout Types */
-
-  div.callout-note {
-    border-left-color: #4582ec !important;
-  }
-
-  div.callout-note .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
-  }
-
-  div.callout-note.callout-style-default .callout-title {
-    background-color: #dae6fb
-  }
-
-  div.callout-important {
-    border-left-color: #d9534f !important;
-  }
-
-  div.callout-important .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-important.callout-style-default .callout-title {
-    background-color: #f7dddc
-  }
-
-  div.callout-warning {
-    border-left-color: #f0ad4e !important;
-  }
-
-  div.callout-warning .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-warning.callout-style-default .callout-title {
-    background-color: #fcefdc
-  }
-
-  div.callout-tip {
-    border-left-color: #02b875 !important;
-  }
-
-  div.callout-tip .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
-  }
-
-  div.callout-tip.callout-style-default .callout-title {
-    background-color: #ccf1e3
-  }
-
-  div.callout-caution {
-    border-left-color: #fd7e14 !important;
-  }
-
-  div.callout-caution .callout-icon::before {
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
-  }
-
-  div.callout-caution.callout-style-default .callout-title {
-    background-color: #ffe5d0
-  }
-
-  </style>
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -337,7 +138,7 @@
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 21 março, 2025
+            Última atualização: 09 setembro, 2025
           </p>
     </div>
 </div>
@@ -349,7 +150,7 @@ LECON/DEST - UFES
 <li><p><strong>Site:</strong> <a href="https://ffajardo64.github.io/statistical_learning/series_temporais.html">Introdução à Análise de Séries Temporais</a></p></li>
 <li><p><strong>Email:</strong> fabio.molinares@ufes.br (Fabio A. Fajardo Molinares)</p></li>
 <li><p><strong>Horário:</strong> Qua / Sex 09:00 - 11:00h</p></li>
-<li><p><strong>Local:</strong> Sala 5 prédio didático (quartas) / LCEx (sextas)</p></li>
+<li><p><strong>Local:</strong> Sala XX prédio IC I (quartas) / LCEx (sextas)</p></li>
 </ul>
 <p><br></p>
 <ul>
@@ -376,9 +177,9 @@ LECON/DEST - UFES
 <h2>Programa da disciplina</h2>
 <div class="fragment semi-fade-out" data-fragment-index="2">
 <ol type="1">
-<li><p><strong>Introdução</strong>;</p></li>
-<li><p><strong>Processos Estacionários</strong>: 2.1. Função de autocovariância e autocorrelação; 2.2. Processo de ruido branco; 2.3. Processos autorregressivos AR(p); 2.4. Processos de médias móveis MA(q); 2.5. Relação dual entre os processos AR(p) e MA(q);</p></li>
+<li><strong>Introdução</strong>;</li>
 </ol>
+<p><span style="text-align: justify"> 2. <strong>Processos Estacionários</strong>: 2.1. Função de autocovariância e autocorrelação; 2.2. Processo de ruido branco; 2.3. Processos autorregressivos AR(p); 2.4. Processos de médias móveis MA(q); 2.5. Relação dual entre os processos AR(p) e MA(q); </span></p>
 </div>
 <div class="fragment fade-in" data-fragment-index="2">
 <ol start="3" type="1">
@@ -390,28 +191,22 @@ LECON/DEST - UFES
 <section id="programa-da-disciplina-1" class="slide level2">
 <h2>Programa da disciplina</h2>
 <div class="fragment semi-fade-out" data-fragment-index="2">
-<ol start="5" type="1">
-<li><strong>Processos não-estacionários</strong>: 5.1. Não-estacionariedade na média e na variância; 5.2. Transformações para estabilização da variância; 5.3. Procedimento de identificação de modelos ARIMA(p,d,q); 5.4. Função de autocorrelação estendida e outros procedimentos de identificação; 5.5. Estimação de modelos ARIMA(p,d,q) e testes de adequação do modelo; 5.6. Aplicações;</li>
-</ol>
+<p><span style="text-align: justify"> 5. <strong>Processos não-estacionários</strong>: 5.1. Não-estacionariedade na média e na variância; 5.2. Transformações para estabilização da variância; 5.3. Procedimento de identificação de modelos ARIMA(p,d,q); 5.4. Função de autocorrelação estendida e outros procedimentos de identificação; 5.5. Estimação de modelos ARIMA(p,d,q) e testes de adequação do modelo; 5.6. Aplicações; </span></p>
 </div>
 <div class="fragment fade-in" data-fragment-index="2">
 <ol start="6" type="1">
-<li><strong>Processos sazonais</strong>: 6.1. Introdução; 6.2. Sazonalidade determinística: Identificação, estimação e verificação; 6.3. Sazonalidade estocástica: Identificação, estimação e verificação; 6.4. Aplicações em pacotes estatísticos: R, SPSS, Minitab, etc;</li>
+<li><p><strong>Processos sazonais</strong>: 6.1. Introdução; 6.2. Sazonalidade determinística: Identificação, estimação e verificação; 6.3. Sazonalidade estocástica: Identificação, estimação e verificação; 6.4. Aplicações em pacotes estatísticos: R, SPSS, Minitab, etc;</p></li>
+<li><p><strong>Testes de raiz unitária</strong>: 7.1. Introdução; 7.2. Teste de Dickey-Fuller e extensões; 7.3. Outros testes de raiz unitária;</p></li>
 </ol>
 </div>
 </section>
 <section id="programa-da-disciplina-2" class="slide level2">
 <h2>Programa da disciplina</h2>
 <div class="fragment semi-fade-out" data-fragment-index="2">
-<ol start="7" type="1">
-<li><strong>Testes de raiz unitária</strong>: 7.1. Introdução; 7.2. Teste de Dickey-Fuller e extensões; 7.3. Outros testes de raiz unitária;</li>
-</ol>
+<p><span style="text-align: justify"> 8. <strong>Análise de intervenção e identificação de dados atípicos</strong>: 8.1. Introdução; 8.2. Efeitos da intervenção; 8.3. Estimação e e testes; 8.4. Valores atípicos e modelos para valores atípicos; 8.5. Estimação do efeito de observações atípicas; 8.6. Detecção de observações atípicas; 8.7. Aplicações. </span></p>
 </div>
 <div class="fragment fade-in" data-fragment-index="2">
-<ol start="8" type="1">
-<li><strong>Análise de intervenção e identificação de dados atípicos</strong>: 8.1. Introdução; 8.2. Efeitos da intervenção; 8.3. Estimação e e testes; 8.4. Valores atípicos e modelos para valores atípicos; 8.5. Estimação do efeito de observações atípicas; 8.6. Detecção de observações atípicas; 8.7. Aplicações.
-</li>
-</ol>
+<p><span style="text-align: justify"> 9. <strong>Inteligência artificial aplicada em séries temporais</strong>: 9.1 Deep Learning para Séries temporais; 9.2 Diferentes Estruturas de Deep Learning para Séries Temporais; 9.3 Aplicação de Deep Learning para Séries Temporais. </span></p>
 </div>
 </section>
 <section id="algumas-referências-bibliográficas" class="slide level2">
@@ -437,47 +232,65 @@ LECON/DEST - UFES
 </section>
 <section id="processo-ensino-aprendizagem" class="slide level2">
 <h2>Processo ensino-aprendizagem</h2>
-<p>O processo ensino-aprendizagem será baseado em aulas expositivas nas quartas e sextas das 09:00 às 11:00h na sala 5 do prédio didático (Anexo ao IC-I). As aulas computacionais serão realizadas serão realizadas no LCex.</p>
+<p>O processo ensino-aprendizagem será baseado em aulas expositivas nas quartas e sextas das 09:00 às 11:00h na sala XX do prédio IC-I. As aulas computacionais serão realizadas serão realizadas no LCex.</p>
 <p><br></p>
-<blockquote>
-<p><strong>Frequência:</strong> Será computada durante as aulas. Solicita-se informar a sua participação na aula. Importante não esquecer de informar a presença, pois independente da pontuação na média final, o aluno que não tiver frequência igual ou superior a 75% será reprovado por faltas.</p>
-</blockquote>
+<p>O material da disciplina estará disponível para consulta online no link <a href="https://ffajardo64.github.io/statistical_learning/series_temporais.html">Introdução à Análise de Séries Temporais</a>. Sugere-se consultar o material antes da discussão dos assuntos em sala.</p>
+<p><br></p>
+<p>A parte computacional será executada preferencialmente nas linguagens <strong>R</strong> e <strong>Python</strong>. Nada impede de usar outras linguagens de programação da sua preferência, e.g., <strong>Julia</strong>, ou softwares econométricos, e.g., RATS, Eviews, Gauss, Oxmetrics, SAS, entre outros.</p>
 </section>
-<section id="atividades-computacionais" class="slide level2">
-<h2>Atividades computacionais</h2>
-<p>A parte computacional será executada preferencialmente na linguagem <strong>R</strong>. Nada impede de usar outras linguagens de programação da sua preferência, e.g., <strong>Python</strong> ou <strong>Julia</strong>.</p>
-<ul>
-<li>No caso do <strong>R</strong>, existe uma basta quantidade de pacotes especializados na Análise de Séries Temporais. Sugere-se dar uma olhada no <tt><a href="https://cran.r-project.org/web/views/TimeSeries.html">CRAN Task View: Time Series</a> Analysis</tt>.</li>
-</ul>
+<section class="slide level2">
+
+<p>No caso do <strong>R</strong>, existe uma basta quantidade de pacotes especializados na Análise de Séries Temporais. Sugere-se dar uma olhada no <tt><a href="https://cran.r-project.org/web/views/TimeSeries.html">CRAN Task View: Time Series</a> Analysis</tt>.</p>
 <blockquote>
 <p>Quem tiver interesse na instalação de todos os pacotes relacionados da área, basta instalar o pacote <tt><a href="https://cran.r-project.org/web/packages/ctv/index.html">ctv</a></tt> e usar o comando <b><tt>ctv::install.views(“TimeSeries”, coreOnly = TRUE)</tt></b> na linha de comando.</p>
 </blockquote>
-</section>
-<section id="atividades-computacionais-1" class="slide level2">
-<h2>Atividades computacionais</h2>
+<p>Ainda, recomenda-se a instalação dos pacotes <tt><a href="https://pkg.yangzhuoranyang.com/tsdl/">tsdl</a></tt> (<em>Time Series Data Library</em>) e <tt><a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">datasets</a></tt>. Esses pacotes proporcionam uma grande quantidade de conjuntos de dados para treinar as metodologías discutadas em sala de aula.</p>
 <ul>
-<li><p>Ainda, recomenda-se a instalação dos pacotes <tt><a href="https://pkg.yangzhuoranyang.com/tsdl/">tsdl</a></tt> (<em>Time Series Data Library</em>) e <tt><a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">datasets</a></tt>. Esses pacotes proporcionam uma grande quantidade de conjuntos de dados para treinar as metodologías discutadas em sala de aula.</p></li>
-<li><p>Algumas referências online:</p>
+<li>Algumas referências online:
 <ul>
-<li><a href="http://leg.ufpr.br/~lucambio/CE017/20192S/tsar.pdf">Time Series Analysis with R</a></li>
-<li><a href="https://github.com/PacktPublishing/Hands-On-Time-Series-Analysis-with-R">Hands On Time Series Analysis with R</a></li>
-<li><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#">Using R for Time Series Analysis</a></li>
-<li><a href="https://rc2e.com/timeseriesanalysis">R Cookbook</a></li>
+<li><a href="http://leg.ufpr.br/~lucambio/CE017/20192S/tsar.pdf">Time Series Analysis with R</a>;</li>
+<li><a href="https://github.com/PacktPublishing/Hands-On-Time-Series-Analysis-with-R">Hands On Time Series Analysis with R</a>;</li>
+<li><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#">Using R for Time Series Analysis</a>;</li>
+<li><a href="https://rc2e.com/timeseriesanalysis">R Cookbook</a>.</li>
 </ul></li>
 </ul>
+</section>
+<section id="frequência" class="slide level2 center" data-background-color="#172a46">
+<h2>Frequência</h2>
+</section>
+<section id="frequência-em-sala-de-aula" class="slide level2">
+<h2>Frequência em sala de aula</h2>
+<p>A Lei de Diretrizes e Bases da Educação Nacional (LDB) estabelece que a frequência mínima para aprovação no ensino superior é de <span class="math inline">\(75\%\)</span> do total de horas letivas. Diferente do que ocorre em outros níveis de ensino, o ensino superior <strong>não prevê o abono de faltas</strong>, mesmo em casos de consultas médicas ou outros motivos de ausência, pois estas faltas já estão contempladas nos <span class="math inline">\(25\%\)</span> restantes permitidos.</p>
+<p><br></p>
+<p>Dessa forma, solicita-se informar a sua participação na aula. Importante não esquecer de informar a presença, pois independente da pontuação na média final, <ins>o aluno que não tiver frequência igual ou superior a 75% será reprovado por faltas</ins>.</p>
+</section>
+<section id="lista-de-chamada" class="slide level2">
+<h2>Lista de chamada</h2>
+<p>Conforme as normas acadêmicas e regulamentações institucionais, a lista de presença é um documento oficial da Universidade, devendo ser preenchida de forma fidedigna pelo próprio estudante presente.</p>
+<p><br></p>
+<p>Por se tratar de documento público, assinar no lugar de outra pessoa configura alteração da verdade sobre fato juridicamente relevante (presença em sala de aula), conduta que, salvo melhor juízo, caracteriza crime de falsidade ideológica (Art. 299 do Código Penal). Caso o aluno ausente aceite ou se beneficie da assinatura falsa, poderá também incorrer em uso de documento falso (Art. 304 do Código Penal).</p>
+<p><br></p>
+<p>Além disso, conforme o regimento interno e/ou o código de conduta da Ufes, tal ato configura infração disciplinar tanto para quem realizou a assinatura quanto para quem consentiu (se comprovado), sujeitando os envolvidos a penalidades como advertência, suspensão e, em casos extremos, desligamento.</p>
 </section>
 <section id="atividades-avaliativas" class="slide level2 center" data-background-color="#172a46">
 <h2>Atividades avaliativas</h2>
 </section>
 <section id="atividades-avaliativas-1" class="slide level2">
 <h2>Atividades avaliativas</h2>
-<p>As atividades avaliativas consistirão em duas provas escritas <span class="math inline">\((P_i, i=1, 2)\)</span> e uma prova prática <span class="math inline">\((P_3)\)</span>. Nas provas <span class="math inline">\(P_1\)</span> e <span class="math inline">\(P_2\)</span> serão julgados os conhecimentos teóricos e práticos da disciplina e a prova <span class="math inline">\(P_3\)</span> consistirá em um trabalho prático. Dessa forma, a média final <span class="math inline">\((MF)\)</span> das provas será calcula da seguinte forma: <span class="math display">\[MF=0.3\times(P_1+P_2) + 0.4\times P_3.\]</span></p>
+<p>As atividades avaliativas consistirão em duas provas escritas <span class="math inline">\((P_i, i=1, 2, 3)\)</span>. Nas provas serão julgados os conhecimentos teóricos e práticos da disciplina. Dessa forma, a média parcial <span class="math inline">\((MP)\)</span> das provas será calculada da seguinte forma: <span class="math display">\[MF=0.3\times(P_1+P_2) + 0.4\times P_3.\]</span></p>
 <p>Alunos que não obtiverem nota final igual ou superior a <span class="math inline">\(7.0\)</span> (sete) ao final do período letivo ficarão de prova final. No que se refere a requerimentos matemáticos, o aluno deve ser familiar com cálculo diferencial e integral, geometria analítica e álgebra linear. Enquanto a conhecimentos estatísticos, eu assumirei que o aluno possui conhecimentos de <strong>probabilidade</strong> e <strong>inferência estatística</strong>, <strong>processos estocásticos</strong>, <strong>análise de regressão</strong>, <strong>estatística multivariada</strong> e <strong>estatística computacional</strong>.</p>
-</section>
-<section id="sobre-a-prova-prática" class="slide level2">
-<h2>Sobre a prova prática</h2>
-<p>A prova prática deve ser entregue em formato de <em>trabalho científico</em>. O documento deve conter um título, um resumo do trabalho, uma introdução ao problema em estudo, uma motivação para as técnicas utilizadas, os resultados e as conclusões do trabalho. Sugere-se o uso do pacote <strong><a href="https://bookdown.org/yihui/rmarkdown/journals.html">rticles</a></strong> para o uso do <tt>Rmarkdown</tt> ou do estilo <strong><a href="https://ctan.org/pkg/amsart?lang=en">amsart</a></strong> do <span class="math inline">\(\LaTeX\)</span>.</p>
-<p>No que se refere à redação do trabalho, recomenda-se que ele esteja bem escrito e que seus textos estejam gramaticalmente corretos. Evite também cometer erros de ortografia, mantenha sempre do lado seu dicionário de confiança.</p>
+<!-- ## Sobre a prova prática -->
+<!-- A prova prática deve ser entregue em formato de *trabalho científico*. -->
+<!-- O documento deve conter um título, um resumo do trabalho, uma introdução ao  -->
+<!-- problema em estudo, uma motivação para as técnicas utilizadas, os resultados e -->
+<!-- as conclusões do trabalho. Sugere-se o uso do pacote -->
+<!-- **[rticles](https://bookdown.org/yihui/rmarkdown/journals.html)** para -->
+<!-- o uso do <tt>Rmarkdown</tt> ou do estilo  -->
+<!-- **[amsart](https://ctan.org/pkg/amsart?lang=en)** do $\LaTeX$. -->
+<!-- No que se refere à redação do trabalho, recomenda-se que ele esteja -->
+<!-- bem escrito e que seus textos estejam gramaticalmente corretos. Evite  -->
+<!-- também cometer erros de ortografia, mantenha sempre do lado seu dicionário  -->
+<!-- de confiança. -->
 </section>
 <section id="datas-importantes" class="slide level2 center" data-background-color="#172a46">
 <h2>Datas Importantes</h2>
@@ -485,35 +298,82 @@ LECON/DEST - UFES
 <section id="datas-importantes-1" class="slide level2">
 <h2>Datas importantes</h2>
 <ul>
-<li><p><strong>Início das aulas:</strong> Quarta-feira 16 de agosto de 2023</p></li>
-<li><p><strong>Prova 1:</strong> Quarta-feira 04 de outubro de 2023</p></li>
-<li><p><strong>Prova 2:</strong> <s>Sexta-feira 27 de outubro de 2023</s> (Adiada pelo dia do servidor)</p></li>
-<li><p><strong>Mostra de profissões</strong>: 14 a 20 de outubro de 2023</p></li>
-<li><p><strong>Prova 3:</strong> Quarta-feira 29 de novembro de 2023</p></li>
-<li><p><strong>Encerramento das aulas:</strong> Sexta-feira 15 de dezembro de 2023</p></li>
-<li><p><strong>Prova Final:</strong> Quarta-feira 20 de dezembro de 2023</p></li>
+<li><p><strong>Início das aulas:</strong> Quarta-feira 24 de setembro de 2025</p></li>
+<li><p><strong>Prova 1:</strong> Sexta-feira 07 de novembro de 2025</p></li>
+<li><p><strong>Prova 2:</strong> Sexta-feira 12 de dezembro de 2025</p></li>
+<li><p><strong>Mostra de profissões</strong>: 06 a 10 de outubro de 2025</p></li>
+<li><p><strong>Recesso acadêmico</strong>: 22 de dezembro a 20 de janeiro de 2026</p></li>
+<li><p><strong>Prova 3:</strong> Sexta-feira 20 de fevereiro de 2026</p></li>
+<li><p><strong>Encerramento das aulas:</strong> Sexta-feira 24 de fevereiro de 2026</p></li>
+<li><p><strong>Prova Final:</strong> Quarta-feira 25 de fevereiro de 2026<sup>*</sup></p></li>
 </ul>
+<p><br></p>
+<hr>
+
+<p><font size="5"><sup>*</sup>Alunos com média parcial <strong>inferior</strong> a <span class="math inline">\(7.0\)</span> (sete ponto zero), ao final do período letivo terão opção de apresentar uma prova final no formato escrito. Na prova final será avaliado o <strong>conteúdo completo</strong> da disciplina.</font></p>
+</section>
+<section id="datas-para-2a-chamada-de-provas" class="slide level2">
+<h2>Datas para 2<sup>a</sup> chamada de provas</h2>
+<ul>
+<li><strong>Prova 1:</strong> Quarta-feira 10 de dezembro de 2025</li>
+<li><strong>Prova 2:</strong> Quarta-feira 21 de janeiro de 2026</li>
+<li><strong>Prova 3:</strong> Quarta-feira 25 de fevereiro de 2026</li>
+<li><strong>Prova Final:</strong> Sexta-feira 27 de fevereiro de 2026</li>
+</ul>
+<p><br></p>
+<p>A aplicação de provas agendadas para 2<sup>a</sup> chamada deverá seguir o estabelecido no Art. 14 da <a href="https://daocs.ufes.br/sites/daocs.ufes.br/files/field/anexo/resolucao_no_33.2023_-_exercicios_domiciliares_p_alunos.pdf">Resolução N°33 de 2023 do CEPE/UFES</a>. Dessa forma:</p>
+<ul>
+<li>Para fazer jus à segunda chamada, o(a) estudante deverá solicitá-la à secretaria do colegiado do curso ou equivalente, mediante abertura de documento avulso a ser protocolado no Sistema de Protocolo Web, tendo o(a)estudante requerente como interessado.</li>
+</ul>
+</section>
+<section id="datas-para-2a-chamada-de-provas-1" class="slide level2">
+<h2>Datas para 2a chamada de provas</h2>
+<ul>
+<li>As ausências às aulas por motivo de doença por períodos até 8 (oito) dias deverão ser enquadradas no limite de faltas permitidas, de acordo com a legislação vigente, devendo o(a) estudante <strong>protocolar</strong>, no prazo de 5 (cinco) dias contados da data final do afastamento constante no atestado, pedido de segunda chamada caso atividades avaliativas tenham sido realizadas no período de afastamento.</li>
+</ul>
+<p><br></p>
+<ul>
+<li><strong>O atestado médico deverá conter período do afastamento, Classificação Internacional das Doenças – CID, identificação e número do registro do médico no Conselho Regional de Medicina - CRM.</strong></li>
+</ul>
+<blockquote>
+<p>Para orientações adicionais, sugere-se entrar em contato com seu colegiado de curso.</p>
+</blockquote>
+</section>
+<section id="comportamento-em-sala-de-aula" class="slide level2 center" data-background-color="#172a46">
+<h2>Comportamento em sala de aula</h2>
+</section>
+<section id="etiqueta" class="slide level2">
+<h2>Etiqueta</h2>
+<p>É importante manter um comportamento adequado na sala e/ou laboratório durante as aulas. Dessa forma, do meu ponto de vista, são considerados comportamentos <strong>rudes</strong>:</p>
+<ul>
+<li><p>Deixar o celular ligado durante a aula, atender ou fazer ligações, mesmo ao sair da sala, ou mantê-lo no modo silencioso e sair para atender;</p></li>
+<li><p>Conversar durante a aula ou realizar qualquer atividade não relacionada ao conteúdo ensinado, além de demonstrar desinteresse ou falta de concentração;</p></li>
+<li><p>Aguardar sempre o momento de falar e escutar atentamente o que é dito por outras pessoas;</p></li>
+<li><p>Evitar discussões sobre temas não relacionados ao conteúdo educacional durante as aulas;</p></li>
+<li><p>Chegar atrasado, sair da sala durante a aula ou antes do término da mesma;</p></li>
+<li><p>Faltar às aulas sem um motivo justificado.</p></li>
+</ul>
+</section>
+<section id="respeito-honestidade-e-dedicação." class="slide level2 center">
+<h2>Respeito, Honestidade e Dedicação.</h2>
+<p><span style="color:grey"><font size="6"><q>No que diz respeito ao empenho, ao compromisso, ao esforço, à dedicação, não existe meio termo. Ou você faz uma coisa bem feita ou não faz</q> – Ayrton Senna da Silva (1960 — 1994).</font></span></p>
 </section>
 <section id="política-de-proteção-aos-direitos-autorais" class="slide level2">
 <h2>Política de proteção aos direitos autorais</h2>
 <blockquote>
 <p><span style="color:grey"><font size="6">O conteúdo disponível consiste em material protegido pela legislação brasileira, sendo certo que, por ser o detentor dos direitos sobre o conteúdo disponível na plataforma, o <strong>LECON</strong> e o <strong>NEAEST</strong> detém direito exclusivo de usar, fruir e dispor de sua obra, conforme Artigo 5<sup>o</sup>, inciso XXVII, da Constituição Federal e os Artigos 7<sup>o</sup> e 28<sup>o</sup>, da Lei 9.610/98. A divulgação e/ou veiculação do conteúdo em sites diferentes à plataforma e sem a devida autorização do <strong>LECON</strong> e o <strong>NEAEST</strong>, pode configurar violação de direito autoral, nos termos da Lei 9.610/98, inclusive podendo caracterizar conduta criminosa, conforme Artigo 184<sup>o</sup>, §1<sup>o</sup> a 3<sup>o</sup>, do Código Penal. É considerada como contrafação a reprodução não autorizada, integral ou parcial, de todo e qualquer conteúdo disponível na plataforma.</font></span></p>
 </blockquote>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/logo_neaest_lecon.png" class="quarto-figure quarto-figure-center" width="1800"></p>
-</figure>
-</div>
-<p><span style="color:grey"><font size="4">Material elaborado pela equipe LECON/NEAEST: Alessandro J. Q. Sarnaglia, Bartolomeu Zamprogno, Fabio A. Fajardo, Luciana G. de Godoi e Nátaly A. Jiménez.</font></span></p>
-<div class="quarto-auto-generated-content">
+
+<img data-src="images/logo_neaest_lecon.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"><p><span style="color:grey"><font size="4">Material elaborado pela equipe LECON/NEAEST: Alessandro J. Q. Sarnaglia, Bartolomeu Zamprogno, Fabio A. Fajardo, Luciana G. de Godoi e Nátaly A. Jiménez.</font></span></p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/Lecon_logo2024_transparente.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
-</div>
-</section>
-    </div>
-  </div>
+</div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
   <script src="intro_files/libs/revealjs/dist/reveal.js"></script>
@@ -543,7 +403,8 @@ LECON/DEST - UFES
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
 'smaller': false,
  
@@ -698,7 +559,7 @@ LECON/DEST - UFES
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -841,8 +702,6 @@ LECON/DEST - UFES
       });
       clipboard.on('success', onCopySuccess);
       if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
         const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
           text: getTextToCopy,
           container: window.document.getElementById('quarto-embedded-source-code-modal')
