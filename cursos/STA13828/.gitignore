@@ -971,6 +971,7 @@ FodyWeavers.xsd
 # Drawio
 *.drawio
 *.drawio.bkp
+*.xcf
 
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
