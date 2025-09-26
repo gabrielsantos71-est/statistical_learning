@@ -203,7 +203,7 @@
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 24 setembro, 2025
+            Última atualização: 25 setembro, 2025
           </p>
     </div>
 </div>
@@ -411,12 +411,28 @@ Uma amostra deve refletir a diversidade da população.
 </style>
 </div>
 </section>
+<section id="medidas-resumo-1" class="slide level2">
+<h2>Medidas resumo</h2>
+<ul>
+<li><p><strong>Medidas de posição</strong>: As medidas de posição são ferramentas essenciais para a análise de dados. Elas nos permitem identificar o valor típico ou central de um conjunto de observações, mostrando onde a maior parte dos dados se concentra. Existem várias medidas, e.g., a média aritmética, a mediana, a moda, a média ponderada, a média geomética, a média harmônica, a média quadrática, cúbica e biquadrática, entre outras;</p></li>
+<li><p><strong>Medidas de dispersão</strong>: As medidas de dispersão mostram o quanto um conjunto de observações está espalhado ou concentrado em torno de um valor central. Em outras palavras, enquanto as medidas de posição nos dizem “onde” os dados estão, as medidas de dispersão nos dizem “quão” esses dados estão distribuídos;</p></li>
+<li><p><strong>Medidas de Forma</strong>: As medidas de forma nos ajudam a entender o formato de uma distribuição de dados. Em vez de focar na posição (onde os dados estão) ou na dispersão (o quão espalhados eles estão), as medidas de forma nos dizem como a distribuição está “desenhada”.</p></li>
+</ul>
+</section>
+<section id="medidas-de-posição" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de posição</h2>
+</section>
 <section id="medidas-de-tendência-central" class="slide level2">
 <h2>Medidas de tendência central</h2>
-<p>As medidas de tendência central permitem quantificar o valor em torno do qual o conjunto de dados se agrupa. Existem várias medidas, e.g., a média aritmética, a mediana, a moda, a média ponderada, a média geomética, a média harmônica, a média quadrática, cúbica e biquadrática, entre outras.</p>
-<p><br></p>
 <div id="def-media" class="theorem definition">
 <p><span class="theorem-title"><strong>Definição 9 (Média aritmética)</strong></span> A média aritmética é a medida de tendência central mais comumente usada para quantificar a centralidade de um conjunto de observações. Se <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> representa um conjunto de <span class="math inline">\(n\)</span> valores, a média aritmética define-se como <span class="math display">\[\bar{x}=\frac1n\sum_{i=1}^nx_i=\frac{x_1+x_2+\cdots+x_n}{n}.\]</span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div id="exm-mediaaritmetica" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 12</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
+<p>A média aritmética é dada por</p>
+<p><span class="math display">\[\bar{x}=\frac{1+2+3+\cdots+40+70+80}{15}=\frac{358}{15}=23.87;\]</span></p>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -427,9 +443,12 @@ Uma amostra deve refletir a diversidade da população.
 <p><br></p>
 <div class="fragment fade-in" data-fragment-index="1">
 <div title="Média ponderada">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Média ponderada</strong></p>
 </div>
 <div class="callout-content">
@@ -443,18 +462,48 @@ Uma amostra deve refletir a diversidade da população.
 <section class="slide level2">
 
 <div id="exm-mediaponderada" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 12</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
-<ul>
-<li>A média aritmética é dada por</li>
-</ul>
-<p><span class="math display">\[\bar{x}=\frac{1+2+3+\cdots+40+70+80}{15}=\frac{358}{15}=23.87;\]</span></p>
-<ul>
-<li>A média ponderada é dada por</li>
-</ul>
+<p><span class="theorem-title"><strong>Exemplo 13</strong></span> Para calcular o salário médio dos funcionários de uma empresa, foi realizado o seguinte levantamento:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Função</th>
+<th style="text-align: center;">Quantidade</th>
+<th style="text-align: right;">Salário (<span class="math inline">\(R\$\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diretor</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">17500</td>
+</tr>
+<tr class="even">
+<td>Gerente</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">8300</td>
+</tr>
+<tr class="odd">
+<td>Auxiliar administrativo</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">2000</td>
+</tr>
+<tr class="even">
+<td>Atendente</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: right;">1100</td>
+</tr>
+<tr class="odd">
+<td>Auxiliar TI</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1500</td>
+</tr>
+</tbody>
+</table>
+<p>A média salarial da empresa é dada por</p>
 <div class="math">
 <p><span class="math display">\[\begin{align*}
-\bar{x}_p&amp;=\frac{1+2+3+5+(2\times10)+12+15+(2\times20)+30+(2\times40)+70+80}{15}\\
-&amp;=\frac{358}{15}=23.87.
+\bar{x}_p&amp;=\frac{(2\times17500)+(5\times8300)+(10\times2000)+(16\times1100)+(5\times1500)}{38}\\
+&amp;=\frac{121600}{38}=3200.
 \end{align*}\]</span></p>
 </div>
 </div>
@@ -481,7 +530,7 @@ Uma amostra deve refletir a diversidade da população.
 <section class="slide level2">
 
 <div id="exm-mediageometrica" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 13 (Retorno Médio de um Investimento)</strong></span> Imagine que um usuário investiu <span class="math inline">\(R\$ 1000\)</span> em uma aplicação financeira.</p>
+<p><span class="theorem-title"><strong>Exemplo 14 (Retorno Médio de um Investimento)</strong></span> Imagine que um usuário investiu <span class="math inline">\(R\$ 1000\)</span> em uma aplicação financeira.</p>
 <ul>
 <li><p>No primeiro ano, ela valorizou <span class="math inline">\(100\%\)</span>. Agora você tem R$ 2000;</p></li>
 <li><p>No segundo ano, ela desvalorizou <span class="math inline">\(50\%\)</span>. Agora você tem R$1000 novamente.</p></li>
@@ -523,7 +572,7 @@ Uma amostra deve refletir a diversidade da população.
 <section class="slide level2">
 
 <div id="exm-mediaharmonica" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 14 (Preço Médio de Compra de uma Ação)</strong></span> Imagine que você decide investir <span class="math inline">\(R\$ 100\)</span> em ações de uma empresa em dois momentos diferentes:</p>
+<p><span class="theorem-title"><strong>Exemplo 15 (Preço Médio de Compra de uma Ação)</strong></span> Imagine que você decide investir <span class="math inline">\(R\$ 100\)</span> em ações de uma empresa em dois momentos diferentes:</p>
 <ul>
 <li>Na primeira compra, a ação custava <span class="math inline">\(R\$ 10\)</span>;</li>
 <li>Na segunda compra, a ação custava <span class="math inline">\(R\$ 20\)</span>.</li>
@@ -583,13 +632,13 @@ x_{\left(\frac{n+1}{2}\right)}, &amp; \text{para } n \text{ ímpar;}\\ \\
 <section class="slide level2">
 
 <div id="exm-mediana1" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 15</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
+<p><span class="theorem-title"><strong>Exemplo 16</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
 <p>A mediana é dada por <span class="math inline">\(\tilde{x}=15\)</span>.</p>
 </div>
 <p><br></p>
 <div class="fragment fade-in" data-fragment-index="1">
 <div id="exm-mediana2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 16 (Renda Familiar Média de um País)</strong></span> Imagine um grupo de <span class="math inline">\(100\)</span> famílias, onde <span class="math inline">\(99\)</span> delas têm uma renda anual entre <span class="math inline">\(R\$ 20000\)</span> e <span class="math inline">\(R\$ 80000\)</span>, mas uma única família tem uma renda de <span class="math inline">\(R\$ 1\)</span> bilhão.</p>
+<p><span class="theorem-title"><strong>Exemplo 17 (Renda Familiar Média de um País)</strong></span> Imagine um grupo de <span class="math inline">\(100\)</span> famílias, onde <span class="math inline">\(99\)</span> delas têm uma renda anual entre <span class="math inline">\(R\$ 20000\)</span> e <span class="math inline">\(R\$ 80000\)</span>, mas uma única família tem uma renda de <span class="math inline">\(R\$ 1\)</span> bilhão.</p>
 <p><br></p>
 <p>A <strong>média aritmética</strong> seria <span style="color:#82243a">distorcida</span> pela renda dessa única família, fazendo com que o “salário médio” pareça muito alto, não representando a realidade da maioria.</p>
 <p>A <strong>mediana</strong>, no entanto, será a renda da família que está na 50ª posição da lista (quando as rendas são ordenadas da menor para a maior). Esse valor dará uma imagem muito mais precisa e realista do que a maioria das famílias realmente ganha.</p>
@@ -602,22 +651,30 @@ x_{\left(\frac{n+1}{2}\right)}, &amp; \text{para } n \text{ ímpar;}\\ \\
 <p><span class="theorem-title"><strong>Definição 14 (Quantis)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores. Considere <span class="math inline">\(x_{(1)}, x_{(2)},\ldots,x_{(n)}\)</span> o conjunto de observações ordenadas em ordem crescente, i.e., <span class="math display">\[x_{(1)}\le x_{(2)}\le\cdots\le x_{(n)}.\]</span></p>
 <p>Define-se o quantil de ordem <span class="math inline">\(p\)</span>, denotado como <span class="math inline">\(q(p)\)</span>, onde <span class="math inline">\(p\in(0,1)\)</span>, como aquele cujas <span class="math inline">\(100p\%\)</span> observações são menores do que <span class="math inline">\(q(p)\)</span>.</p>
 </div>
+<div title="Quantis">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quantis</strong></p>
+</div>
+<div class="callout-content">
+<p>Os quantis são consideradas medidas de tendência não-central e são indicadores de uma determinada posição na distribuição dos dados. Os quantis não buscam a centralidade da distribuição, como a média ou a mediana, mas sim dividem o conjunto de dados em partes iguais, indicando a posição de um valor em relação a todos os outros.</p>
+</div>
+</div>
+</div>
+</div>
 <p><br></p>
 <div class="fragment fade-in" data-fragment-index="1">
 <div id="exm-quantis1" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 17</strong></span> Alguns quantis de interesse para a análise descritiva:</p>
-<ul>
-<li>I Quantil: <span class="math inline">\(q_1=q(0.25)\)</span>;</li>
-<li>II Quantil (Mediana): <span class="math inline">\(q_2=q(0.5)\)</span>;</li>
-<li>III Quantil: <span class="math inline">\(q_3=q(0.75)\)</span>.</li>
-</ul>
+<p><span class="theorem-title"><strong>Exemplo 18</strong></span> Alguns quantis de interesse para a análise descritiva:</p>
+<p>I Quantil: <span class="math inline">\(q_1=q(0.25)\)</span>; II Quantil (Mediana): <span class="math inline">\(q_2=q(0.5)\)</span>; III Quantil: <span class="math inline">\(q_3=q(0.75)\)</span>.</p>
 </div>
 </div>
 </section>
 <section class="slide level2">
 
 <div id="exm-quantis2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 18</strong></span> Suponha o seguinte conjunto de dados: <span class="math display">\[15, 5, 3, 8, 10, 2, 7, 11, 12.\]</span> Ordenando os valores, temos que</p>
+<p><span class="theorem-title"><strong>Exemplo 19</strong></span> Suponha o seguinte conjunto de dados: <span class="math display">\[15, 5, 3, 8, 10, 2, 7, 11, 12.\]</span> Ordenando os valores, temos que</p>
 <p><span class="math display">\[2, 3, 5, 7, 8, 10, 11, 12, 15.\]</span> A mediana é o valor <span class="math inline">\(\tilde{x}=q_2=8\)</span>. O primeiro quantil é dado por: <span class="math display">\[q_1=\frac{3+5}{2}=\frac82=4.\]</span> O terceiro quantil é dado por: <span class="math display">\[q_3=\frac{11+12}{2}=\frac{23}{2}=11.5.\]</span></p>
 </div>
 </section>
@@ -684,7 +741,7 @@ x_{\left(\frac{n+1}{2}\right)}, &amp; \text{para } n \text{ ímpar;}\\ \\
 <p><br></p>
 <div class="fragment fade-in" data-fragment-index="1">
 <div id="exm-moda" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 19 (Gestão de Estoque e Produção)</strong></span> Uma empresa de calçados dificilmente vai fabricar um tipo de sapato, baseado na média aritmética do tamanho do pé dos consumidores, por exemplo, <span class="math inline">\(39.5\)</span> cm.</p>
+<p><span class="theorem-title"><strong>Exemplo 20 (Gestão de Estoque e Produção)</strong></span> Uma empresa de calçados dificilmente vai fabricar um tipo de sapato, baseado na média aritmética do tamanho do pé dos consumidores, por exemplo, <span class="math inline">\(39.5\)</span> cm.</p>
 <p><br></p>
 <p>Para otimizar sua produção, a empresa precisa saber qual é o tamanho mais <strong>popular</strong>.</p>
 </div>
@@ -698,9 +755,12 @@ x_{\left(\frac{n+1}{2}\right)}, &amp; \text{para } n \text{ ímpar;}\\ \\
 <p><br></p>
 <div class="fragment fade-in" data-fragment-index="1">
 <div title="Relação entre média, mediana e moda">
-<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
 <p><strong>Relação entre média, mediana e moda</strong></p>
 </div>
 <div class="callout-content">
@@ -728,11 +788,113 @@ Média - Moda = <span class="math inline">\(3\,\)</span>(Média - Mediana)
 
 <h3 id="relação-empírica-entre-a-média-a-mediana-e-a-moda-2">Relação empírica entre a média, a mediana e a moda</h3>
 
-<!-- *** -->
-<!-- ## Medidas de dispersão -->
-<!-- ## Medidas de assimetria e curtose -->
-<!-- *** -->
 <img data-src="images/assimetria_esquerda.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
+<section id="medidas-de-dispersão" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de dispersão</h2>
+</section>
+<section class="slide level2">
+
+<div id="def-variancia" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 16 (Variância)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores. A variância define-se como <span class="math display">\[s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2,\]</span> onde <span class="math inline">\(\bar{x}=\frac1n\sum_{i=1}^nx_i\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Outra forma">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Outra forma</strong></p>
+</div>
+<div class="callout-content">
+<p>Outra forma de calcular a variância é dada por <span class="math display">\[s_*^{2}=\frac1{n}\sum_{i=1}^n(x_i-\bar{x})^2.\]</span> Nesse caso, teriamos a média dos desvíos médios ao quadrado. Quando <span class="math inline">\(n\)</span> é suficientemente grande, as propriedades estatísticas de <span class="math inline">\(s^2\)</span> e <span class="math inline">\(s_*^2\)</span> são similares. Em aplicações práticas usaremos <span class="math inline">\(s^2\)</span> para quantificar o valor da variância de um conjunto de dados.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="algumas-considerações">Algumas considerações</h3>
+<ul>
+<li>A variância sempre é um valor não-negativo, i.e., <span class="math inline">\(s^2\ge0\)</span>;</li>
+<li>A variância é invariante à adição (ou substração) de um valor constante aos dados, i.e., as variâncias das sequências <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> e <span class="math inline">\(x_1\pm a,x_2\pm a,\ldots,x_n\pm a\)</span>, com <span class="math inline">\(a\)</span> constante, são iguais;</li>
+<li>Se a sequência é multiplicada por uma constante <span class="math inline">\(a\)</span>, a variância é multiplicada pelo quadrado da constante, i.e., se a variância da sequência <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> é <span class="math inline">\(s^2\)</span>, então a variância do conjunto <span class="math inline">\(ax_1,ax_2,\ldots,ax_n\)</span> é dada por <span class="math inline">\(a^2\,s^2\)</span>;</li>
+</ul>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Desvio padrão">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Desvio padrão</strong></p>
+</div>
+<div class="callout-content">
+<p>O desvio padrão define-se como <span class="math display">\[s=\sqrt{\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2}=\sqrt{s^2}\]</span></p>
+<p>e é a medida de dispersão mais usada na prática, pois apresenta as mesmas unidades dos dados.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-variancia1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 21</strong></span> No mundo dos investimentos, a dispersão dos retornos de um ativo financeiro (como uma ação, um fundo ou um título) é sinônimo de <strong>volatilidade</strong>. O desvio padrão é a métrica padrão que os analistas e investidores usam para entender o risco de um investimento.</p>
+<ul>
+<li><p><strong>O que ele mede?</strong> O quanto os retornos de um ativo tendem a se desviar de seu retorno médio esperado;</p></li>
+<li><p><strong>Regra básica:</strong> Quanto maior o desvio padrão de um ativo, maior é o seu <em>risco</em> e sua <em>volatilidade</em>.</p></li>
+</ul>
+<p>Considere o seguinte cenário: Um investidor está comparando dois fundos de investimento:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Fundo</th>
+<th style="text-align: center;">Retorno anual médio (<span class="math inline">\(\bar{x}\)</span>)</th>
+<th style="text-align: right;">Desvio padrão (<span class="math inline">\(s\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td style="text-align: center;"><span class="math inline">\(8\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\%\)</span></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td style="text-align: center;"><span class="math inline">\(8\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15\%\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Baseados na <strong>média</strong>, ambos os fundos têm o mesmo retorno esperado (<span class="math inline">\(8\%\)</span>);</p></li>
+<li><p>Baseados no <strong>desvio padrão</strong>, o Fundo <strong>A</strong> é um investimento de <strong>baixo</strong> risco. O Fundo <strong>B</strong> é um investimento de <strong>alto</strong> risco. Isso indica uma volatilidade muito maior, com a possibilidade de perdas significativas.</p></li>
+</ul>
+<p>Dessa forma, o investidor que prioriza a segurança (baixo risco) escolherá o Fundo <strong>A</strong>, enquanto o investidor que aceita grandes flutuações em busca de ganhos potencialmente maiores escolherá o Fundo <strong>B</strong>.</p>
+</section>
+<section id="medidas-de-forma" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de forma</h2>
+</section>
+<section class="slide level2">
+
+<div id="def-assimetria" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 17 (Assimetria)</strong></span> &nbsp;</p>
+</div>
+<div id="def-curtose" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 18 (Curtose)</strong></span> &nbsp;</p>
+</div>
+</section>
 <section class="slide level2">
 
 <div id="exr-obesidade" class="theorem exercise">
@@ -774,6 +936,7 @@ Média - Moda = <span class="math inline">\(3\,\)</span>(Média - Mediana)
 <li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações, tal que, <span class="math inline">\(n_1\)</span> números têm média <span class="math inline">\(\bar{x}_1\)</span>, <span class="math inline">\(n_2\)</span> números têm média <span class="math inline">\(\bar{x}_2,\ldots, n_k\)</span> números têm média <span class="math inline">\(\bar{x}_k\)</span>. Mostre que, a média aritmética do conjunto de observações é dada por <span class="math display">\[\bar{x}=\frac{\sum_{j=1}^k\bar{x}_jn_j}{\sum_{j=1}^kn_j}.\]</span></p></li>
 <li><p>Mostre que o produtos dos quocientes de cada valor de um conjunto de números pela média geométrica do conjunto é igual a 1, i.e., <span class="math display">\[\frac{x_1}{\bar{x}_g}\frac{x_2}{\bar{x}_g}\cdots\frac{x_n}{\bar{x}_g}=1.\]</span></p></li>
 <li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que: <span class="math display">\[\bar{x}_h\le\bar{x}_g\le\bar{x}.\]</span></p></li>
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (x_{i} - x_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p></li>
 </ol>
 <!-- ## Referências -->
 <!-- ::: {#refs} -->
