@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
-<script src="aula3_files/libs/clipboard/clipboard.min.js"></script>
-<script src="aula3_files/libs/quarto-html/tabby.min.js"></script>
-<script src="aula3_files/libs/quarto-html/popper.min.js"></script>
-<script src="aula3_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="aula3_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="aula3_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="aula3_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="aula2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula2_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula2_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula2_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula2_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="LECON/DEST - UFES">
-  <title>STA13828 - Análise de Séries Temporais I  Processos com representação ARMA(p,q) </title>
+  <title>Análise exploratória de dados  Medidas resumo </title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,34 +28,79 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for citations */
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-      margin-bottom: 0em;
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
     }
-    .hanging-indent div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }  </style>
-  <link rel="stylesheet" href="aula3_files/libs/revealjs/dist/theme/quarto-bbd3fe9ba78fe19100bb54757e835c1d.css">
-  <link href="aula3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="aula3_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="aula3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="aula3_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="aula3_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="aula3_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="aula2_files/libs/revealjs/dist/theme/quarto-024e1e1fed892d9c5de4270c398ef4bc.css">
+  <link href="aula2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula2_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula2_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula2_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -149,9 +194,9 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#172a46" data-background-opacity="number" data-background-size="contain" class="quarto-title-block center">
-  <h1 class="title">STA13828 - Análise de Séries Temporais I<br>
+  <h1 class="title">Análise exploratória de dados<br>
 </h1><h3><br>
-Processos com representação ARMA(p,q)<br>
+Medidas resumo<br>
 </h3>
   <p class="subtitle"><br><br></p>
 
@@ -161,480 +206,22 @@ Processos com representação ARMA(p,q)<br>
 LECON/DEST - UFES 
 </div>
         <p class="quarto-title-affiliation">
-            Última atualização: 15 setembro, 2025
+            Última atualização: 29 setembro, 2025
           </p>
     </div>
 </div>
 
 </section>
-<section id="processos-com-representação-armapq" class="slide level2">
-<h2>Processos com representação ARMA(p,q)</h2>
-<div id="def-eqdiffp" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 1</strong></span> Um <span class="math inline">\(\{X_t; t\in\mathbb{Z}\}\)</span> diz-se um processo com representação ARMA<span class="math inline">\((p,q)\)</span> se ele é estacionário e tem a seguinte representação: <span class="math display">\[\phi(B)X_t=\theta(B)Z_t,\]</span> onde <span class="math inline">\(\phi(B)=1-\phi_1B-\cdots-\phi_pB^p\)</span> e <span class="math inline">\(\theta(B)=1+\theta_1B+\theta_2B^2+\cdots+\theta_qB^q\)</span> e <span class="math inline">\(\{Z_t\}\)</span> é um processo de ruído branco com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(\sigma^2\)</span>.</p>
-</div>
-<p><br></p>
-<div class="fragment fade-in" data-fragment-index="1">
+<section id="medidas-resumo" class="slide level2">
+<h2>Medidas resumo</h2>
 <ul>
-<li><p>O processo com representação ARMA<span class="math inline">\((p,q)\)</span> também é chamado de processo autorregressivo e de médias móveis de ordens <span class="math inline">\(p\)</span> e <span class="math inline">\(q\)</span>;</p></li>
-<li><p>Dizemos que o processo <span class="math inline">\(\{X_t\}\)</span>, com média <span class="math inline">\(\mu\)</span>, é ARMA <span class="math inline">\(\!(p,q)\)</span> se o processo <span class="math inline">\(\{X_t-\mu\}\)</span> tem representação ARMA <span class="math inline">\(\!(p,q)\)</span>;</p></li>
-<li><p>Na literatura, podemos encontrar os primeiros estudos desse tipo de processos nos trabalhos de <span class="citation" data-cites="wold:1938">Wold (<a href="#/referências" role="doc-biblioref" onclick="">1938</a>)</span> e <span class="citation" data-cites="bartlett:1946">Bartlett (<a href="#/referências" role="doc-biblioref" onclick="">1946</a>)</span>.</p></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo1" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 1</strong></span> Seja <span class="math inline">\(\{X_t; t\in\mathbb{Z}\}\)</span> um processo com representação ARMA<span class="math inline">\((p,q)\)</span>. Se <span class="math inline">\(\phi(z)\equiv1\)</span>, então <span class="math inline">\(X_t=\theta(B)Z_t\)</span>, i.e., o processo se torna um processo com representação MA<span class="math inline">\((q)\)</span>, onde a média do processo é dada por <span class="math display">\[\mathbb{E}X_t=\sum_{j=0}^q\theta_j\mathbb{E}Z_{t-j}=0.\]</span> Para calcular a FACV do processo, sabemos que</p>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-    \gamma_X(h)&amp;=\mathrm{Cov}(X_{t+h}X_t)=\sum_{j=0}^\infty\psi_j\psi_{j+|h|}\sigma^2
-    =\sigma^2\sum_{j=0}^\infty\theta_j\theta_{j+|h|}\\
-    &amp;=\begin{cases}
-    \sigma^2\sum_{j=0}^{q-|h|}\theta_j\theta_{j+|h|}, &amp; \text{ para } |h|\le q;\\
-    0, &amp; \text{ para } |h|&gt;q.
-    \end{cases}
-  \end{align*}\]</span></p>
-</div>
-</div>
-<hr>
-
-<p><font size="6">Para detalhes, vide <span class="citation" data-cites="box:jenkins:reinsel:1994">Box et al. (<a href="#/referências" role="doc-biblioref" onclick="">1994</a>)</span>, <span class="citation" data-cites="brockwell:davis:2016">Brockwell e Davis (<a href="#/referências" role="doc-biblioref" onclick="">2016</a>)</span>, <span class="citation" data-cites="morettin:toloi:2006">Morettin e Toloi (<a href="#/referências" role="doc-biblioref" onclick="">2006</a>)</span> e <span class="citation" data-cites="wei:2005">Wei (<a href="#/referências" role="doc-biblioref" onclick="">2005</a>)</span>.</font></p>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo2" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 2</strong></span> Seja <span class="math inline">\(\{X_t; t\in\mathbb{Z}\}\)</span> um processo com representação ARMA<span class="math inline">\((1,1)\)</span>, i.e., <span class="math display">\[X_t-\phi X_{t-1}=Z_t+\theta Z_{t-1},\]</span> onde <span class="math inline">\(\{Z_t\}\)</span> representa um processo de ruído branco com média <span class="math inline">\(0\)</span> e variância <span class="math inline">\(\sigma^2\)</span> e <span class="math inline">\(|\phi|&lt;1\)</span>.</p>
-<p>O processo é linear, já que pode ser representado como <span class="math display">\[X_t=Z_t+(\phi+\theta)\sum_{j=1}^\infty\phi^{j-1}Z_{t-j}.\]</span> Dessa forma, a função de autocovariância é dada por:</p>
-<p><span class="math display">\[\gamma(h)=\sum_{j=0}^\infty\psi_j\psi_{j+|h|}\sigma^2.\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Para <span class="math inline">\(h=0\)</span>,</li>
-</ul>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  \gamma(0)&amp;=\sigma^2+\sigma^2\sum_{j=1}^\infty\psi_j^2
-  =\sigma^2\left[1+(\phi+\theta)^2\sum_{j=1}^\infty\phi^{2j-2}\right]\\
-  &amp;=\sigma^2\left[1+(\phi+\theta)^2\sum_{j=0}^\infty\phi^{2j}\right]
-  =\sigma^2\left[1+\frac{(\phi+\theta)^2}{1-\phi^2}\right].
-\end{align*}\]</span></p>
-</div>
-<ul>
-<li>Para <span class="math inline">\(h=1\)</span>, temos que</li>
-</ul>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  \gamma(1)&amp;=\sigma^2\sum_{j=0}^\infty\psi_j\psi_{j+1}
-  =\sigma^2\psi_0\psi_1+\sigma^2\sum_{j=1}^\infty\psi_j\psi_{j+1}
-\end{align*}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  \gamma(1)&amp;=\sigma^2(\phi+\theta)+\sigma^2\sum_{j=1}^\infty(\phi+\theta)\phi^{j-1}(\phi+\theta)\phi^{j}
-  =\sigma^2\left[\phi+\theta+(\phi+\theta)^2\sum_{j=1}^\infty\phi^{2j-1}\right]\\
-  &amp;=\sigma^2\left[\phi+\theta+(\phi+\theta)^2\sum_{j=0}^\infty\phi^{2j+1}\right]
-  =\sigma^2\left[\phi+\theta+(\phi+\theta)^2\phi\sum_{j=0}^\infty\phi^{2j}\right]\\
-  &amp;=\sigma^2\left[\phi+\theta+\frac{(\phi+\theta)^2\phi}{1-\phi^2}\right].
-\end{align*}\]</span></p>
-</div>
-<ul>
-<li>Para <span class="math inline">\(h\ge 2\)</span>, temos que</li>
-</ul>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  \gamma(h)&amp;=\sigma^2\sum_{j=0}^\infty\psi_j\psi_{j+h}
-  =\sigma^2\left[\psi_h+\sum_{j=1}^\infty\psi_j\psi_{j+h}\right]
-\end{align*}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  \gamma(h)&amp;=\sigma^2\left[(\phi+\theta)\phi^{h-1}+(\phi+\theta)^2\sum_{j=1}^\infty\phi^{j-1}\phi^{j+h-1}\right]\\
-  &amp;=\sigma^2\left[(\phi+\theta)\phi^{h-1}+(\phi+\theta)^2\phi^{h-1}\sum_{j=1}^\infty\phi^{2j-1}\right]\\
-  &amp;=\phi^{h-1}\sigma^2\left[\phi+\theta+(\phi+\theta)^2\sum_{j=1}^\infty\phi^{2j-1}\right]\\
-  &amp;=\phi^{h-1}\gamma(1).
-\end{align*}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="def-causal" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 2 (Causalidade)</strong></span> Um processo <span class="math inline">\(\{X_t; t\in\mathbb{Z}\}\)</span> com representação ARMA <span class="math inline">\(\!(p,q)\)</span> é <strong>causal</strong>, ou função causal de <span class="math inline">\(\{Z_t\}\)</span>, se existe uma sequência de constantes <span class="math inline">\(\{\psi_j\}\)</span>, tal que <span class="math inline">\(\sum_{j=0}^\infty|\psi_j|&lt;\infty\)</span> e <span class="math display">\[X_t=\sum_{j=0}^\infty\psi_jZ_{t-j}, \quad t\in\mathbb{Z}, \quad \text{(com prob. 1)}\]</span> onde os coeficientes <span class="math inline">\(\{\psi_j\}\)</span> são calculados a partir da relação <span class="math inline">\(\psi(z)=\sum_{j=0}^\infty\psi_jz^j=\theta(z)\phi^{-1}(z)\)</span>, com <span class="math inline">\(|z|\le1\)</span>.</p>
-</div>
-<p><br></p>
-<div id="thm-teorema1" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 1</strong></span> Seja <span class="math inline">\(\{X_t\}\)</span> um processo com representação ARMA <span class="math inline">\(\!(p,q)\)</span>, i.e., <span class="math inline">\(\phi(B)X_t=\theta(B)Z_t\)</span>, e tal que os polinômios <span class="math inline">\(\phi(\cdot)\)</span> e <span class="math inline">\(\theta(\cdot)\)</span> não possuem raízes comuns. Então, <span class="math inline">\(\{X_t\}\)</span> é <strong>causal</strong> <em>see</em> <span class="math inline">\(\phi(z)\ne0\)</span>, para todo <span class="math inline">\(|z|\le1\)</span>, com <span class="math inline">\(z\in\mathbb{C}\)</span>.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<ul>
-<li><p>O resultado do <a href="#/thm-teorema1" class="quarto-xref">Teorema&nbsp;1</a> mostra que, se <span class="math inline">\(\{X_t\}\)</span> é uma solução estacionária de uma equação ARMA, com <span class="math inline">\(\phi(z)\ne0\)</span>, para <span class="math inline">\(|z|\le1\)</span>, então, a solução é representada por <span class="math display">\[X_t=\sum_{j=0}^\infty\psi_jZ_{t-j},\quad \text{(com prob. 1)}\]</span> onde <span class="math inline">\(\{\psi_j\}\)</span> são calculados a partir da relação <span class="math inline">\(\psi(z)=\sum_{j=0}^\infty\psi_jz^j=\theta(z)\phi^{-1}(z)\)</span>, com <span class="math inline">\(|z|\le1\)</span>.</p></li>
-<li><p>Por outra parte, se <span class="math inline">\(X_t=\sum_{j=0}^\infty\psi_jZ_{t-j}\)</span>, então <span class="math display">\[\phi(B)X_t=\phi(B)\psi(B)Z_t=\theta(B)Z_t.\]</span> Dessa forma, o processo <span class="math inline">\(\{\psi(B)Z_t\}\)</span> é a única solução estacionária das equações ARMA se <span class="math inline">\(\phi(z)\ne0\)</span> para <span class="math inline">\(|z|\le1\)</span>.</p></li>
+<li><p><strong>Medidas de posição</strong>: As medidas de posição são ferramentas essenciais para a análise de dados. Elas nos permitem identificar o valor típico ou central de um conjunto de observações, mostrando onde a maior parte dos dados se concentra. Existem várias medidas, e.g., a média aritmética, a mediana, a moda, a média ponderada, a média geomética, a média harmônica, a média quadrática, cúbica e biquadrática, entre outras;</p></li>
+<li><p><strong>Medidas de dispersão</strong>: As medidas de dispersão mostram o quanto um conjunto de observações está espalhado ou concentrado em torno de um valor central. Em outras palavras, enquanto as medidas de posição nos dizem “onde” os dados estão, as medidas de dispersão nos dizem “quão” esses dados estão distribuídos;</p></li>
+<li><p><strong>Medidas de Forma</strong>: As medidas de forma nos ajudam a entender o formato de uma distribuição de dados. Em vez de focar na posição (onde os dados estão) ou na dispersão (o quão espalhados eles estão), as medidas de forma nos dizem como a distribuição está “desenhada”.</p></li>
 </ul>
 </section>
-<section class="slide level2">
-
-<ul>
-<li>A sequência <span class="math inline">\(\{\psi_j\}\)</span> é calculada a partir da relação <span class="math inline">\(\psi(z)=\sum_{j=0}^\infty\psi_jz^j=\theta(z)\phi^{-1}(z)\)</span>, daí <span class="math display">\[(1-\phi_1z-\cdots-\phi_pz^p)(\psi_0+\psi_1z+\psi_2z^2+\cdots)=1+\theta_1z+\theta_2z^2+\cdots+\theta_qz^q.\]</span> Se igualamos os coeficientes dos termos <span class="math inline">\(z^j\)</span>, para <span class="math inline">\(j=0,1,2,\ldots\)</span>, temos que
-<div class="math">
-<p><span class="math display">\[\begin{align}
-1&amp;=\psi_0,\\
-\theta_1&amp;=\psi_1-\psi_0\phi_1,\\
-\theta_2&amp;=\psi_2-\psi_1\phi_1-\psi_0\phi_2,\\
-&amp;\,\,\, \vdots\\
-\theta_j&amp;=\psi_j-\sum_{k=1}^p\phi_k\psi_{j-k}, \quad j=0,1,2,\ldots,
-\end{align}\]</span></p>
-</div></li>
-</ul>
-<p>onde <span class="math inline">\(\theta_0=1\)</span>, <span class="math inline">\(\theta_j=0\)</span> para <span class="math inline">\(j&gt;q\)</span> e <span class="math inline">\(\psi_j=0\)</span> para <span class="math inline">\(j&lt;0\)</span>.</p>
-</section>
-<section class="slide level2">
-
-<ul>
-<li>A condição <span class="math inline">\(\phi(z)\ne0\)</span>, para todo <span class="math inline">\(|z|\le1\)</span>, é equivalente a dizer que as raízes do polinômio autorregressivo, em módulo, devem ser maiores que <span class="math inline">\(1\)</span>;</li>
-</ul>
-<blockquote>
-
-<ul>
-<li>A região definida pelo conjunto de números complexos <span class="math inline">\(z\)</span>, tal que <span class="math inline">\(|z| = 1\)</span> é referida como o <strong>círculo unitário</strong>;</li>
-</ul>
-
-</blockquote>
-<blockquote>
-
-<ul>
-<li>Se <span class="math inline">\(\{X_t\}\)</span> é um processo com representação ARMA <span class="math inline">\(\!(p,q)\)</span>, tal que os polinômios <span class="math inline">\(\phi(\cdot)\)</span> e <span class="math inline">\(\theta(\cdot)\)</span> não possuem raízes comuns, então, temos que:</li>
-</ul>
-
-</blockquote>
-<blockquote>
-
-<ul>
-<li><p>Nenhuma das raízes comuns se encontra no círculo unitário, nesse caso <span class="math inline">\(\{X_t\}\)</span> é a única solução estacionária das equações ARMA sem zeros comuns, obtida cancelando os fatores comuns de <span class="math inline">\(\phi(\cdot)\)</span> e <span class="math inline">\(\theta(\cdot)\)</span>;</p></li>
-<li><p>Pelo menos uma das raízes comuns se encontra no círculo unitário, nesse caso as equações ARMA podem ter mais do que em solução estacionária;</p></li>
-</ul>
-
-</blockquote>
-<blockquote>
-
-<ul>
-<li>Processos com representação ARMA, para os quais <span class="math inline">\(\phi(\cdot)\)</span> e <span class="math inline">\(\theta(\cdot)\)</span> possuem raízes comuns são raramente considerados.</li>
-</ul>
-
-</blockquote>
-</section>
-<section class="slide level2">
-
-</section>
-<section class="slide level2">
-
-<p>Em particular, considere a equação em diferenças <span class="math inline">\((1-0.5B)X_t=2\)</span> e considere a condição inicial <span class="math inline">\(X_0=50\)</span>. Dessa forma, <span class="math display">\[X_t=4+46\,(0.5)^t.\]</span> Como <span class="math inline">\(|0.5|&lt;1\)</span> a função tende a estabilizar-se em <span class="math inline">\(\dfrac{a_0}{1-a_1}=4\)</span>.</p>
-
-<img data-src="aula3_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
-<section class="slide level2">
-
-<div id="prp-eqdiff_homogenea" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposição 1</strong></span> Seja <span class="math inline">\(C(B)X_t=0\)</span> uma equação em diferenças homogênea. Se <span class="math inline">\(C(z)=\prod_{j=1}^N(1-R_jz)^{m_j}\)</span>, onde <span class="math inline">\(\sum_{j=1}^Nm_j=p\)</span> e <span class="math inline">\(z_j=R_j^{-1}\in\mathbb{C}\)</span>, com <span class="math inline">\(j=1,2,3,\ldots,N\)</span>, são as raízes de multiplicidade <span class="math inline">\(m_j\)</span> de <span class="math inline">\(C(z)=0\)</span>. Então,</p>
-<p><span id="eq-solucao"><span class="math display">\[X_t=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_{i}^{t}. \qquad(1)\]</span></span></p>
-<p>Em particular, se <span class="math inline">\(m_j=1\)</span> para todo <span class="math inline">\(j\)</span>, então <span class="math display">\[X_t=\sum_{i=1}^Nb_{i}\,R_{i}^{t}.\]</span></p>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>Prova</em>. </span>Sugere-se a leitura do livro de <span class="citation" data-cites="wei:2005">Wei (<a href="#/referências" role="doc-biblioref" onclick="">2005,p. 26</a>)</span>.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Quando <span class="math inline">\(C(z)=0\)</span> tem raízes complexas, então, as mesmas se apresentam por pares, i.e., se <span class="math inline">\(R_1^{-1}=c+d\,i\)</span> é raíz, então <span class="math inline">\(R_2^{-1}=c-d\,i\)</span> também é raíz.</p>
-<p><br></p>
-<p>Em geral, qualquer número complexo pode ser escrito em forma polar, sendo então <span class="math display">\[c\pm d\,i=\alpha(\cos\phi\pm i\,\mathrm{sen}\,\phi),\]</span> onde, <span class="math inline">\(\alpha=\sqrt{c^2+d^2}\)</span> e <span class="math inline">\(\phi=\tan^{-1}\left(\dfrac{d}{c}\right)\)</span>.</p>
-<p>Ainda, pela fórmula de Moivre, temos que <span class="math inline">\((c\pm d\,i)^t=\alpha^t(\cos\phi t\pm i\,\mathrm{sen}\,\phi t)\)</span>.</p>
-</section>
-<section class="slide level2">
-
-<p>Dessa forma, se o par <span class="math inline">\(c\pm d\,i\)</span> tem multiplicidade <span class="math inline">\(m\)</span>, a solução da equação em diferenças deverá conter as sequências <span class="math display">\[\alpha^t\cos\phi t,\, t\alpha^t\cos\phi t,\ldots,\, t^{m-1}\alpha^t\cos\phi t\]</span> e <span class="math display">\[\alpha^t\mathrm{sen}\,\phi t,\, t\alpha^t\mathrm{sen}\,\phi t,\ldots,\, t^{m-1}\alpha^t\mathrm{sen}\,\phi t.\]</span></p>
-<p>Tais sequências resultam evidentes do termo <span class="math inline">\(\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_{i}^{t}\)</span> da solução geral de uma equação em diferenças homogênea na <a href="#/eq-solucao" class="quarto-xref">Eq.&nbsp;1</a>.</p>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo8" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 3</strong></span> Considere a equação característica dada por <span class="math display">\[1-a_1z-a_2z^2=(1-R_1z)(1-R_2z)=0,\]</span> onde <span class="math inline">\(R_1=c+d\,i=\alpha(\cos\phi+i\,\mathrm{sen}\,\phi)\)</span> e <span class="math inline">\(R_2\)</span> seu conjugado.</p>
-Pela <a href="#/prp-eqdiff_homogenea" class="quarto-xref">Proposição&nbsp;1</a>, sabemos que <span class="math inline">\(X_t=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_{i}^{t}\)</span>. Daí, temos que <span class="math display">\[X_t=b_1R_1^{t}+b_2R_ 2^{t}=b_1\alpha^t(\cos\phi t + i\,\mathrm{sen}\,\phi t)+b_2\alpha^t(\cos\phi t - i\,\mathrm{sen}\,\phi t).\]</span> Se assumimos <span class="math inline">\(b_1\)</span> e <span class="math inline">\(b_2\)</span> números complexos e <span class="math inline">\(b_2\)</span> o conjugado de <span class="math inline">\(b_1=x+i\,y\)</span>, então
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  X_t&amp;=\alpha^t\left[(x+i\,y)(\cos\phi t + i\,\mathrm{sen}\,\phi t)+(x-i\,y)(\cos\phi t - i\,\mathrm{sen}\,\phi t)\right]\\
-  &amp;=\alpha^t\left[2x\cos\phi t + 2i^2y\,\mathrm{sen}\,\phi t\right]=e_1\alpha^t\cos\phi t + e_2\alpha^t\,\mathrm{sen}\,\phi t,
-  \end{align}\]</span></p>
-</div>
-<p>onde <span class="math inline">\(e_1\)</span> e <span class="math inline">\(e_2\)</span> são números reais.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo9" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 4</strong></span> Encontre a solução da equação em diferenças dada por <span class="math display">\[X_t-2X_{t-1}+1.5X_{t-2}-0.5X_{t-3}=0.\]</span> A equação característica é dada por</p>
-<span class="math display">\[C(z)=1-2z+1.5z^2-0.5z^3=(0.5z^2-z+1)(1-z)=0.\]</span> Dessa forma, pelo teorema fundamental da álgebra temos <span class="math inline">\(3\)</span> raízes. No entanto, como o grau do polinômio é ímpar, então, temos pelo menos uma raíz real. Daí, as raízes da equação característica são dadas por <span class="math inline">\(R_1^{-1}=1\)</span> com multiplicidade <span class="math inline">\(1\)</span> e
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  z&amp;=\frac{1\pm\sqrt{1-4\,(0.5)}}{2\,(0.5)}=1\pm i,
-  \end{align}\]</span></p>
-</div>
-<p>então, <span class="math inline">\(R_2^{-1}=1+i\)</span> e <span class="math inline">\(R_3^{-1}=1-i\)</span>, ambos com multiplicidade <span class="math inline">\(1\)</span>, onde <span class="math inline">\(R_2=\frac{1-i}{2}\)</span> e <span class="math inline">\(R_3=\frac{1+i}{2}\)</span>.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Dessa forma, temos <span class="math inline">\(R_1=1\)</span>, <span class="math inline">\(R_2=\frac{1-i}{2}\)</span> e <span class="math inline">\(R_3=\frac{1+i}{2}\)</span>. Reescrevendo as últimas na forma polar, temos que <span class="math display">\[\alpha=(c^2+ d^2)^{\frac12}=\sqrt{\left(\frac12\right)^2+\left(\frac12\right)^2}=\sqrt{\frac12}\]</span> e <span class="math display">\[\phi=\tan^{-1}\left(\frac{d}{c}\right)=\tan^{-1}\left(1\right)=\frac{\pi}{4}.\]</span></p>
-</section>
-<section class="slide level2">
-
-Daí,
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  X_t&amp;=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_i^{t}\\
-  &amp;=b_{10}+b_{20}\left(\sqrt{\frac12}\right)^t\left(\cos\frac{\pi}{4}t+i\,\mathrm{sen}\,\frac{\pi}{4}t\right)+b_{30}\left(\sqrt{\frac12}\right)^t\left(\cos\frac{\pi}{4}t-i\,\mathrm{sen}\,\frac{\pi}{4}t\right)\\
-  &amp;=b_{1}+b_{2}\left(\sqrt{\frac12}\right)^t\cos\frac{\pi}{4}t+b_{3}\left(\sqrt{\frac12}\right)^t\,\mathrm{sen}\,\frac{\pi}{4}t.
-  \end{align}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="aula3_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="768"></section>
-<section class="slide level2">
-
-<div id="exm-exemplo10" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 5</strong></span> Considere a equação em diferenças dada por <span class="math inline">\(X_t-2X_{t-1}+X_{t-2}=0\)</span> ou <span class="math inline">\((1-2B+B^2)X_t=0\)</span>.</p>
-<p>Para encontrar a solução da equação, considere a seguinte equação característica: <span class="math display">\[C(z)=1-2z+z^2=(1-z)^2=0.\]</span> Pelo teorema fundamental da álgebra, sabe-se que a equação característica tem duas raízes, sendo <span class="math inline">\(R_1^{-1}=1\)</span> com multiplicidade <span class="math inline">\(m_1=2\)</span>. Daí, <span class="math display">\[X_t=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_i^{t}=\sum_{i=1}^1\sum_{j=0}^{m_i-1}b_{ij}\,t^j=b_{10}\,t^0+b_{11}\,t^1=b_{1}+b_{2}\,t.\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo11" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 6</strong></span> Considere a equação em diferenças <span class="math display">\[(1-\phi B)(1-B)^2X_t=0.\]</span></p>
-<p>A equação característica é dada por <span class="math display">\[C(z)=(1-\phi z)(1-z)^2=0.\]</span> Então, <span class="math inline">\(R_1^{-1}=\phi^{-1}\)</span> com multiplicidade <span class="math inline">\(1\)</span> e <span class="math inline">\(R_2^{-1}=1\)</span> com multiplicidade <span class="math inline">\(2\)</span>. Daí,</p>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-X_t&amp;=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_i^{t}=\sum_{i=1}^2\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_i^{t}\\
-&amp;=\sum_{j=0}^0b_{1j}t^jR_1^{t}+\sum_{j=0}^1b_{2j}t^jR_2^{t}=b_1\phi^t+b_2+b_3t.
-\end{align*}\]</span></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div>
-
-</div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="aula3_files/figure-revealjs/unnamed-chunk-4-1.png" width="768"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="aula3_files/figure-revealjs/unnamed-chunk-4-2.png" width="768"></p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo12" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 7</strong></span> Considere a equação em diferenças dada por <span class="math display">\[X_t-X_{t-1}+0.21X_{t-2}=0.\]</span> A equação característica é dada por <span class="math display">\[C(z)=1-z+0.21z^2=0.\]</span> Daí,</p>
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  z&amp;=\frac{1\pm\sqrt{1-4\,(0.21)}}{2\,(0.21)}=\frac{1\pm\sqrt{1-\frac{21}{25}}}{\frac{21}{50}}=\frac{1\pm\sqrt{\frac{4}{25}}}{\frac{21}{50}}=\frac{1\pm\frac{2}{5}}{\frac{21}{50}}.
-  \end{align}\]</span></p>
-</div>
-<p>Assim, as raízes da equação característica são dadas por <span class="math inline">\(R_1^{-1}=\frac{10}{3}\)</span> e <span class="math inline">\(R_2^{-1}=\frac{10}{7}\)</span>.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="columns">
-<div class="column" style="width:30%;">
-Então,
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-X_t&amp;=\sum_{i=1}^N\sum_{j=0}^{m_i-1}b_{ij}\,t^jR_i^{t}\\&amp;
-=\sum_{i=1}^2\sum_{j=0}^{1-1}b_{ij}\,t^jR_i^{t}\\
-&amp;=b_{10}\left(\frac{3}{10}\right)^{t}+b_{20}\left(\frac{7}{10}\right)^{t}\\
-&amp;=b_{1}\left(\frac{3}{10}\right)^{t}+b_{2}\left(\frac{7}{10}\right)^{t}.
-\end{align*}\]</span></p>
-</div>
-</div><div class="column" style="width:20%;">
-
-</div><div class="column" style="width:50%;">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="aula3_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-
-<div id="thm-schur" class="theorem">
-<p><span class="theorem-title"><strong>Teorema 2 (Critério de Schur-Cohn)</strong></span> Seja <span class="math inline">\(C(z)=\sum_{j=0}^pa_jz^j=0\)</span> a equação característica de uma equação em diferenças de ordem p, com <span class="math inline">\(a_p\ne0\)</span>. Se os determinantes</p>
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  D_k&amp;=\left|\begin{array}{cccc:cccc}
-  a_0       &amp; 0           &amp; \cdots &amp; 0      &amp; a_p     &amp;a_{p-1}&amp; \cdots &amp; a_{p-k+1}\\
-  a_1       &amp; a_0         &amp; \cdots &amp; 0      &amp; 0       &amp; a_p &amp; \cdots &amp; a_{p-k+2}\\
-  \vdots    &amp; \vdots      &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \vdots&amp; \ddots &amp; \vdots\\
-  a_{k-1}   &amp; a_{k-2}     &amp; \cdots &amp; a_0    &amp; 0       &amp; 0 &amp; \cdots &amp; a_p\\ \hdashline
-  \bar{a}_p       &amp;  0          &amp; \cdots &amp; 0      &amp; \bar{a}_0 &amp; \bar{a}_1     &amp; \cdots &amp; \bar{a}_{k-1}\\
-  \bar{a}_{p-1}   &amp;   \bar{a}_p       &amp; \cdots &amp; 0      &amp; 0 &amp; \bar{a}_0       &amp;\cdots  &amp; \bar{a}_{k-2}\\
-  \vdots    &amp; \vdots      &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \vdots &amp; \ddots&amp; \vdots\\
-  \bar{a}_{p-k+1} &amp; \bar{a}_{p-k+2}   &amp; \cdots &amp; \bar{a}_p    &amp; 0       &amp; 0 &amp; \cdots &amp; \bar{a}_0\\
-  \end{array}\right|, \quad k=1,2,3,\ldots,p,
-  \end{align}\]</span></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>são diferentes de zero, então, <span class="math inline">\(C(z)\)</span> não possui zeros em <span class="math inline">\(|z|=1\)</span> e possui <span class="math inline">\(m\)</span> zeros em <span class="math inline">\(|z|&lt;1\)</span>, onde <span class="math inline">\(m\)</span> é o número de variação de sinal da sequência <span class="math inline">\(1,D_1,D_2,\ldots,D_p\)</span> e <span class="math inline">\(\bar{a_i}\)</span> representa o conjuado de <span class="math inline">\(a_i\)</span>, com <span class="math inline">\(i=0,1,2,\ldots,p\)</span>.</p>
-<p><br><br></p>
-<div title="Critério de Schur-Cohn">
-<div class="callout callout-important no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Critério de Schur-Cohn</strong></p>
-</div>
-<div class="callout-content">
-<p>O Critério de Schur-Cohn afirma que o módulo das raízes da equação característica serão menores do que <span class="math inline">\(1\)</span>, <em>see</em> os <span class="math inline">\(p\)</span> determinates <span class="math inline">\(D_1,D_2,\ldots,D_p\)</span> são todos positivos, i.e., <strong>para verificar a estabilidade de uma equação em diferenças de ordem <span class="math inline">\(p\)</span>, requer-se que todos os <span class="math inline">\(p\)</span> determinantes sejam <ins>positivos</ins></strong>. Em caso, que um dos determinantes não seja positivo, então não teremos estabilidade na solução.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Em particular, para <span class="math inline">\(k=1, 2\)</span> e <span class="math inline">\(3\)</span></p>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  D_1&amp;=\left|\begin{array}{c:c}
-  a_0       &amp; a_{p}\\ \hdashline
-  \bar{a}_p &amp; \bar{a}_0
-  \end{array}\right| \\
-  D_2&amp;=\left|\begin{array}{cc:cc}
-  a_0 &amp; 0  &amp; a_p &amp; a_{p-1}\\
-  a_1 &amp; a_0  &amp; 0 &amp; a_{p}\\ \hdashline
-  \bar{a}_p &amp; 0 &amp; \bar{a}_0 &amp; \bar{a}_1\\
-  \bar{a}_{p-1} &amp; \bar{a}_p &amp; 0 &amp;\bar{a}_0
-  \end{array}\right| &amp;
-  D_3&amp;=\left|\begin{array}{ccc:ccc}
-  a_0 &amp; 0 &amp; 0  &amp; a_p &amp; a_{p-1} &amp; a_{p-2}\\
-  a_1 &amp; a_0  &amp; 0 &amp; 0 &amp;a_{p} &amp; a_{p-1}\\
-  a_2 &amp; a_1  &amp; 0 &amp; 0 &amp;0 &amp; a_{p}\\ \hdashline
-  \bar{a}_p &amp; 0 &amp;0&amp; \bar{a}_0 &amp; \bar{a}_1 &amp; \bar{a}_2\\
-  \bar{a}_{p-1} &amp; \bar{a}_p&amp; 0 &amp;  0 &amp; \bar{a}_0 &amp;\bar{a}_1\\
-  \bar{a}_{p-2} &amp; \bar{a}_{p-1}&amp; a_p &amp;  0 &amp; 0 &amp;\bar{a}_0
-  \end{array}\right|
-  \end{align*}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-Para <span class="math inline">\(k=p\)</span>
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  D_p&amp;=\left|\begin{array}{cccc:cccc}
-  a_0       &amp; 0           &amp; \cdots &amp; 0      &amp; a_p     &amp;a_{p-1}&amp; \cdots &amp; a_{1}\\
-  a_1       &amp; a_0         &amp; \cdots &amp; 0      &amp; 0       &amp; a_p &amp; \cdots &amp; a_{2}\\
-  \vdots    &amp; \vdots      &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \vdots&amp; \ddots &amp; \vdots\\
-  a_{p-1}   &amp; a_{p-2}     &amp; \cdots &amp; a_0    &amp; 0       &amp; 0 &amp; \cdots &amp; a_p\\ \hdashline
-  \bar{a}_p       &amp;  0          &amp; \cdots &amp; 0      &amp; \bar{a}_0 &amp; \bar{a}_1     &amp; \cdots &amp; \bar{a}_{p-1}\\
-  \bar{a}_{p-1}   &amp;   \bar{a}_p       &amp; \cdots &amp; 0      &amp; 0 &amp; \bar{a}_0       &amp;\cdots  &amp; \bar{a}_{p-2}\\
-  \vdots    &amp; \vdots      &amp; \ddots &amp; \vdots &amp; \vdots  &amp; \vdots &amp; \ddots&amp; \vdots\\
-  \bar{a}_{1} &amp; \bar{a}_{2}   &amp; \cdots &amp; \bar{a}_p    &amp; 0       &amp; 0 &amp; \cdots &amp; \bar{a}_0\\
-  \end{array}\right|
-  \end{align}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo13" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 8</strong></span> Considere a equação em diferenças dada por <span class="math display">\[(1-a_1B-a_2B^2)X_t=0.\]</span></p>
-<p>A equação característica é dada por <span class="math inline">\(C(z)=1-a_1z-a_2z^2=0\)</span>.</p>
-<p>Dessa forma, pelo <a href="#/thm-schur" class="quarto-xref">Teorema&nbsp;2</a>, os determinantes a considerar são dados por</p>
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  D_1&amp;=\left|\begin{array}{c:c}
-  -1       &amp; a_2\\ \hdashline
-  a_2 &amp; -1
-  \end{array}\right|=1-a_2^2=(1-a_2)(1+a_2)
-  \end{align*}\]</span></p>
-</div>
-<p><br></p>
-<p>Daí, a condição <span class="math inline">\(D_1&gt;0\)</span> é equivalente a <span class="math inline">\(1-a_2^2&gt;0\)</span> ou <span class="math inline">\(|a_2|&lt;1\)</span>.</p>
-</div>
-</section>
-<section class="slide level2">
-
-<div class="math">
-<p><span class="math display">\[\begin{align*}
-  D_2&amp;=\left|\begin{array}{cc:cc}
-  -1 &amp; 0  &amp; a_2 &amp; a_{1}\\
-  a_1 &amp; -1  &amp; 0 &amp; a_{2}\\ \hdashline
-  a_2 &amp; 0 &amp; -1 &amp; a_1\\
-  a_1 &amp; a_2 &amp; 0 &amp;-1
-  \end{array}\right|\\&amp;=(-1)\left(-1+a_2^2\right)+a_2\left(-a_1^2a_2-a_2-a_1^2+a_2^3\right)-a_1\left(a_1a_2+a_1\right)\\
-  &amp;=1-2a_2^2-a_1^2\left(1+2a_2+a_2^2\right)+ a_2^4=\left(1-a_2^2\right)^2-a_1^2(1+a_2)^2\\
-  &amp;=(1+a_2)^2\left[(1-a_2)^2-a_1^2\right].
-  \end{align*}\]</span></p>
-</div>
-<p><br></p>
-<p>Temos então, <span class="math inline">\(D_2=(1+a_2)^2\left[(1-a_2)^2-a_1^2\right]\)</span>.</p>
-</section>
-<section class="slide level2">
-
-<p>Daí, a condição <span class="math inline">\(D_2&gt;0\)</span> é equivalente a <span class="math display">\[(1+a_2)^2\left[(1-a_2)^2-a_1^2\right]&gt;0.\]</span></p>
-O que significa que, <span class="math inline">\(D_2&gt;0\,\)</span> <em>see</em> <span class="math inline">\(\,(1-a_2)^2&gt;a_1^2\)</span> ou <span class="math inline">\(|1-a_2|&gt;|a_1|\)</span>. Dessa forma, as condições de estabilidade são dada por
-<div class="math">
-<p><span class="math display">\[\begin{align}
-    |a_2|&amp;&lt; 1; &amp; a_2+a_1&amp;&lt;1 &amp; \text{ e } &amp; &amp; a_2-a_1&amp;&lt;1.
-  \end{align}\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="exm-exemplo14" class="theorem example">
-<p><span class="theorem-title"><strong>Exemplo 9</strong></span> Considere a equação em diferenças de ordem <span class="math inline">\(p\)</span>, dada por <span class="math inline">\((1-a_1B-a_2B^2-\cdots-a_pB^p)X_t=0\)</span>, com <span class="math inline">\(a_p\ne0\)</span>. Daí, a equação característica é dada por <span class="math display">\[1-a_1z-a_2z^2-\cdots-a_{p-1}z^{p-1}-a_pz^p=0.\]</span> Dessa forma, pelo teorema fundamental da álgebra, temos que <span class="math display">\[(1-R_1B)(1-R_2B)\cdots(1-R_pB)=0,\]</span> onde as raízes da equação característica são dadas por <span class="math inline">\(R_1^{-1}, R_2^{-1}, R_3^{-1}, \ldots, R_p^{-1}\)</span>.</p>
-<p>Se todas as raízes são diferentes, então a solução da equação em diferenças é dada por <span class="math display">\[X_t=b_1R_1^t+b_2R_2^t+\cdots+b_pR_p^t.\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-<p><b><span style="color:#82243a">Cenário 1.</span></b> Se <span class="math inline">\(1&lt;m\le p\)</span> raízes reais iguais, tal que <span class="math inline">\(R_1=R_2=\cdots=R_m=R\)</span>, então a solução é dada por <span class="math display">\[X_t=R^t\sum_{j=1}^mb_jt^{j-1}+\sum_{j=m+1}^pb_jR_j^t.\]</span> <b><span style="color:#82243a">Cenário 2.</span></b> Em geral, se <span class="math inline">\(m=p\)</span> e <span class="math inline">\(|R|&lt;1\)</span> a solução é dada por <span class="math display">\[X_t=R^t\sum_{j=1}^pb_jt^{j-1}.\]</span></p>
-<div class="callout callout-important no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-Usando o Critério de Schur-Cohn podemos concluir que, para uma equação em diferenças de ordem <span class="math inline">\(p\ge1\)</span>, para que exista <strong>estabilidade</strong>, ou <strong>equilibrio</strong>, no longo prazo é necessário que
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  |a_p|&amp;&lt;1 &amp; &amp; \text{ e}&amp; &amp; a_p+a_{p-1}+\cdots+a_1&lt;1,
-  \end{align}\]</span></p>
-</div>
-<p>que em outras palavras significa que <span class="math inline">\(|R_i|&lt;1\)</span> para <span class="math inline">\(i=1,2,3,\ldots,p\)</span>.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="exercícios" class="slide level2 center" data-background-color="#172a46">
-<h2>Exercícios</h2>
+<section id="medidas-de-posição" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de posição</h2>
 <div class="cell">
 <style type="text/css">
 .center h2 {
@@ -643,83 +230,525 @@ Usando o Critério de Schur-Cohn podemos concluir que, para uma equação em dif
 </style>
 </div>
 </section>
+<section id="medidas-de-tendência-central" class="slide level2">
+<h2>Medidas de tendência central</h2>
+<div id="def-media" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 1 (Média aritmética)</strong></span> A média aritmética é a medida de tendência central mais comumente usada para quantificar a centralidade de um conjunto de observações. Se <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> representa um conjunto de <span class="math inline">\(n\)</span> valores, a média aritmética define-se como <span class="math display">\[\bar{x}=\frac1n\sum_{i=1}^nx_i=\frac{x_1+x_2+\cdots+x_n}{n}.\]</span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div id="exm-mediaaritmetica" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 1</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
+<p>A média aritmética é dada por</p>
+<p><span class="math display">\[\bar{x}=\frac{1+2+3+\cdots+40+70+80}{15}=\frac{358}{15}=23.87;\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-mediaponderada" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 2 (Média ponderada)</strong></span> Se <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> representa um conjunto de <span class="math inline">\(n\)</span> valores, das quais <span class="math inline">\(n_1\)</span> são iguais a <span class="math inline">\(x_1\)</span>, <span class="math inline">\(n_2\)</span> são iguais a <span class="math inline">\(x_2\)</span>,…, <span class="math inline">\(n_k\)</span> são iguais a <span class="math inline">\(x_k\)</span>, onde <span class="math inline">\(n_1+n_2+n_3+\cdots+n_k=n\)</span>, então a média ponderada define-se como <span class="math display">\[\bar{x}_p=\frac1n\sum_{i=1}^kn_ix_i=\frac{n_1x_1+n_2x_2+\cdots+n_kx_k}{n}.\]</span></p>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Média ponderada">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Média ponderada</strong></p>
+</div>
+<div class="callout-content">
+<p>A média ponderada também pode ser representada por <span class="math display">\[\bar{x}_p=\sum_{i=1}^kf_ix_i,\]</span> onde <span class="math inline">\(f_i=\frac{n_i}{n}\)</span> representa a <strong>frequência relativa</strong> da observação <span class="math inline">\(x_i\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-mediaponderada" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 2</strong></span> Para calcular o salário médio dos funcionários de uma empresa, foi realizado o seguinte levantamento:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Função</th>
+<th style="text-align: center;">Quantidade</th>
+<th style="text-align: right;">Salário (<span class="math inline">\(R\$\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Diretor</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">17500</td>
+</tr>
+<tr class="even">
+<td>Gerente</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">8300</td>
+</tr>
+<tr class="odd">
+<td>Auxiliar administrativo</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: right;">2000</td>
+</tr>
+<tr class="even">
+<td>Atendente</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: right;">1100</td>
+</tr>
+<tr class="odd">
+<td>Auxiliar TI</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">1500</td>
+</tr>
+</tbody>
+</table>
+<p>A média salarial da empresa é dada por</p>
+<div class="math">
+<p><span class="math display">\[\begin{align*}
+\bar{x}_p&amp;=\frac{(2\times17500)+(5\times8300)+(10\times2000)+(16\times1100)+(5\times1500)}{38}\\
+&amp;=\frac{121600}{38}=3200.
+\end{align*}\]</span></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-mediageometrica" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 3 (Média geométrica)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores, a média geométrica define-se como <span class="math display">\[\bar{x}_g=\sqrt[n]{x_1\cdot x_2\cdot\cdots\cdot x_n}=\sqrt[n]{\prod_{i=1}^nx_i}.\]</span></p>
+</div>
+<p><br></p>
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>A principal aplicação da média geométrica está no cálculo de taxas de crescimento médio de algo que muda ou cresce de forma multiplicativa ao longo do tempo. Isso a torna a ferramenta ideal para áreas como economia e finanças, onde os retornos, a inflação ou o crescimento de populações são processos cumulativos.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-mediageometrica" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 3 (Retorno Médio de um Investimento)</strong></span> Imagine que um usuário investiu <span class="math inline">\(R\$ 1000\)</span> em uma aplicação financeira.</p>
+<ul>
+<li><p>No primeiro ano, ela valorizou <span class="math inline">\(100\%\)</span>. Agora você tem R$ 2000;</p></li>
+<li><p>No segundo ano, ela desvalorizou <span class="math inline">\(50\%\)</span>. Agora você tem R$1000 novamente.</p></li>
+</ul>
+<p>Se você usasse a <strong>média aritmética</strong>, chegaria a um resultado enganoso: <span class="math display">\[\bar{x}=\frac{100\%+(−50\%)}{2}=25\%\]</span></p>
+<p>Esse cálculo sugere que, em média, você teve um retorno positivo. No entanto, sua realidade é que o valor final do seu investimento é exatamente o mesmo que o inicial.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>A <strong>média geométrica</strong>, por outro lado, reflete a realidade da sua situação. Ela considera o efeito de acumulação:</p>
+<p>Primeiro, convertimos os percentuais em fatores de crescimento, i.e.,</p>
+<ul>
+<li>1° Ano: <span class="math inline">\(1+1.0=2.0\)</span>;</li>
+<li>2° Ano: <span class="math inline">\(1−0.5=0.5\)</span>.</li>
+</ul>
+<p>A média geométrica é dada por <span class="math display">\[\bar{x}_g = \sqrt{2.0\times0.5}=1\]</span></p>
+<p>Convertendo o resultado de volta para um percentual de crescimento, temos que <span class="math inline">\((1−1)\times100\%=0\%\)</span>. Ou seja, a <strong>média geométrica</strong> mostra que, em média, o seu investimento não cresceu, o que é a resposta correta e mais útil para entender o desempenho real.</p>
+</section>
+<section class="slide level2">
+
+<div id="def-mediaharmonica" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 4 (Média harmônica)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores, a média harmônica define-se como <span class="math display">\[\bar{x}_h=\frac{n}{\sum_{i=1}^n\frac{1}{x_i}}.\]</span></p>
+</div>
+<p><br></p>
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>A <strong>média harmônica</strong> tem uma aplicação muito útil em finanças e economia, especialmente para calcular o preço médio de compra em situações onde você investe uma quantia fixa de dinheiro em um ativo (como ações ou moedas) ao longo do tempo.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-mediaharmonica" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 4 (Preço Médio de Compra de uma Ação)</strong></span> Imagine que você decide investir <span class="math inline">\(R\$ 100\)</span> em ações de uma empresa em dois momentos diferentes:</p>
+<ul>
+<li>Na primeira compra, a ação custava <span class="math inline">\(R\$ 10\)</span>;</li>
+<li>Na segunda compra, a ação custava <span class="math inline">\(R\$ 20\)</span>.</li>
+</ul>
+<p>Qual foi o preço médio que você pagou por ação?</p>
+<p><br></p>
+<p>Se você usar a média aritmética, o resultado seria: <span class="math display">\[\bar{x} = \frac{R\$ 10+R\$ 20}{2}=R\$ 15.\]</span></p>
+<p>No entanto, essa resposta está <ins>incorreta</ins>. A média aritmética não considera que você comprou mais ações quando o preço estava baixo.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Para calcular o preço médio real primeiro calcula-se o número de ações compradas:</p>
+<ul>
+<li>Ações na 1ª compra: <span class="math inline">\(\frac{R\$ 100}{R\$ 10}=10\)</span> ações;</li>
+<li>Ações na 2ª compra: <span class="math inline">\(\frac{R\$ 100}{R\$ 20}=5\)</span> ações.</li>
+</ul>
+<p>O Preço Médio Real (<span class="math inline">\(PMR\)</span>) é calculado como: <span class="math display">\[PMR=\frac{\text{Dinheiro total gasto}}{\text{Total de ações compradas}}=\frac{R\$ 100 +R\$ 100}{10 + 5}=\frac{R$ 200}{15}\approx R\$ 13.33.\]</span></p>
+<p>Aplicando a <strong>média harmônica</strong> aos preços das ações, temos que <span class="math display">\[\bar{x}_h=\frac{2}{\frac{1}{10}+\frac{1}{20}}=\frac{40}{3}\approx R\$13.33.\]</span></p>
+<p>A média harmônica dá o resultado correto porque ela dá um peso maior ao preço menor (<span class="math inline">\(R\$ 10\)</span>), que é onde você comprou mais ações.</p>
+</section>
+<section class="slide level2">
+
+<div id="def-mediana" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 5 (Mediana)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores. Considere <span class="math inline">\(x_{(1)}, x_{(2)},\ldots,x_{(n)}\)</span> o conjunto de observações ordenadas em ordem crescente, i.e., <span class="math display">\[\min\{x_1, x_2,\ldots,x_n\}=x_{(1)}\le x_{(2)}\le\cdots\le x_{(n)}=\max\{x_1, x_2,\ldots,x_n\}.\]</span></p>
+<p>A mediana define-se como:</p>
+<div class="math">
+<p><span class="math display">\[\begin{align*}
+
+\tilde{x}&amp;=
+\begin{cases}
+x_{\left(\frac{n+1}{2}\right)}, &amp; \text{para } n \text{ ímpar;}\\ \\
+\frac{x_{\left(\frac{n}{2}\right)}+x_{\left(\frac{n}{2}+1\right)}}{2}, &amp; \text{para } n \text{ par.}
+\end{cases}
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>A <strong>mediana</strong> é a medida perfeita para situações em que o conjunto de dados contém valores extremos (<em>outliers</em>). Na economia, isso é muito comum, especialmente com indicadores de renda e riqueza.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/mediana.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
+<section class="slide level2">
+
+<div id="exm-mediana1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 5</strong></span> Considere a seguinte sequência de observações: <span class="math display">\[1,2,3,5,10,10,12,15,20,20,30,40,40,70,80.\]</span></p>
+<p>A mediana é dada por <span class="math inline">\(\tilde{x}=15\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div id="exm-mediana2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 6 (Renda Familiar Média de um País)</strong></span> Imagine um grupo de <span class="math inline">\(100\)</span> famílias, onde <span class="math inline">\(99\)</span> delas têm uma renda anual entre <span class="math inline">\(R\$ 20000\)</span> e <span class="math inline">\(R\$ 80000\)</span>, mas uma única família tem uma renda de <span class="math inline">\(R\$ 1\)</span> bilhão.</p>
+<p><br></p>
+<p>A <strong>média aritmética</strong> seria <span style="color:#82243a">distorcida</span> pela renda dessa única família, fazendo com que o “salário médio” pareça muito alto, não representando a realidade da maioria.</p>
+<p>A <strong>mediana</strong>, no entanto, será a renda da família que está na 50ª posição da lista (quando as rendas são ordenadas da menor para a maior). Esse valor dará uma imagem muito mais precisa e realista do que a maioria das famílias realmente ganha.</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-quantis" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 6 (Quantis)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores. Considere <span class="math inline">\(x_{(1)}, x_{(2)},\ldots,x_{(n)}\)</span> o conjunto de observações ordenadas em ordem crescente, i.e., <span class="math display">\[x_{(1)}\le x_{(2)}\le\cdots\le x_{(n)}.\]</span></p>
+<p>Define-se o quantil de ordem <span class="math inline">\(p\)</span>, denotado como <span class="math inline">\(q(p)\)</span>, onde <span class="math inline">\(p\in(0,1)\)</span>, como aquele cujas <span class="math inline">\(100p\%\)</span> observações são menores do que <span class="math inline">\(q(p)\)</span>.</p>
+</div>
+<div title="Quantis">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quantis</strong></p>
+</div>
+<div class="callout-content">
+<p>Os quantis são consideradas medidas de tendência não-central e são indicadores de uma determinada posição na distribuição dos dados. Os quantis não buscam a centralidade da distribuição, como a média ou a mediana, mas sim dividem o conjunto de dados em partes iguais, indicando a posição de um valor em relação a todos os outros.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div id="exm-quantis1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 7</strong></span> Alguns quantis de interesse para a análise descritiva:</p>
+<p>I Quantil: <span class="math inline">\(q_1=q(0.25)\)</span>; II Quantil (Mediana): <span class="math inline">\(q_2=q(0.5)\)</span>; III Quantil: <span class="math inline">\(q_3=q(0.75)\)</span>.</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-quantis2" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 8</strong></span> Suponha o seguinte conjunto de dados: <span class="math display">\[15, 5, 3, 8, 10, 2, 7, 11, 12.\]</span> Ordenando os valores, temos que</p>
+<p><span class="math display">\[2, 3, 5, 7, 8, 10, 11, 12, 15.\]</span> A mediana é o valor <span class="math inline">\(\tilde{x}=q_2=8\)</span>. O primeiro quantil é dado por: <span class="math display">\[q_1=\frac{3+5}{2}=\frac82=4.\]</span> O terceiro quantil é dado por: <span class="math display">\[q_3=\frac{11+12}{2}=\frac{23}{2}=11.5.\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Agora, suponha que ao conjunto é acrescentado o valor <span class="math inline">\(100\)</span>, dessa forma temo a seguinte sequência: <span class="math display">\[2, 3, 5, 7, 8, 10, 11, 12, 15, 100.\]</span> Nesse novo conjunto, a mediana é o valor <span class="math inline">\(\tilde{x}=q_2=\frac{8+10}{2}=\frac{18}{2}=9\)</span>. O primeiro quantil é dado por <span class="math inline">\(q_1=5\)</span> e o terceiro quantil é dado por <span class="math inline">\(q_3=12\)</span>.</p>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Executando no R">
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Executando no R</strong></p>
+</div>
+<div class="callout-content">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="do">## Conjunto de observações</span></span>
+<span id="cb1-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>)</span>
+<span id="cb1-3"><a href=""></a><span class="fu">mean</span>(x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.111111</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">quantile</span>(x, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.25</span>), <span class="at">type =</span> <span class="dv">6</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+ 2.0  4.0  8.0 11.5 15.0 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="do">## Acrescentando o valor 100</span></span>
+<span id="cb5-2"><a href=""></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">15</span>, <span class="dv">100</span>)</span>
+<span id="cb5-3"><a href=""></a><span class="fu">mean</span>(y)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">quantile</span>(y, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">by =</span> <span class="fl">0.25</span>), <span class="at">type =</span> <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  0%  25%  50%  75% 100% 
+   2    5    9   12  100 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-moda" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 7 (Moda)</strong></span> A moda é uma medida de tendência central que representa o valor mais frequente.</p>
+</div>
+<p><br></p>
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>A <strong>moda</strong> é particularmente útil quando lidamos com dados categóricos ou discretos (que não são contínuos), e a pergunta é sobre popularidade ou preferência.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div id="exm-moda" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 9 (Gestão de Estoque e Produção)</strong></span> Uma empresa de calçados dificilmente vai fabricar um tipo de sapato, baseado na média aritmética do tamanho do pé dos consumidores, por exemplo, <span class="math inline">\(39.5\)</span> cm.</p>
+<p><br></p>
+<p>Para otimizar sua produção, a empresa precisa saber qual é o tamanho mais <strong>popular</strong>.</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Ao analisar os dados de vendas, a <strong>moda</strong> indicará qual é o número mais vendido, por exemplo, tamanho <span class="math inline">\(40\)</span>.</p>
+<p>Com essa informação, a empresa pode otimizar sua produção e gerenciar seu estoque, garantindo que o produto mais procurado esteja sempre disponível, enquanto evita produzir em excesso tamanhos menos populares.</p>
+<p>A <strong>moda</strong> é usada em pesquisa de mercado para identificar o produto, sabor ou serviço mais popular, orientando as estratégias de marketing e desenvolvimento de produtos.</p>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Relação entre média, mediana e moda">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Relação entre média, mediana e moda</strong></p>
+</div>
+<div class="callout-content">
+Para conjuntos de observações com comportamento unimodal, i.e., uma única moda, e levemente concentrada ao lado direito (ou esquerdo), vigora a seguinte relação empírica:
+<p style="text-align: center">
+Média - Moda = <span class="math inline">\(3\,\)</span>(Média - Mediana)
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="relação-empírica-entre-a-média-a-mediana-e-a-moda">Relação empírica entre a média, a mediana e a moda</h3>
+
+<img data-src="images/simetria.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
+<section class="slide level2">
+
+<h3 id="relação-empírica-entre-a-média-a-mediana-e-a-moda-1">Relação empírica entre a média, a mediana e a moda</h3>
+
+<img data-src="images/assimetria_direita.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
+<section class="slide level2">
+
+<h3 id="relação-empírica-entre-a-média-a-mediana-e-a-moda-2">Relação empírica entre a média, a mediana e a moda</h3>
+
+<img data-src="images/assimetria_esquerda.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"></section>
+<section id="medidas-de-dispersão" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de dispersão</h2>
+</section>
+<section class="slide level2">
+
+<div id="def-variancia" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 8 (Variância)</strong></span> Seja <span class="math inline">\(x_1, x_2,\ldots,x_n\)</span> um conjunto de <span class="math inline">\(n\)</span> valores. A variância define-se como <span class="math display">\[s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2,\]</span> onde <span class="math inline">\(\bar{x}=\frac1n\sum_{i=1}^nx_i\)</span>.</p>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Outra forma">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Outra forma</strong></p>
+</div>
+<div class="callout-content">
+<p>Outra forma de calcular a variância é dada por <span class="math display">\[s_*^{2}=\frac1{n}\sum_{i=1}^n(x_i-\bar{x})^2.\]</span> Nesse caso, teriamos a média dos desvíos médios ao quadrado. Quando <span class="math inline">\(n\)</span> é suficientemente grande, as propriedades estatísticas de <span class="math inline">\(s^2\)</span> e <span class="math inline">\(s_*^2\)</span> são similares. Em aplicações práticas usaremos <span class="math inline">\(s^2\)</span> para quantificar o valor da variância de um conjunto de dados.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="algumas-considerações">Algumas considerações</h3>
+<ul>
+<li>A variância sempre é um valor não-negativo, i.e., <span class="math inline">\(s^2\ge0\)</span>;</li>
+<li>A variância é invariante à adição (ou substração) de um valor constante aos dados, i.e., as variâncias das sequências <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> e <span class="math inline">\(x_1\pm a,x_2\pm a,\ldots,x_n\pm a\)</span>, com <span class="math inline">\(a\)</span> constante, são iguais;</li>
+<li>Se a sequência é multiplicada por uma constante <span class="math inline">\(a\)</span>, a variância é multiplicada pelo quadrado da constante, i.e., se a variância da sequência <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> é <span class="math inline">\(s^2\)</span>, então a variância do conjunto <span class="math inline">\(ax_1,ax_2,\ldots,ax_n\)</span> é dada por <span class="math inline">\(a^2\,s^2\)</span>;</li>
+</ul>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Desvio padrão">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Desvio padrão</strong></p>
+</div>
+<div class="callout-content">
+<p>O desvio padrão define-se como <span class="math display">\[s=\sqrt{\frac1{n-1}\sum_{i=1}^n(x_i-\bar{x})^2}=\sqrt{s^2}\]</span></p>
+<p>e é a medida de dispersão mais usada na prática, pois apresenta as mesmas unidades dos dados.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-variancia1" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 10</strong></span> No mundo dos investimentos, a dispersão dos retornos de um ativo financeiro (como uma ação, um fundo ou um título) é sinônimo de <strong>volatilidade</strong>. O desvio padrão é a métrica padrão que os analistas e investidores usam para entender o risco de um investimento.</p>
+<ul>
+<li><p><strong>O que ele mede?</strong> O quanto os retornos de um ativo tendem a se desviar de seu retorno médio esperado;</p></li>
+<li><p><strong>Regra básica:</strong> Quanto maior o desvio padrão de um ativo, maior é o seu <em>risco</em> e sua <em>volatilidade</em>.</p></li>
+</ul>
+<p>Considere o seguinte cenário: Um investidor está comparando dois fundos de investimento:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Fundo</th>
+<th style="text-align: center;">Retorno anual médio (<span class="math inline">\(\bar{x}\)</span>)</th>
+<th style="text-align: right;">Desvio padrão (<span class="math inline">\(s\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td style="text-align: center;"><span class="math inline">\(8\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(3\%\)</span></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td style="text-align: center;"><span class="math inline">\(8\%\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(15\%\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><p>Baseados na <strong>média</strong>, ambos os fundos têm o mesmo retorno esperado (<span class="math inline">\(8\%\)</span>);</p></li>
+<li><p>Baseados no <strong>desvio padrão</strong>, o Fundo <strong>A</strong> é um investimento de <strong>baixo</strong> risco. O Fundo <strong>B</strong> é um investimento de <strong>alto</strong> risco. Isso indica uma volatilidade muito maior, com a possibilidade de perdas significativas.</p></li>
+</ul>
+<p>Dessa forma, o investidor que prioriza a segurança (baixo risco) escolherá o Fundo <strong>A</strong>, enquanto o investidor que aceita grandes flutuações em busca de ganhos potencialmente maiores escolherá o Fundo <strong>B</strong>.</p>
+</section>
+<section id="medidas-de-forma" class="slide level2 center" data-background-color="#172a46">
+<h2>Medidas de forma</h2>
+</section>
+<section class="slide level2">
+
+<div id="def-assimetria" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 9 (Assimetria)</strong></span> &nbsp;</p>
+</div>
+<div id="def-curtose" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 10 (Curtose)</strong></span> &nbsp;</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exr-obesidade" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercício 1 (Obesidade na Ufes)</strong></span> A obesidade entre estudantes é um problema de saúde pública crescente no Brasil, sendo mais elevada entre <strong>adolescentes</strong>, especialmente os de baixa renda, que enfrentam uma combinação de excesso de peso e desnutrição.</p>
+<p><br></p>
+<p><strong>Objetivo:</strong> Suponha que nosso objetivo é avaliar a IMC nos estudantes da Ufes.</p>
+<p><br></p>
+<p>De acordo com as informações da plataforma <a href="https://info.ufes.br/" target="_blank">InfoUfes</a>, a universidade conta com aproximadamente 16.705 discentes.</p>
+<p>Claramente, resulta insustentável medir o IMC de todos os estudantes. Dessa forma, resulta interessante selecionar um grupo de estudantes que reflita bem as características dos estudantes, e não somente alguns, como por exemplo: atletas ou alguns estudantes acima do peso.</p>
+<p><br></p>
+<font size="6">
+<p style="text-align: center">
+<strong>Identifique o(s) parâmetro(s) e as variáveis nesse estudo.</strong>
+</p>
+</font><p><font size="6"></font></p>
+</div>
+</section>
+<section id="exercícios" class="slide level2 center" data-background-color="#172a46">
+<h2>Exercícios</h2>
+</section>
 <section id="sugestão-de-exercícios" class="slide level2">
 <h2>Sugestão de exercícios</h2>
 <ol type="1">
-<li>Considere a equação em diferenças de segunda ordem, dada pela seguinte representação <span class="math inline">\((1-a_1B-a_2B^2)X_t=(1-R_1B)(1-R_2B)X_t=0\)</span>.</li>
-</ol>
-<ol type="a">
-<li>Mostre que a solução geral para a equação é dada por:</li>
+<li>Mostre que:</li>
 </ol>
 <div class="math">
-<p><span class="math display">\[\begin{align}
-  X_t&amp;=\begin{cases}
-  b_1R_1^{t}+b_2R_2^{t}, &amp; \text{para } R_1^{-1} \text{ e } R_2^{-1} \, \text{ raízes reais };\\
-  \alpha^t\left[(b_1+b_2)\cos\phi t + i(b_1-b_2)\,\mathrm{sen}\,\phi t)\right], &amp; \text{para } R_1^{-1} \text{ e } R_2^{-1} \, \text{ raízes complexas };\\
-  b_1R_1^{t}+b_2\,tR_2^{t}, &amp; \text{para } R_1^{-1} = R_2^{-1}.
-  \end{cases}
-  \end{align}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+  &amp;a.\, \sum_{i=1}^n(x_i-\bar{x})f_i=0, \quad \text{onde } f_i=\frac{n_i}{n}, \text{ para } i=1,2,\ldots, n; \\
+  &amp;b.\, \sum_{i=1}^n(x_i-\bar{x})^2\le\sum_{i=1}^n(x_i-x_0)^2,
+  \end{align*}\]</span> onde <span class="math inline">\(x_0\ne\bar{x}\)</span> é uma valor arbitrário.</p>
 </div>
-</section>
-<section class="slide level2">
-
-<ol start="2" type="a">
-<li>Note que as condições para estabilidade dinâmica da função <span class="math inline">\(X_t\)</span>, em termos das suas raízes, são dadas por <span class="math inline">\(|R_1|&lt;1\)</span> e <span class="math inline">\(|R_2|&lt;1\)</span> ou equivalentemente:
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  %\tag{1}
-  i.\,\, &amp; R_i&lt;1; &amp; ii.\,\, &amp; -R_i&lt;1, \quad i=1,2; &amp;\text{e}&amp; &amp; iii.\,\, &amp; |R_1R_2|&lt;1.
-  \end{align}\]</span></p>
-</div>
-Mostre que as condições acimas podem ser reescritas em termos de, <span class="math inline">\(a_1\)</span> e <span class="math inline">\(a_2\)</span>, da seguinte forma:
-<div class="math">
-<p><span class="math display">\[\begin{align}
-  %\tag{2}
-  i.\,\, &amp; a_2+a_1&lt;1; &amp; ii.\,\, &amp; a_2-a_1&lt;1; &amp;\text{e}&amp; &amp; iii.\,\, &amp; |a_2|&lt;1.
-  \end{align}\]</span></p>
-</div></li>
-</ol>
-</section>
-<section class="slide level2">
-
 <ol start="2" type="1">
-<li>Considere a equação em diferenças de terceira ordem, dada pela seguinte representação <span class="math inline">\((1-a_1B-a_2B^2-a_3B^3)X_t=0\)</span>. Mostre que as condições de estabilidade são dadas por
-<div class="math">
-<p><span class="math display">\[\begin{align}
-&amp;|a_3|&lt; 1; &amp; a_3+a_2+a_1&lt;1;\\
-&amp;a_2-a_1-a_3&lt;1; &amp; a_3\,(a_3+a_1)-a_2&lt;1;
-  \end{align}\]</span></p>
-</div>
-e</li>
+<li>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações, cuja média aritmética é dada por <span class="math inline">\(\bar{x}\)</span>. Mostre que, a média aritmética do conjunto <span class="math inline">\(x_1\pm a,x_2\pm a,\ldots,x_n\pm a\)</span>, onde <span class="math inline">\(a\)</span> é um valor constante, é dada por <span class="math inline">\(\bar{x}\pm a\)</span>.</li>
 </ol>
-<div class="math">
-<p><span class="math display">\[\begin{align}
-    3a_3-a_2-a_1&lt;3\quad \text{ou} \quad a_1-a_2-3a_3&lt;3.
-  \end{align}\]</span></p>
-</div>
 </section>
-<section id="referências" class="slide level2 smaller scrollable">
-<h2>Referências</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bartlett:1946" class="csl-entry" role="listitem">
-Bartlett, M. S. (1946), <span>“On the theoretical specification and sampling properties of autocorrelated time series”</span>, <em>Journal of the Royal Statistical Society</em>, 8, 27–41.
-</div>
-<div id="ref-box:jenkins:reinsel:1994" class="csl-entry" role="listitem">
-Box, G. E., Jenkins, G. M., e Reinsel, G. (1994), <em>Time Series Analysis: Forecasting and Control</em>, Prentice Hall.
-</div>
-<div id="ref-brockwell:davis:2016" class="csl-entry" role="listitem">
-Brockwell, P., e Davis, R. (2016), <em>Introduction to Time Series and Forecasting</em>, Springer Verlag.
-</div>
-<div id="ref-morettin:toloi:2006" class="csl-entry" role="listitem">
-Morettin, P., e Toloi, C. (2006), <em>Análise de Séries Temporais</em>, Editora Blucher: ABE - Projeto Fisher.
-</div>
-<div id="ref-wei:2005" class="csl-entry" role="listitem">
-Wei, W. (2005), <em>Time Series Analysis: Univariate and Multivariate Methods</em>, Addison Wesley.
-</div>
-<div id="ref-wold:1938" class="csl-entry" role="listitem">
-Wold, H. (1938), <em>A study in the analysis of stationary time series</em>, Almqvist &amp; Wiksells Boktryckert Uppsala.
-</div>
-</div>
+<section class="slide level2">
+
+<ol start="3" type="1">
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações, tal que, <span class="math inline">\(n_1\)</span> números têm média <span class="math inline">\(\bar{x}_1\)</span>, <span class="math inline">\(n_2\)</span> números têm média <span class="math inline">\(\bar{x}_2,\ldots, n_k\)</span> números têm média <span class="math inline">\(\bar{x}_k\)</span>. Mostre que, a média aritmética do conjunto de observações é dada por <span class="math display">\[\bar{x}=\frac{\sum_{j=1}^k\bar{x}_jn_j}{\sum_{j=1}^kn_j}.\]</span></p></li>
+<li><p>Mostre que o produtos dos quocientes de cada valor de um conjunto de números pela média geométrica do conjunto é igual a 1, i.e., <span class="math display">\[\frac{x_1}{\bar{x}_g}\frac{x_2}{\bar{x}_g}\cdots\frac{x_n}{\bar{x}_g}=1.\]</span></p></li>
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que: <span class="math display">\[\bar{x}_h\le\bar{x}_g\le\bar{x}.\]</span></p></li>
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (x_{i} - x_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p></li>
+</ol>
+<!-- ## Referências -->
+<!-- ::: {#refs} -->
+<!-- ::: -->
 </section>
 <section id="política-de-proteção-aos-direitos-autorais" class="slide level2">
 <h2>Política de proteção aos direitos autorais</h2>
@@ -739,20 +768,20 @@ Wold, H. (1938), <em>A study in the analysis of stationary time series</em>, Alm
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="aula3_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="aula2_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="aula3_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="aula3_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="aula3_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula2_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
