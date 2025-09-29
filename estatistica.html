@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt">
+
+<head>
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PNSXVNR');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<!--- basic page needs
+   ================================================== -->
+	<meta charset="utf-8">
+	<title>Análise Exploratório de Dados</title>
+	<meta name="description"
+		content="Site do Laboratório de Estatística e Computação Natural -- LECON. Neste site serão disponibilizados materiais sobre Estatística e afins.">
+	<meta name="author" content="LECON">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+   ================================================== -->
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/mainSTA.css">
+	<link rel="stylesheet" href="css/vendor.css">
+	<link rel="stylesheet" href="css/slidebar.css">
+
+	<!-- script
+   ================================================== -->
+
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+	<script src="js/slidebar.js"></script>
+
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+	<link rel="stylesheet" href="css/font-awesome-6/css/all.css" type="text/css">
+
+
+</head>
+
+<!-- favicons
+	================================================== -->
+<link rel="icon" type="image/png" href="favicon.ico">
+
+</head>
+
+<body id="top">
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNSXVNR" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- header 
+   ================================================== -->
+	<header>
+
+
+		<div class="row">
+
+			<div class="top-bar">
+				<a class="menu-toggle" href="#"><span>Menu</span></a>
+
+				<div class="logo">
+					<a href="https://bit.ly/4mKtIXg">Menu</a>
+				</div>
+
+				<nav id="main-nav-wrap">
+					<ul class="main-navigation">
+						<li class="current"><a class="smoothscroll" href="#intro" title="">Início</a></li>
+						<li><a class="smoothscroll" href="#slides" title="">Slides</a></li>
+						<li><a class="smoothscroll" href="#referencias" title="">Referências</a></li>
+						<li><a class="smoothscroll" href="#scripts" title="">Scripts</a></li>
+						<li><a class="smoothscroll" href="#datasets" title="">Datasets</a></li>
+						<li><a class="smoothscroll" href="#contato" title="">Contato</a></li>
+					</ul>
+				</nav>
+			</div> <!-- /top-bar -->
+
+		</div> <!-- /row -->
+	</header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+	<section id="intro">
+
+		<div class="intro-overlay"></div>
+
+		<div class="intro-content">
+			<div class="row">
+
+				<div class="col-twelve">
+
+					<h5>Introdução à</h5>
+					<h1>Estatística e Probabilidade</h1>
+
+					<p class="intro-position">
+						<span><a href="#slides">Slides</a></span>
+						<span><a href="#referencias">Referências</a></span>
+						<span><a href="#scripts">Scripts</a></span>
+						<span><a href="#datasets">Datasets</a></span>
+						<span><a href="#contato">Contato</a></span>
+					</p>
+
+				</div>
+
+			</div>
+		</div> <!-- /intro-content -->
+
+		<ul class="intro-social">
+			<li><a href="mailto:lecon@ufes.br" target="_blank"><i class="fas fa-envelope"></i></a></li>
+			<li><a href="https://github.com/lecondest" target="_blank"><i class="fab fa-github"></i></a></li>
+			<li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+		</ul> <!-- /intro-social -->
+
+	</section> <!-- /intro -->
+
+
+	<!-- slides section
+   ================================================== -->
+	<section id="slides" class="grey-section">
+		<div class="row section-intro">
+			<div class="col-twelve slides-header">
+
+				<h2>Slides</h2>
+				<h1>Introdução à Estatística e Probabilidade</h1>
+
+				<p class="lead">
+					O objetivo da disciplina é fornecer aos alunos os fundamentos teóricos e práticos necessários para a análise exploratória de dados, 
+					capacitando-os a interpretar e comunicar os resultados de forma eficaz. A disciplina abrange tópicos como visualização de dados,
+					análise univariada e bivariada, identificação de padrões e tendências, e técnicas de resumo e apresentação de dados. São discutidos também os conceitos básicos de probabilidade e inferência estatística.
+				</p>
+
+			</div>
+		</div> <!-- /section-intro-->
+
+		<div class="row slides-timeline">
+
+			<div class="col-twelve slides-header">
+
+			</div> <!-- /slides-header -->
+
+			<div class="col-twelve">
+
+				<div class="timeline-wrap">
+
+					<div id="owl-slider-work" class="owl-carousel certificate-list">
+
+						<!-- Intro -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-book-open-reader"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 0 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="https://bit.ly/3KjMfw7" target="_blank">Plano de Ensino</a></h4>
+								<p>
+									Plano de ensino proposto para a disciplina. Nesse material é informado o programa da disciplina, datas importantes, referências bibliográficas sugeridas para o
+									acompanhamento dos assuntos, entre outros.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Intro -->
+
+						<!-- Aula 1 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 1 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4> <a href="https://bit.ly/46Hp3iB" target="_blank">Introdução</a></h4>
+								<p>
+									É apresentada uma breve introdução à análise exploratória de dados, incluindo a importância da análise de dados na tomada de decisões e a
+									relevância da disciplina para a formação acadêmica e profissional dos alunos.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 1 -->
+
+						<!-- Aula 2 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 2 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="https://bit.ly/46DQmud" target="_blank"> Medidas resumo</a></h4>
+								<p>
+									São discutidas algumas medidas resumo utilizadas na análise exploratória de dados, como média, mediana, moda, desvio padrão e variância. Além disso, são apresentados alguns gráficos utilizados para visualizar a distribuição dos dados, como histogramas e boxplots.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 2 -->
+
+
+						<!-- Aula 3 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 3 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="" target="_blank">Tabelas de frequências</a></h4>
+								<p>
+									São discutidas algumas técnicas para a construção de tabelas de frequências, como a utilização de classes e intervalos. Além disso, são apresentados alguns gráficos utilizados para visualizar a distribuição dos dados, como histogramas e polígonos de frequência.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 3 -->
+
+						<!-- Aula 4 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 4 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="" target="_blank"> Visualização</a></h4>
+								<p>
+									São discutidas algumas técnicas de visualização de dados, como gráficos de dispersão, gráficos de barras e gráficos de linhas. Além disso, são apresentados alguns pacotes em R que podem ser utilizados para a criação desses gráficos, como ggplot2 e plotly.	
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 4 -->
+
+						<!-- Aula 5 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 5 </h3>
+								<p>Setembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="https://bit.ly/4jZNwoT" target="_blank"> Introdução à probabilidade</a></h4>
+								<p>
+									São discutidos alguns conceitos básicos de probabilidade, como eventos, espaço amostral e probabilidade condicional. Além disso, são apresentados alguns modelos probabilísticos utilizados na análise de dados, como a distribuição normal e a distribuição binomial.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 5 -->
+
+						<!-- Aula 6 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 6 </h3>
+								<p>Novembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="" target="_blank"> Distribuição amostral da média</a></h4>
+								<p>
+									São discutidos alguns aspectos relacionados à distribuição amostral da média e como ela pode ser utilizada para realizar inferências sobre a população.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 6 -->
+
+						<!-- Aula 7 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 7 </h3>
+								<p>Novembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="" target="_blank"> Estimação da média</a></h4>
+								<p>
+									São discutidos alguns aspectos relacionados à estimação da média populacional a partir de uma amostra. Além disso, são apresentados alguns métodos para a construção de intervalos de confiança para a média.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 7 -->
+						<!-- Aula 8 -->
+						<div class="timeline-block">
+
+							<div class="timeline-ico">
+								<i class="fa fa-chart-line"></i>
+							</div>
+
+							<div class="timeline-header">
+								<h3> Aula 8 </h3>
+								<p>Novembro, 2025</p>
+							</div>
+
+							<div class="timeline-content">
+								<h4><a href="" target="_blank"> Teste de hipóteses para a média</a></h4>
+								<p>
+									São discutidos alguns aspectos relacionados ao teste de hipóteses para a média populacional, incluindo a formulação de hipóteses nula e alternativa, o cálculo de estatísticas de teste e a interpretação de resultados.
+								</p>
+							</div>
+						</div> <!-- /timeline-block -->
+						<!-- \Aula 8 -->
+
+					</div> <!-- owl-slider-work -->
+				</div> <!-- /timeline-wrap -->
+
+			</div> <!-- /col-twelve -->
+
+		</div> <!-- /slides-timeline -->
+		
+	</section> <!-- /features -->
+
+	<section id="referencias">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h1>Referências Bibliográficas</h1>
+
+				<div class="intro-info">
+
+					<!--<img src="images/profile-pic.jpg" alt="Profile Picture">-->
+					<p class="lead">
+						As referências bibliográficas estão compostas por livros físicos, livros online e alguns sites
+						com assuntos relacionados à áreas. Os livros online são gratuitos e podem ser acessados
+						diretamente no link. Os livros físicos podem ser adquiridos em livrarias ou em sites de vendas
+						online.
+					<p>
+
+					<h5>Livros físicos</h5>
+					<ol>
+						<li>MONTGOMERY, Douglas C.; PECK, Elizabeth A.; VINING, G. Geoffrey. Introduction to linear
+							regression analysis. 5th ed. New Jersey: Wiley Interscience, 2012.</li>
+
+						<li>DRAPER, Norman Richard; SMITH, Harry. Applied regression analysis. 3rd ed. New York: John
+							Wiley, c1998. xvii, 706 p.</li>
+
+						<li>GREENE, W. H. Econometric Analysis. 8th ed. New York: Pearson, c2018. xvii, 1176 p.</li>
+
+						<li>HOFFMANN, Rodolfo; VIEIRA, Sônia. Análise de regressão: uma introdução à econometria. 3 ed.
+							São Paulo: Hucitec, 2006 viii, 379p.</li>
+
+						<li>GUJARATI, Damodar N.; PORTER, Dawn C. Econometria básica. 5 ed. Rio de Janeiro, RJ: AMGH,
+							2011. 924 p.</li>
+
+					</ol>
+
+					<h5>Livros online</h5>
+					<ol>
+						<li>Bailey, R. A. (2008). <a href="https://bit.ly/3Kx5m7H" target="_blank">Statistical
+								Reasoning</a>. 1st ed.</li>
+
+						<li>Dalpiaz D. (2021). <a
+								href="https://daviddalpiaz.github.io/appliedstats/applied_statistics.pdf"
+								target="_blank">Applied Statistics with R</a>.</li>
+
+						<li>Irizarry, R. (2021). <a href="https://bit.ly/2SRBJBK" target="_blank">Introduction to Data
+								Science</a>. <a href="https://bit.ly/3zEySwF" target="_blank">[Online version]</a></li>
+
+						<li>Justiniano, P. (2021). <a href="http://www.leg.ufpr.br/~paulojus/estbas/"
+								target="_blank">Estatística Básica</a>. Material didático. Equipe EstBas - DEST/UFPR.
+						</li>
+
+						<li>Petersen, K. B. and Pedersen, M. S. (2012). <a
+								href="http://www2.imm.dtu.dk/pubdb/edoc/imm3274.pdf" target="_blank">The Matrix
+								Cookbook</a>.</li>
+
+
+						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.had.co.nz/" target="_blank">R
+								for data science</a>. <a href="https://es.r4ds.hadley.nz/" target="_blank">[Spanish
+								version]</a>. 1st Ed.</li>
+
+						<li>Wickham, H. and Grolemund, G. (2017). <a href="https://r4ds.hadley.nz/" target="_blank">R
+								for data science</a>. 2nd ed.</li>
+
+						<li>Wright, C., Ellis, S., Hicks, S. and Peng, R. (2021). <a href="https://bit.ly/3qhUDht"
+								target="_blank">Tidyverse Skills for Data Science in R</a>. 2nd ed.</li>
+					</ol>
+
+					<h5>Artigos</h5>
+					<ol>
+
+						<li><a href="https://www.openintro.org/" target="_blank">OpenIntro statistics</a>.</li>
+					</ol>
+
+					<h5>Sites</h5>
+					<ol>
+						<li><a href="https://bookdown.org/" target="_blank">Livros gratuitos feitos com o pacote
+								Bookdown</a>.</li>
+
+						<li><a href="https://www.openintro.org/" target="_blank">OpenIntro statistics</a>.</li>
+
+					</ol>
+
+				</div>
+			</div>
+		</div> <!-- /section-intro -->
+
+	</section> <!-- /process-->
+
+
+	<!-- Scripts Section
+   ================================================== -->
+	<section id="scripts">
+
+		<div class="overlay"></div>
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h5>Scripts</h5>
+
+				<p class="lead">
+					Scripts em R e Python estão disponíveis para ilustrar algumas técnicas utilizadas para a análise de dados. Para execução do exemplos são utilizados conjuntos de dados disponíveis na seção de <a
+						href="#datasets">Datasets</a>. Não esqueça de verificar a seção de <a
+						href="#referencias">Referências Bibliográficas</a> para obter mais informações sobre os métodos
+					utilizados.
+				</p>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row scripts-content">
+
+			<div id="owl-slider" class="owl-carousel scripts-list">
+
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-pie-chart"></i></span>
+
+					<div class="scripts-content">
+
+						<h3>Análise Descritiva</h3>
+
+						<p class="desc">
+						<ul>
+							<li><a href="" target="_blank"> Script01.R</a></li>
+							<li><a href="" target="_blank"> Script02.R</a></li>
+							<li><a href="" target="_blank"> Script03.R</a></li>
+						</ul>
+						</p>
+					</div>
+				</div> <!-- /scripts -->
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-bar-chart"></i></span>
+
+					<div class="scripts-content">
+
+						<h3>Visualização</h3>
+
+						<p class="desc">
+						<ul>
+							<li><a href="" target="_blank"> Script04.R</a></li>
+							<li><a href="http://" target="_blank"> Script05.R</a></li>
+							<li><a href="http://" target="_blank"> Script06.R</a></li>
+						</ul>
+						</p>
+					</div>
+				</div> <!-- /scripts -->
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-signal"></i></span>
+
+					<div class="scripts-content">
+
+						<h3>Probabilidade I</h3>
+
+						<p class="desc">
+						<ul>
+							<li><a href="https://" target="_blank"> Script07.R</a></li>
+							<li><a href="https://" target="_blank"> Script08.R</a></li>
+							<li><a href="https://" target="_blank"> Script09.R</a></li>
+						</ul>
+						</p>
+
+					</div>
+				</div> <!-- /scripts -->
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-network"></i></span>
+
+					<div class="scripts-content">
+
+						<h3> Probabilidade II</h3>
+
+						<p class="desc">
+							<a href="http://" target="_blank"> Script1.ipynb</a>
+						</p>
+
+					</div>
+
+				</div> <!-- /scripts -->
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-edit"></i></span>
+
+					<div class="scripts-content">
+
+						<h3>Inferência I</h3>
+
+						<p class="desc">
+							<a href="https://bit.ly/3wWBSEg" target="_blank"> ST_aula6.ipynb</a>
+						</p>
+
+					</div>
+
+				</div> <!-- /scripts -->
+
+				<div class="scripts">
+
+					<span class="icon"><i class="icon-external"></i></span>
+
+					<div class="scripts-content">
+
+						<h3>Inferência II</h3>
+
+						<p class="desc">
+							<a href="http://" target="_blank"> Script1.ipynb</a>
+						</p>
+
+					</div>
+
+				</div> <!-- /scripts -->
+
+
+			</div> <!-- /scripts-content -->
+
+	</section> <!-- /scripts -->
+
+	<!-- Datasets Section
+   ================================================== -->
+
+	<section id="datasets">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h1>Datasets</h1>
+
+				<div class="intro-info">
+
+					<p class="lead">
+						Os conjuntos de dados disponíveis também podem ser encontradas em diferentes fontes. Alguns
+						deles fazem parte da literatura clássica de análise de regressão, outros são conjuntos
+						proporcionados por diversas plataformas de análise de dados ou por instituições dedicadas ao
+						tratamento estatístico de dados.
+					<p>
+
+					<h5>Arquivos csv</h5>
+					<ol>
+						<li>
+							<a href="https://bit.ly/446XHRM"
+								target="_blank">Biomassa</a> - <a href="https://github.com/ffajardo64/statistical_learning/blob/main/cursos/STA13824/db/biomassa/readme.md" target="_blank">Descrição</a>
+						</li>
+
+						<li>
+							<a href="https://"
+								target="_blank"> Dataset2</a>.
+						</li>
+
+						<li>
+							<a href="https://www.sidc.be/silso/datafiles" target="_blank"> Sunspot number</a>. (diária -
+							mensal - anual).
+						</li>
+					</ol>
+
+					<h5>Sites</h5>
+					<ol>
+						<li>
+							<a href="https://datasetsearch.research.google.com/" target="_blank">Dataset Search</a>.
+						</li>
+
+						<li>
+							<a href="https://www.google.com/publicdata/directory" target="_blank">Global public data
+								explorer</a>.
+						</li>
+
+						<li>
+							<a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html"
+								target="_blank">The R Datasets Package</a>.
+						</li>
+
+					</ol>
+				</div>
+			</div>
+		</div> <!-- /section-intro -->
+
+	</section> <!-- /process-->
+
+
+
+	<!-- End Dataset Section ================================================== -->
+
+
+	<!-- Phrase Section ================================================== -->
+
+	<section id="cta" class="grey-section">
+		<div class="row cta-content">
+			<h2 class="h01">George E. P. Box</h2>
+			<aside class="pull-quote">
+				<blockquote>
+					<p>
+						Estatísticos, assim como os artistas, têm o mau hábito de se apaixonar por seus modelos.
+					</p>
+				</blockquote>
+			</aside>
+		</div> <!-- /cta-content -->
+	</section> <!-- /cta -->
+
+	<!-- contato
+   ================================================== -->
+	<section id="contato">
+
+		<div class="row section-intro">
+			<div class="col-twelve">
+
+				<h5>Contato</h5>
+				<h1>FALE CONOSCO!</h1>
+
+				<p>
+					Laboratório de Estatística e Computação Natural -- LECON <br />
+					Departamento de Estatística | Universidade Federal do Espírito Santo <br />
+					Av. Fernando Ferrari, 514 - Goiabeiras, Vitória - ES, 29075-910.
+				</p>
+
+			</div>
+		</div> <!-- /section-intro -->
+
+		<div class="row contato-form">
+
+			<a href="mailto:lecon@ufes.br"><button class="submitform">Enviar E-mail</button></i></a>
+
+		</div> <!-- /contato-form -->
+
+	</section> <!-- /contato -->
+
+
+	<!-- footer
+   ================================================== -->
+
+	<footer>
+		<div class="row">
+
+			<div class="col-six tab-full pull-right social">
+
+				<ul class="footer-social">
+					<li><a href="https://github.com/lecondest"><i class="fab fa-github"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/"><i class="fab fa-linkedin"></i></a></li>
+				</ul> <!-- /intro-social -->
+
+			</div>
+
+			<div class="col-eight tab-full">
+
+				<div class="copyright">
+
+					<span>
+						© Copyright 2022 -
+
+						<script>
+							new Date().getFullYear() > document.write(new Date().getFullYear());
+						</script>
+					</span>
+
+					<span>Design by <a href="https://lecon.ufes.br/">LECON</a></span>
+
+				</div>
+			</div>
+
+			<div id="go-top">
+				<a class="smoothscroll" title="Voltar ao topo" href="#top"><i class="fas fa-arrow-up"></i></a>
+			</div>
+
+		</div> <!-- /row -->
+	</footer>
+
+	<div id="preloader">
+		<div id="loader"></div>
+	</div>
+
+	<!-- Java Script
+   ================================================== -->
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/jquery-migrate-1.4.1.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
