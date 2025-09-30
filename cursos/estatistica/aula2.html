@@ -690,6 +690,184 @@ Média - Moda = <span class="math inline">\(3\,\)</span>(Média - Mediana)
 <li><p>Baseados no <strong>desvio padrão</strong>, o Fundo <strong>A</strong> é um investimento de <strong>baixo</strong> risco. O Fundo <strong>B</strong> é um investimento de <strong>alto</strong> risco. Isso indica uma volatilidade muito maior, com a possibilidade de perdas significativas.</p></li>
 </ul>
 <p>Dessa forma, o investidor que prioriza a segurança (baixo risco) escolherá o Fundo <strong>A</strong>, enquanto o investidor que aceita grandes flutuações em busca de ganhos potencialmente maiores escolherá o Fundo <strong>B</strong>.</p>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Amplitude interquantil">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Amplitude interquantil</strong></p>
+</div>
+<div class="callout-content">
+<p>Uma medida de dispersão alternativa ao desvio padrão é a amplitude interquantil, definida como a diferença entre o terceiro e primeiro quantil, i.e., <span class="math display">\[AIQ = q_3 - q_1.\]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="def-cv" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 9 (Coeficiente de variação)</strong></span> O Coeficiente de Variação (<span class="math inline">\(CV\)</span>) é uma medida estatística que permite comparar a dispersão (risco ou variabilidade) de dois ou mais conjuntos de dados que possuem médias muito diferentes ou que estão em unidades de medida distintas. O <span class="math inline">\(CV\)</span> é calculado como <span class="math display">\[CV=\frac{s}{\bar{x}}\times 100\%.\]</span></p>
+</div>
+<p><br></p>
+<div id="exm-cv" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 11</strong></span> Suponha que um investidor quer comparar o risco de dois ativos financeiros:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Ativo</th>
+<th style="text-align: center;">Retorno médio (<span class="math inline">\(\bar{x}\)</span>)</th>
+<th style="text-align: right;">Desvio padrão (<span class="math inline">\(s\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td style="text-align: center;"><span class="math inline">\(R\$\, 10\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(R\$\, 2\)</span></td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td style="text-align: center;"><span class="math inline">\(R\$\, 100\)</span></td>
+<td style="text-align: right;"><span class="math inline">\(R\$\, 5\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Se olharmos apenas para o desvio padrão, os dados sugerem que o Ativo B (<span class="math inline">\(R\$\, 5\)</span>) tem um risco absoluto maior que o Ativo A (<span class="math inline">\(R\$\, 2\)</span>). Mas, utilizando o <span class="math inline">\(CV\)</span>, temos que:</p>
+<ul>
+<li>Ativo A: <span class="math inline">\(CV=\frac{2}{10}=0.2\)</span> ou <span class="math inline">\(20\%\)</span>;</li>
+<li>Ativo B: <span class="math inline">\(CV=\frac{5}{100}=0.05\)</span> ou <span class="math inline">\(5\%\)</span>.</li>
+</ul>
+<p>O resultado do <span class="math inline">\(CV\)</span> sugere que o <strong>Ativo A</strong> é muito mais arriscado (volátil) em relação ao seu próprio retorno médio do que o <strong>Ativo B</strong>.</p>
+<p><br></p>
+<p><strong>Conclusão</strong>: O Ativo B, apesar de ter um desvio padrão absoluto maior, é o mais estável e, portanto, o de menor risco relativo. O Coeficiente de Variação remove as diferenças de escala (<span class="math inline">\(R\$\, 10\)</span> vs <span class="math inline">\(R\$\, 100\)</span>) para permitir essa comparação de risco real.</p>
+</section>
+<section class="slide level2">
+
+<div id="def-desviomedio" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 10 (Desvio Absoluto Médio)</strong></span> O desvio absoluto médio (<span class="math inline">\(D_m\)</span>) define-se como a média aritmética dos módulos dos desvios tomados em relação à média, i.e., <span class="math display">\[D_m=\frac1n\sum_{i=1}^n\left|x_i-\bar{x}\right|\]</span></p>
+</div>
+<p><br></p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>O <span class="math inline">\(D_m\)</span> é uma medida de dispersão que se destaca pela sua simplicidade de interpretação. Enquanto o desvio padrão eleva as diferenças ao quadrado (o que o torna mais complexo de explicar), o <span class="math inline">\(D_m\)</span> utiliza o valor absoluto, respondendo à pergunta de forma mais direta.</p>
+<p>Mas, apesar de sua clareza, o <span class="math inline">\(D_m\)</span> não é a medida de dispersão mais utilizada em estatística inferencial. Isso ocorre porque a função de valor absoluto (usada para eliminar o sinal negativo) não é suave (diferenciável), o que dificulta o uso do <span class="math inline">\(D_m\)</span> em cálculos avançados de otimização e em modelos de regressão, onde a variância e o desvio padrão são matematicamente superiores.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-desviomedio" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 12</strong></span> O gerente de uma loja de café está analisando o desempenho de seus funcionários no preparo de bebidas. O objetivo é a <strong>consistência</strong>.</p>
+<p><br></p>
+<p><strong>Cenário</strong>: Tempo (em segundos) que 5 funcionários levaram para preparar um cappuccino.</p>
+<p><br></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 34%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Funcionário</th>
+<th style="text-align: center;">Tempo de Preparo (seg)</th>
+<th style="text-align: center;">Desvio da Média</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">∣25−30∣=5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">∣28−30∣=2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">∣30−30∣=0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">∣32−30∣=2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">∣35−30∣=5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<p>A média é dada por <span class="math display">\[\bar{x}=\frac{25+28+30+32+35}{5}=\frac{150}{5}=30 \text{ segundos}.\]</span> Dessa forma, o <span class="math inline">\(D_m\)</span> é calculado como <span class="math display">\[D_m=\frac{5+2+0+2+5}{5}=\frac{14}{5}=2.8 \text{ segundos}.\]</span></p>
+<p><br></p>
+<p><strong>Conclusão para o Gerente</strong>: A média de preparo é de <span class="math inline">\(30\)</span> segundos, mas o desvio médio é de <span class="math inline">\(2.8\)</span> segundos. Isso significa que, em média, o tempo de preparo de cada funcionário varia em <span class="math inline">\(2.8\)</span> segundos da média ideal.</p>
+<p>Essa métrica é uma forma clara e direta de avaliar a consistência da equipe e pode ser usada para definir metas de treinamento.</p>
+</section>
+<section class="slide level2">
+
+<div id="def-desviomediano" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 11 (Desvio Absoluto Mediano)</strong></span> O desvio absoluto mediano define-se como a mediana dos módulos dos desvios medianos, i.e., <span class="math display">\[MAD=\frac1n\sum_{i=1}^n\left|x_i-\bar{x}\right|.\]</span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Quando usar?">
+<div class="callout callout-important no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Quando usar?</strong></p>
+</div>
+<div class="callout-content">
+<p>O <span class="math inline">\(MAD\)</span> é uma medida robusta de dispersão, sendo mais resiliente à presença de dados atípicos (<em>outliers</em>) no conjunto de dados. No desvio padrão, as distâncias da média são elevadas ao quadrado, portanto, grandes desvios são ponderados com mais intensidade e, portanto, dados atípicos podem influenciá-la com maior facilidade. No MAD, os desvios de um pequeno número de dados atípicos são irrelevantes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="exm-MAD" class="theorem example">
+<p><span class="theorem-title"><strong>Exemplo 13 (Volatilidade do Setor de Tecnologia)</strong></span> Suponha que você está analisando a volatilidade no crescimento anual de todas as empresas de tecnologia em uma cidade.</p>
+<p><br></p>
+<p>O setor é composto por <span class="math inline">\(995\)</span> pequenas e médias startups (crescimento anual estável) e <span class="math inline">\(5\)</span> empresas gigantes (“unicórnios”) que tiveram um crescimento exponencial e atípico;</p>
+<p><br></p>
+<p>O crescimento exagerado e desproporcional dessas 5 gigantes puxaria o desvio padrão para um valor muito alto. O resultado seria que, estatisticamente, o setor pareceria ser de <strong>altíssimo risco</strong> e <strong>volatilidade</strong>, o que não é verdade para a maioria das <span class="math inline">\(995\)</span> startups menores.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Ao usar o <span class="math inline">\(MAD\)</span>, você se concentra na mediana do crescimento e na mediana das distâncias. O <span class="math inline">\(MAD\)</span> ignora o impacto extremo dos <span class="math inline">\(5\)</span> unicórnios, oferecendo uma medida de volatilidade que reflete a realidade da empresa típica do setor.</p>
+<p><br></p>
+<p><strong>Conclusão Econômica</strong>: Neste caso, o <span class="math inline">\(MAD\)</span> oferece uma visão mais robusta do risco subjacente. Ele permite ao analista financeiro ou gestor de políticas públicas separar o “barulho” dos dados atípicos que influenciam o risco real e sistêmico do mercado. Se o <span class="math inline">\(MAD\)</span> é baixo, a maioria das empresas é consistente, mesmo que algumas poucas sejam exceções gigantescas.</p>
+</section>
+<section class="slide level2">
+
 </section>
 <section id="medidas-de-forma" class="slide level2 center" data-background-color="#172a46">
 <h2>Medidas de forma</h2>
@@ -697,10 +875,33 @@ Média - Moda = <span class="math inline">\(3\,\)</span>(Média - Mediana)
 <section class="slide level2">
 
 <div id="def-assimetria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 9 (Assimetria)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definição 12 (Assimetria)</strong></span> &nbsp;</p>
 </div>
-<div id="def-curtose" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 10 (Curtose)</strong></span> &nbsp;</p>
+<div class="fragment fade-in" data-fragment-index="1">
+<div title="Resumo dos 5 números">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resumo dos 5 números</strong></p>
+</div>
+<div class="callout-content">
+<p>Os cinco valores, <span class="math inline">\(x_{(1)}, q1, q2, q3\)</span> e <span class="math inline">\(x_{(n)}\)</span> são importantes para se ter uma boa noção da assimetria da distribuição dos dados. Para uma distribuição simétrica (ou aproximadamente simétrica), deveríamos ter, por exemplo:</p>
+<ul>
+<li><span class="math inline">\(q_2-x_{(1)} \approx x_{(n)}-q_2\)</span>;</li>
+<li><span class="math inline">\(q_2-q_1 \approx q_3-q_2\)</span>;</li>
+<li><span class="math inline">\(q_1-x_{(1)} \approx x_{(n)}-q_3\)</span>;</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<img data-src="images/simetria.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"><div id="def-curtose" class="theorem definition">
+<p><span class="theorem-title"><strong>Definição 13 (Curtose)</strong></span> &nbsp;</p>
 </div>
 </section>
 <section class="slide level2">
