@@ -1050,8 +1050,45 @@ X1    1 25 8.76 3.39      8    8.67 2.97   3  15    12 0.21    -0.96 0.68</code>
 <section class="slide level2">
 
 <div id="def-assimetria" class="theorem definition">
-<p><span class="theorem-title"><strong>Definição 13 (Assimetria)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Definição 13 (Assimetria)</strong></span> O coeficiente de assimetria é uma medida que descreve a falta de simetria em uma distribuição de dados, indicando se há uma concentração de valores em uma das <em>caudas</em> da distribuição.</p>
 </div>
+<div class="r-stack">
+<div class="fragment fade-in-then-out" data-fragment-index="1">
+<p>Uma distribuição <strong>simétrica</strong> possui as duas caudas equilibradas;</p>
+</div>
+<div class="fragment fade-in current-visible" data-fragment-index="2">
+<p><strong>Assimetria negativa (ou à esquerda)</strong> refere-se quando a cauda esquerda da distribuição é mais longa;</p>
+</div>
+<div class="fragment fade-in current-visible" data-fragment-index="3">
+<p>Uma distribuição <strong>assimétrica positiva (ou à direita)</strong> quando a cauda direita da distribuição é mais longa.</p>
+</div>
+</div>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/simetria.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:65.0%" data-fragment-index="1"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/assimetria_esquerda.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:65.0%" data-fragment-index="2"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/assimetria_direita.png" class="fragment fade-in-then-out quarto-figure quarto-figure-center" style="width:65.0%" data-fragment-index="3"></p>
+</figure>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>O coeficiente de assimetria define-se como: <span class="math display">\[b_1=\frac{1}{n}\sum_{i=1}^n\left(\frac{x_i-\bar{x}}{s}\right)^3.\]</span></p>
+<ul>
+<li>Se a distribuição é simétrica, então <span class="math inline">\(b_1=0\)</span>;</li>
+<li>Se a distribuição é assimétrica negativa, então <span class="math inline">\(b_1&lt;0\)</span>;</li>
+<li>Se a distribuição é assimétrica positiva, então <span class="math inline">\(b_1&gt;0\)</span>.</li>
+</ul>
 <div class="fragment fade-in" data-fragment-index="1">
 <div title="Resumo dos 5 números">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -1074,8 +1111,10 @@ X1    1 25 8.76 3.39      8    8.67 2.97   3  15    12 0.21    -0.96 0.68</code>
 </div>
 </div>
 </div>
+</section>
+<section class="slide level2">
 
-<img data-src="images/simetria.png" class="quarto-figure quarto-figure-center r-stretch" width="1800"><div id="def-curtose" class="theorem definition">
+<div id="def-curtose" class="theorem definition">
 <p><span class="theorem-title"><strong>Definição 14 (Curtose)</strong></span> &nbsp;</p>
 </div>
 </section>
