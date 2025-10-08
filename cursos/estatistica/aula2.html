@@ -1138,6 +1138,31 @@ X1    1 25 8.76 3.39      8    8.67 2.97   3  15    12 0.21    -0.96 0.68</code>
 <img data-src="aula2_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1440"></section>
 <section class="slide level2">
 
+<h3 id="executando-no-r-3">Executando no <code>R</code></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="fu">set.seed</span>(<span class="dv">897</span>) <span class="co"># Fixando semente</span></span>
+<span id="cb45-2"><a href=""></a>x<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">23</span>, <span class="fu">rpois</span>(<span class="at">n=</span><span class="dv">23</span>, <span class="at">lambda =</span> <span class="dv">10</span>),<span class="dv">35</span>); x <span class="co"># Gerando sequencia de 30 valores</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 23  7 15 10  8 15 16  7  9 12 12  8 13  5 10  7  4  7  5  7 15  9  9  7 35</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href=""></a>psych<span class="sc">::</span><span class="fu">describe</span>(x, <span class="at">trim =</span> <span class="fl">0.1</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   vars  n mean   sd median trimmed  mad min max range skew kurtosis   se
+X1    1 25   11 6.61      9     9.9 2.97   4  35    31 2.03     4.57 1.32</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href=""></a>moments<span class="sc">::</span><span class="fu">skewness</span>(x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.157591</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href=""></a>moments<span class="sc">::</span><span class="fu">kurtosis</span>(x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.209567</code></pre>
+</div>
+</div>
+
+<img data-src="aula2_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="1440"></section>
+<section class="slide level2">
+
 <div id="exm-obesidade" class="theorem example">
 <p><span class="theorem-title"><strong>Exemplo 15 (Obesidade na Ufes)</strong></span> A obesidade entre estudantes é um problema de saúde pública crescente no Brasil, sendo mais elevada entre <strong>adolescentes</strong>, especialmente os de baixa renda, que enfrentam uma combinação de excesso de peso e desnutrição.</p>
 <p><br></p>
@@ -1181,8 +1206,9 @@ X1    1 25 8.76 3.39      8    8.67 2.97   3  15    12 0.21    -0.96 0.68</code>
 <section class="slide level2">
 
 <ol start="5" type="1">
-<li>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que: <span class="math display">\[\bar{x}_h\le\bar{x}_g\le\bar{x}.\]</span></li>
-<li>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que <span class="math inline">\(S_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (x_{i} - x_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</li>
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que: <span class="math display">\[\bar{x}_h\le\bar{x}_g\le\bar{x}.\]</span></p></li>
+<li><p>Seja <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> um conjunto de observações. Mostre que <span class="math inline">\(s_n^{2}=\frac{1}{2n(n-1)} \sum_{i=1}^{n}\sum_{j=1}^{n} (x_{i} - x_{j})^2\)</span>, para <span class="math inline">\(n&gt;1\)</span>.</p></li>
+<li></li>
 </ol>
 <!-- ## Referências -->
 <!-- ::: {#refs} -->
